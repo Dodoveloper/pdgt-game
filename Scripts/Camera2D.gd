@@ -1,14 +1,20 @@
 extends Camera2D
 
+var first_touch = false
+var previous_touch = Vector2()
+
 func _ready():
 	pass
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton and event.is_pressed():
-		var mouse_pos = event.global_position
-		position = mouse_pos
+	if event is InputEventScreenTouch and event.is_pressed():
+		return
 
-#func _process(delta):
-#	if Input.is_action_pressed("click"):
-#		var mouse_pos = get_global_mouse_position()
-#		position = mouse_pos
+	if event is InputEventScreenDrag:
+		if not first_touch:
+			previous_touch = event.relative
+			first_touch = true
+		else:
+			var result = (event.relative * 2.5) - previous_touch
+			global_position -= result
+			first_touch = false
