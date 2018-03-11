@@ -7,9 +7,6 @@ func _ready():
 	pass
 
 func _unhandled_input(event):
-	if event is InputEventScreenTouch and event.is_pressed():
-		return
-
 	if event is InputEventScreenDrag:
 		if not first_touch:
 			previous_touch = event.relative
