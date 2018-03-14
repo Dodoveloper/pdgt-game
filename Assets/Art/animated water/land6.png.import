@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/land6.png-ab79f5b21ed7b05870be240e062ad8bb.stex"
+
+[deps]
+
+source_file="res://Assets/Art/animated water/land6.png"
+source_md5="7c4f7eba29d9173231eaf02cb0decd4c"
+
+dest_files=[ "res://.import/land6.png-ab79f5b21ed7b05870be240e062ad8bb.stex" ]
+dest_md5="9f47f4ad744a538e19ed2c82224699e3"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

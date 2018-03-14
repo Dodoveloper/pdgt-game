@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=3]
 
 [node name="Map" type="Node" index="0"]
 
-[node name="Camera2D" parent="." index="0" instance=ExtResource( 1 )]
+[node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
+
+[node name="Camera2D" parent="." index="1" instance=ExtResource( 2 )]
 
 anchor_mode = 0
 current = true
@@ -13,11 +16,11 @@ smoothing_enabled = true
 smoothing_speed = 15.0
 _sections_unfolded = [ "Smoothing" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( 608, 512 )
+position = Vector2( 928, 832 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 

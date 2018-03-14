@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/water3_1.png-249b5bd5c2e4f1444244d9c03881a633.stex"
+
+[deps]
+
+source_file="res://Assets/Art/animated water/water3_1.png"
+source_md5="6c3a26c122847747ce5f01704908e29d"
+
+dest_files=[ "res://.import/water3_1.png-249b5bd5c2e4f1444244d9c03881a633.stex" ]
+dest_md5="c221aa043e0fef4432347ddaba745c8d"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

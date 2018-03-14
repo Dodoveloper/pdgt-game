@@ -5,9 +5,6 @@ onready var cell_size = 64
 onready var grid_size = Vector2(int(screensize.x / cell_size), int(ceil(screensize.y / cell_size)))
 onready var tile_size = Vector2(cell_size, cell_size)
 
-func _ready():
-	print(grid_size)
-
 func _draw():
 	var LINE_COLOR = Color(1, 1, 1)
 	var LINE_WIDTH = 2
