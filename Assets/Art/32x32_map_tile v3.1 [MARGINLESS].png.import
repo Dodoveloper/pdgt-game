@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/32x32_map_tile v3.1 [MARGINLESS].png-b63dd4ec0a38728cbece4b2ab6430c06.stex"
+
+[deps]
+
+source_file="res://Assets/Art/32x32_map_tile v3.1 [MARGINLESS].png"
+source_md5="13db56a666de37d148a8e695bc9058a9"
+
+dest_files=[ "res://.import/32x32_map_tile v3.1 [MARGINLESS].png-b63dd4ec0a38728cbece4b2ab6430c06.stex" ]
+dest_md5="fa31b4212c4a6f9a179e290cbb8a9671"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

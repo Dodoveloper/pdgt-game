@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=3]
 
-[node name="Map" type="Node" index="0"]
+[node name="Map" type="Node"]
 
 [node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -18,7 +18,7 @@ _sections_unfolded = [ "Smoothing" ]
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( 928, 832 )
+position = Vector2( 928, 640 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
