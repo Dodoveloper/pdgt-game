@@ -60,7 +60,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
 }
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
