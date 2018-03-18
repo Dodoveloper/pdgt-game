@@ -8,6 +8,8 @@
 
 [node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
 
+visible = true
+
 [node name="Camera2D" parent="." index="1" instance=ExtResource( 2 )]
 
 anchor_mode = 0
