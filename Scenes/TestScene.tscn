@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Grid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Test.gd" type="Script" id=3]
+
+[node name="TestScene" type="Node" index="0"]
+
+[node name="Navigation2D" type="Navigation2D" parent="." index="0"]
+
+[node name="Grid" parent="Navigation2D" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -320, 0 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+modulate = Color( 0.0335693, 0.859375, 0.0658274, 1 )
+position = Vector2( 320, 64 )
+z_index = 20
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="StartPos" type="Position2D" parent="." index="2"]
+
+position = Vector2( 320, 64 )
+
+[node name="FinalPos" type="Position2D" parent="." index="3"]
+
+position = Vector2( 576, 1024 )
+
+
