@@ -1,0 +1,76 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Assets/Art/PixelatedWater.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Art/WaterAnimations/001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/WaterAnimations/002.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/WaterAnimations/003.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/WaterAnimations/004.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/WaterAnimations/005.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/WaterAnimations/006.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/WaterAnimations/007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/WaterAnimations/008.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/WaterAnimations/009.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Art/WaterAnimations/010.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/WaterAnimations/011.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/WaterAnimations/012.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Art/WaterAnimations/013.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Art/WaterAnimations/014.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Art/WaterAnimations/015.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Art/WaterAnimations/016.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Art/WaterAnimations/017.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Art/WaterAnimations/018.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Art/WaterAnimations/019.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Art/WaterAnimations/020.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Art/WaterAnimations/021.png" type="Texture" id=22]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "pixel_waves"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tile_set:0/texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ]
+}
+
+[node name="TileMap" type="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 320, 120 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = "pixel_waves"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/pixel_waves = SubResource( 1 )
+blend_times = [  ]
+
+
