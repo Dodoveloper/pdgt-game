@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 64, 0, 0, 0, 0, -64, 64, -64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 64, 0, 0, 0, 0, -64, 64, -64 ) ]
+
+[node name="TileSet" type="Node2D"]
+
+[node name="blue" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0, 0.480591, 0.992188, 1 )
+position = Vector2( 672, 224 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="blue" index="0"]
+
+position = Vector2( -32, 32 )
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="red" type="Sprite" parent="." index="1"]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1088, 192 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+

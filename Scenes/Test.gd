@@ -1,15 +1,15 @@
-extends Sprite
+extends KinematicBody2D
 
-var speed = 100
+var speed = 150
 onready var nav = get_parent().get_node("Navigation2D")
 var path = []
 var goal = Vector2()
 
 func _ready():
 	global_position = get_parent().get_node("StartPos").position
-	path = get_parent().get_node("Navigation2D").get_simple_path(global_position,
+	path = nav.get_simple_path(global_position,
 			get_parent().get_node("FinalPos").position, false)
-	print(path)
+#	print(path)
 
 func _physics_process(delta):
 	if path.size() > 1:

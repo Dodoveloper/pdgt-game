@@ -14,17 +14,16 @@
 [node name="Camera2D" parent="." index="2" instance=ExtResource( 3 )]
 
 anchor_mode = 0
-current = true
 smoothing_enabled = true
 smoothing_speed = 15.0
 _sections_unfolded = [ "Editor" ]
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 
-visible = false
-position = Vector2( 928, 640 )
+position = Vector2( 2336, 480 )
 scale = Vector2( 0.4, 0.4 )
+z_index = 30
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 

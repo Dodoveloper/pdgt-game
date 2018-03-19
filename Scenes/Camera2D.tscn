@@ -6,8 +6,8 @@
 
 anchor_mode = 1
 rotating = false
-current = false
-zoom = Vector2( 1, 1 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
