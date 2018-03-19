@@ -2,6 +2,7 @@ extends Area2D
 
 var speed = 1000
 var velocity = Vector2()
+var damage
 
 func start(pos, dir):
 	position = pos

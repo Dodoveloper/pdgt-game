@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/TestScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TestScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=5]
 
-[node name="Map" type="Node"]
+[node name="Map" type="Node" index="0"]
 
-[node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
+enemy_count = 10
+spawn_rate = 1.0
 
-[node name="TestScene" parent="." index="1" instance=ExtResource( 2 )]
+[node name="TileMap" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="Camera2D" parent="." index="2" instance=ExtResource( 3 )]
+[node name="TestScene" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." index="2" instance=ExtResource( 4 )]
 
 anchor_mode = 0
 smoothing_enabled = true
@@ -23,7 +28,16 @@ _sections_unfolded = [ "Editor" ]
 position = Vector2( 2336, 480 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 30
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="SpawnRate" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="SpawnRate" to="." method="_on_SpawnRate_timeout"]
 
 
