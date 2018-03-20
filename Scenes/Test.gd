@@ -4,7 +4,7 @@ var speed = 150
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()
-var life
+var life = 100
 
 func set_nav(new_nav):
 	nav = new_nav
@@ -18,5 +18,12 @@ func _physics_process(delta):
 					(speed * delta) / d)
 		else:
 			path.remove(0)
+	else:
+		queue_free()
+
+func hit(damage):
+	# check remaining life
+	if life > damage:
+		life -= damage
 	else:
 		queue_free()

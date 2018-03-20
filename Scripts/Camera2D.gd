@@ -23,13 +23,11 @@ func _unhandled_input(event):
 		# zoom in
 		if event.button_index == BUTTON_WHEEL_UP:
 			zoom_factor = -0.01
-			zoom_pos = get_global_mouse_position()
 			zoom.x = lerp(zoom.x, zoom.x + zoom_factor, zoom_speed)
 			zoom.y = lerp(zoom.y, zoom.y + zoom_factor, zoom_speed)
 		# zoom out
 		if event.button_index == BUTTON_WHEEL_DOWN:
 			zoom_factor = 0.01
-			zoom_pos = get_global_mouse_position()
 			zoom.x = lerp(zoom.x, zoom.x + zoom_factor, zoom_speed)
 			zoom.y = lerp(zoom.y, zoom.y + zoom_factor, zoom_speed)
 
