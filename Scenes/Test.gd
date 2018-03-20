@@ -4,6 +4,7 @@ var speed = 150
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()
+var life
 
 func set_nav(new_nav):
 	nav = new_nav
