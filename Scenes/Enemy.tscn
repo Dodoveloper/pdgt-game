@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Sprite" type="KinematicBody2D"]
+[node name="Sprite" type="KinematicBody2D" index="0"]
 
 modulate = Color( 0.0335693, 0.859375, 0.0658274, 1 )
 position = Vector2( 320, 64 )

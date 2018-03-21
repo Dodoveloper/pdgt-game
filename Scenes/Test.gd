@@ -11,6 +11,7 @@ func set_nav(new_nav):
 	path = nav.get_simple_path(global_position, goal, false)
 
 func _physics_process(delta):
+	# travel to the next point
 	if path.size() > 1:
 		var d = global_position.distance_to(path[0])
 		if d > 2:

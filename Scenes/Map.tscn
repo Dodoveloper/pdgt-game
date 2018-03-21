@@ -19,7 +19,6 @@ spawn_rate = 1.0
 [node name="Camera2D" parent="." index="2" instance=ExtResource( 4 )]
 
 anchor_mode = 0
-smoothing_enabled = true
 smoothing_speed = 15.0
 _sections_unfolded = [ "Editor" ]
 
