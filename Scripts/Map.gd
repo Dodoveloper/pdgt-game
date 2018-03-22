@@ -1,9 +1,12 @@
 extends Node
 
 export (int) var enemy_count
-export (float) var spawn_rate
+var spawn_rate
 
 var Enemy = preload("res://Scenes/Enemy.tscn")
+
+func _ready():
+	randomize()
 
 func _on_SpawnRate_timeout():
 	if enemy_count > 0:
@@ -17,3 +20,5 @@ func _on_SpawnRate_timeout():
 		e.nav = $TestScene/Navigation2D
 		# decrease counter
 		enemy_count -= 1
+		# randomize the timer
+		$SpawnRate.wait_time = rand_range(0.5, 2)

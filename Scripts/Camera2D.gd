@@ -5,8 +5,7 @@ var previous_touch = Vector2()
 var zoom_factor = 1.0
 var zoom_speed = 10
 var zoom_pos = Vector2()
-var zoom_margin = 0.1
-var zooming = false
+var zoom_margin = 10
 
 func _unhandled_input(event):
 	# camera drag
@@ -21,7 +20,6 @@ func _unhandled_input(event):
 	# zoom
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			zooming = true
 			# zoom in
 			if event.button_index == BUTTON_WHEEL_UP:
 				zoom_factor -= 0.01
@@ -30,7 +28,7 @@ func _unhandled_input(event):
 			if event.button_index == BUTTON_WHEEL_DOWN:
 				zoom_factor += 0.01
 				zoom_pos = get_global_mouse_position()
-	# stop the zooming if moving the mouse
+	# stop the zooming when moving the mouse
 	if abs(zoom_pos.x - get_global_mouse_position().x) > zoom_margin:
 		zoom_factor = 1.0
 	if abs(zoom_pos.y - get_global_mouse_position().y) > zoom_margin:
