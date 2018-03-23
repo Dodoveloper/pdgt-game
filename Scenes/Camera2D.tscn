@@ -2,16 +2,16 @@
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="Camera2D" type="Camera2D" index="0"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1.5, 1.5 )
-limit_left = -100
-limit_top = -100
-limit_right = 2660
-limit_bottom = 1540
+zoom = Vector2( 0.9, 0.9 )
+limit_left = -1000
+limit_top = -1000
+limit_right = 4000
+limit_bottom = 3000
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -27,5 +27,6 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 1 )
+_sections_unfolded = [ "Limit", "Smoothing" ]
 
 
