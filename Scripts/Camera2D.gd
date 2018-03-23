@@ -2,10 +2,12 @@ extends Camera2D
 
 var first_touch = false
 var previous_touch = Vector2()
-var zoom_factor = 1.0
+var zoom_factor = 1.1
 var zoom_speed = 10
 var zoom_pos = Vector2()
-var zoom_margin = 10
+var zoom_weight = 0.7
+const MAX_ZOOM = 0.6
+const MIN_ZOOM = 1.6
 
 func _unhandled_input(event):
 	# camera drag
@@ -22,21 +24,17 @@ func _unhandled_input(event):
 		if event.is_pressed():
 			# zoom in
 			if event.button_index == BUTTON_WHEEL_UP:
-				zoom_factor -= 0.01
 				zoom_pos = get_global_mouse_position()
+				zoom_at(zoom_pos, 1 / zoom_factor)
 			# zoom out
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				zoom_factor += 0.01
 				zoom_pos = get_global_mouse_position()
-	# stop the zooming when moving the mouse
-	if abs(zoom_pos.x - get_global_mouse_position().x) > zoom_margin:
-		zoom_factor = 1.0
-	if abs(zoom_pos.y - get_global_mouse_position().y) > zoom_margin:
-		zoom_factor = 1.0
+				zoom_at(zoom_pos, zoom_factor)
 
-func _process(delta):
-	zoom.x = lerp(zoom.x, zoom.x * zoom_factor, zoom_speed * delta)
-	zoom.y = lerp(zoom.y, zoom.y * zoom_factor, zoom_speed * delta)
-	zoom.x = clamp(zoom.x, 0.5, 2.0)
-	zoom.y = clamp(zoom.y, 0.5, 2.0)
-
+func zoom_at(pos, step):
+	zoom.x = lerp(zoom.x, zoom.x * step, zoom_weight)
+	zoom.y = lerp(zoom.y, zoom.y * step, zoom_weight)
+	zoom.x = clamp(zoom.x, MAX_ZOOM, MIN_ZOOM)
+	zoom.y = clamp(zoom.y, MAX_ZOOM, MIN_ZOOM)
+	position.x = lerp(position.x, pos.x, 0.2)
+	position.y = lerp(position.y, pos.y, 0.2)
