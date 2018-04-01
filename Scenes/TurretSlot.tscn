@@ -1,37 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/TurretSlot.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Buttons/TurretSlotButton.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/Buttons/TurretSlotPressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Buttons/TurretSlotHover.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/TurretSlot.gd" type="Script" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[node name="TurretSlot" type="TextureButton" index="0"]
 
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[node name="TurretSlot" type="Area2D" index="0"]
-
-position = Vector2( 288, 160 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-modulate = Color( 1, 0.908569, 0.164063, 1 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-visible = false
-shape = SubResource( 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
 
 

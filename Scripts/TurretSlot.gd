@@ -1,4 +1,4 @@
-extends Area2D
+extends TextureButton
 
 func _ready():
 	pass
