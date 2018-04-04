@@ -7,10 +7,9 @@ var small_price = "100"
 var medium_price = "400"
 var big_price = "1000"
 
-func _ready():
-	pass
-
 func _on_small_pressed():
+	# enable the price button
+	small.get_node("Price").disabled = false
 	# display the buy button if pressed
 	if small.get_node("Type").pressed:
 		small.get_node("Price").text = "Click to buy (%s)" %small_price
@@ -24,6 +23,7 @@ func _on_small_pressed():
 	# reset the message if unpressed
 	if not small.get_node("Type").pressed:
 		small.get_node("Price").text = small_price
+		small.get_node("Price").disabled = true
 
 func _on_medium_pressed():
 	# display the buy button if pressed
@@ -52,3 +52,6 @@ func _on_big_pressed():
 	# clear the message
 	if not big.get_node("Type").pressed:
 		big.get_node("Price").text = big_price
+
+func _on_small_Price_pressed():
+	print("pressed")
