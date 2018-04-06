@@ -14,8 +14,7 @@ func _ready():
 	var json = JSON.parse(file.get_as_text())
 	data = json.result
 #	for i in data.size():
-#		print(data[i].cdimensioni)
-#	get_platform_pit("LUNA A")
+#		print(data[i]["cdimensioni"])
 
 func get_platform_size(platform_name):
 	# get the right index
@@ -38,36 +37,19 @@ func get_platform_size(platform_name):
 		print(platform_size, " ", n1, " ", n2, " ", n1*n2)
 		return n1*n2
 
-func get_platform_pit(platform_name):
+func get_value(platform_id, key):
 	var index
+	# get the right index
 	for i in data.size():
-		if platform_name == data[i].cdenominazione__:
-			index = i
-			break
+		if platform_id == data[i]["ccodice"].to_int():
+			index = i 
 	# get the value
-	if data[index].cpozzi_in_produzione == "" or data[index].cpozzi_in_produzione == null:
-		print("The platform has no specified pits")
+	if data[index][key] == "" or data[index][key] == null:
+		print("the platform has no specified ", key, "!")
 	else:
-		# get the string and convert it
-		var pit_count = data[index].cpozzi_in_produzione.to_int()
-		print(pit_count)
-		return pit_count
-
-func get_mineral(platform_name):
-	var index
-	for i in data.size():
-		if platform_name == data[i].cdenominazione__:
-			index = i
-			break
-	# get the value
-	if data[index].cminerale == "" or data[index].cminerale == null:
-		print("The platform has no specified mineral")
-	else:
-		# get the string and convert it
-		var mineral = data[index].cminerale
-		print(mineral)
-		return mineral
-
+		var value = data[index][key]
+		print(value)
+		return value
 
 
 
