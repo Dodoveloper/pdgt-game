@@ -9,33 +9,28 @@ func _ready():
 	if not file.file_exists(DATA_PATH):
 		print("data absent!")
 		return
-	# read the file and store it into a dictionary
+	# read the file and store it into an array of dictionariess
 	file.open(DATA_PATH, File.READ)
 	var json = JSON.parse(file.get_as_text())
 	data = json.result
+	# close the file
+	file.close()
 #	for i in data.size():
 #		print(data[i]["cdimensioni"])
+#	print(format_string(data[80]["ccapitaneria_di_porto"]))
 
-func get_platform_size(platform_name):
-	# get the right index
-	var index
-	for i in data.size():
-		if platform_name == data[i].cdenominazione__:
-			index = i
-			break
-	# get the size values
-	if data[index].cdimensioni == "" or data[index].cdimensioni == null:
-		print("The platform has no specified size")
-		return
-	else:
-		# get the string and convert it
-		var platform_size = data[index].cdimensioni
-		platform_size = platform_size.replacen("x", "")
-		platform_size = platform_size.replacen("m", "")
-		var n1 = platform_size.left(3).to_int()
-		var n2 = platform_size.right(3).to_int()
-		print(platform_size, " ", n1, " ", n2, " ", n1*n2)
-		return n1*n2
+func format_dimensions(size):
+	var platform_size = size
+	platform_size = platform_size.replacen("x", "")
+	platform_size = platform_size.replacen("m", "")
+	var n1 = platform_size.left(3).to_int()
+	var n2 = platform_size.right(3).to_int()
+	return n1*n2
+
+func format_string(string):
+	var output = string
+	output.erase(output.find("|"), output.length() - output.find("|"))
+	return output
 
 func get_value(platform_id, key):
 	var index
@@ -46,9 +41,9 @@ func get_value(platform_id, key):
 	# get the value
 	if data[index][key] == "" or data[index][key] == null:
 		print("the platform has no specified ", key, "!")
+		return "0"
 	else:
 		var value = data[index][key]
-		print(value)
 		return value
 
 

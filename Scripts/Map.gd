@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 export (int) var enemy_count
 var spawn_rate
