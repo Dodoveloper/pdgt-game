@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=5]
 
-[node name="Map" type="Node"]
+[node name="Map" type="Node" index="0"]
 
 script = ExtResource( 1 )
 enemy_count = 10
@@ -17,7 +17,6 @@ enemy_count = 10
 
 [node name="Camera2D" parent="." index="2" instance=ExtResource( 4 )]
 
-anchor_mode = 0
 smoothing_speed = 15.0
 _sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
 
