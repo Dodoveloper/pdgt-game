@@ -5,15 +5,28 @@ export (float) var fire_rate
 export (PackedScene) var Bullet
 var vis_color = Color(.867, .91, .247, 0.1)
 
+onready var size
 var target
 var can_shoot = true
 
 func _ready():
+	init(size)
 	$Sprite.self_modulate = Color(0.2, 0, 0)
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius
 	$Visibility/CollisionShape2D.shape = shape
 	$ShootTimer.wait_time = fire_rate
+
+func init(size):
+	if size == "Small":
+		detect_radius = 150
+		fire_rate = 0.5
+	elif size == "Medium":
+		detect_radius = 250
+		fire_rate = 0.2
+	elif size == "Big":
+		detect_radius = 450
+		fire_rate = 0.4
 
 func _physics_process(delta):
 	update()

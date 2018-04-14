@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/TurretPopup.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Art/Turrets/Small/small_tower.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Turrets/Small/small_tower_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Turrets/Small/small_tower_hover.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Turrets/Medium/medium_tower.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Turrets/Medium/medium_tower_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/Turrets/Medium/medium_tower_hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/Turrets/Big/big_tower.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/Turrets/Big/big_tower_pressed.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/Turrets/Big/big_tower_hover.png" type="Texture" id=10]
+
+[node name="TurretPopup" type="CanvasLayer"]
+
+layer = 100
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Turrets" type="HBoxContainer" parent="PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 633.0
+margin_bottom = 249.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 70
+alignment = 1
+
+[node name="Small" type="VBoxContainer" parent="PanelContainer/Turrets" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 77.0
+margin_right = 138.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Small" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 23.0
+margin_right = 61.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+stretch_mode = 3
+_sections_unfolded = [ "Textures" ]
+
+[node name="Price" type="Button" parent="PanelContainer/Turrets/Small" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 199.0
+margin_right = 61.0
+margin_bottom = 219.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "100"
+flat = false
+align = 1
+
+[node name="Medium" type="VBoxContainer" parent="PanelContainer/Turrets" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 208.0
+margin_right = 334.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Medium" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 13.0
+margin_right = 126.0
+margin_bottom = 178.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+stretch_mode = 3
+_sections_unfolded = [ "Textures" ]
+
+[node name="Price" type="Button" parent="PanelContainer/Turrets/Medium" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 208.0
+margin_right = 126.0
+margin_bottom = 228.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "400"
+flat = false
+align = 1
+
+[node name="Big" type="VBoxContainer" parent="PanelContainer/Turrets" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 404.0
+margin_right = 548.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Big" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 144.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Price" type="Button" parent="PanelContainer/Turrets/Big" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 198.0
+margin_right = 144.0
+margin_bottom = 218.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1000"
+flat = false
+align = 1
+
+[connection signal="pressed" from="PanelContainer/Turrets/Small/Type" to="." method="_on_small_pressed"]
+
+[connection signal="pressed" from="PanelContainer/Turrets/Small/Price" to="." method="_on_Small_Price_pressed"]
+
+[connection signal="pressed" from="PanelContainer/Turrets/Medium/Type" to="." method="_on_medium_pressed"]
+
+[connection signal="pressed" from="PanelContainer/Turrets/Medium/Price" to="." method="_on_Medium_Price_pressed"]
+
+[connection signal="pressed" from="PanelContainer/Turrets/Big/Type" to="." method="_on_big_pressed"]
+
+[connection signal="pressed" from="PanelContainer/Turrets/Big/Price" to="." method="_on_Big_Price_pressed"]
+
+
