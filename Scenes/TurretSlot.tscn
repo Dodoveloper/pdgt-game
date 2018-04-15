@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Art/Buttons/TurretSlotHover.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/TurretSlot.gd" type="Script" id=4]
 
-[node name="TurretSlot" type="TextureButton" index="0"]
+[node name="TurretSlot" type="TextureButton"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -27,7 +27,11 @@ texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 script = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Rect" ]
+
+[node name="Pivot" type="Position2D" parent="." index="0"]
+
+position = Vector2( 32, 32 )
 
 [connection signal="pressed" from="." to="." method="_on_TurretSlot_pressed"]
 
