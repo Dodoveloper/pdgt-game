@@ -5,7 +5,7 @@ var velocity = Vector2()
 var damage = 2
 
 func start(pos, dir):
-	position = Vector2()
+	position = pos
 	rotation = dir
 	velocity = Vector2(speed, 0).rotated(dir)
 
