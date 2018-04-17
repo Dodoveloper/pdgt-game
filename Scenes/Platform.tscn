@@ -37,4 +37,6 @@ visible = false
 position = Vector2( -9.92749, 6.36752 )
 shape = SubResource( 1 )
 
+[connection signal="area_entered" from="." to="." method="_on_Platform_area_entered"]
+
 

@@ -36,9 +36,9 @@ click=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_n
 2d_physics/layer_1="Platform"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Turret"
-2d_render/layer_4="Cell"
 2d_physics/layer_4="Cell"
 2d_physics/layer_5="Bullet"
+2d_physics/layer_6="EnemyScan"
 
 [rendering]
 

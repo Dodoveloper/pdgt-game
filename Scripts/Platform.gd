@@ -1,6 +1,7 @@
 extends Area2D
 
-var id = 220 # platform's id
+# platform's id
+var id = 220
 var life
 var producting_pits
 var inactive_pits
@@ -73,3 +74,7 @@ func init(id):
 
 
 
+
+
+func _on_Platform_area_entered(area):
+	print(area.name)

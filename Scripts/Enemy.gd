@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 200
+var speed = 600
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()
@@ -14,7 +14,7 @@ func _physics_process(delta):
 	# travel to the next point
 	if path.size() > 1:
 		var d = global_position.distance_to(path[0])
-		if d > 2:
+		if d > 6:
 			global_position = global_position.linear_interpolate(path[0], 
 					(speed * delta) / d)
 		else:
@@ -28,3 +28,7 @@ func hit(damage):
 		life -= damage
 	else:
 		queue_free()
+
+func _on_Scan_area_entered(area):
+	if area.name == "Platform":
+		print("%s: platform detected!" %name)
