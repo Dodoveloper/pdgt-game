@@ -12,7 +12,7 @@ var life = 30
 var can_shoot = true
 var in_range = false
 var target_pos = Vector2()
-var accuracy = 0.5
+var accuracy = 0.3
 
 func set_nav(new_nav):
 	nav = new_nav
@@ -44,7 +44,7 @@ func shoot(pos):
 func _on_Scan_area_entered( area ):
 	print("%s entered" %area.name)
 	# stop moving and start shooting
-	speed = 0#lerp(speed, 0, 10)
+	speed = 0
 	in_range = true
 	target_pos = get_parent().get_node("Platform").global_position
 
