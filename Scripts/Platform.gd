@@ -25,6 +25,7 @@ var info_dict = {
 func _ready():
 	init(id)
 	print(producting_pits, " " , inactive_pits , " " , size , " " , location)
+	pass
 
 func init(id):
 	## init the info dictionary
@@ -65,16 +66,3 @@ func init(id):
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int() + DataHandler.get_value(id, "cpozzi_in_monitoraggio").to_int()
 
-
-
-
-
-
-
-
-
-
-
-
-func _on_Platform_area_entered(area):
-	print(area.name)

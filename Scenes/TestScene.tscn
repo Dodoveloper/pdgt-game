@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Grid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TurretSlot.tscn" type="PackedScene" id=2]
 
-[node name="TestScene" type="Node" index="0"]
+[node name="TestScene" type="Node"]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="0"]
 

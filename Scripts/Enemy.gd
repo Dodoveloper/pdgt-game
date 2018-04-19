@@ -29,6 +29,5 @@ func hit(damage):
 	else:
 		queue_free()
 
-func _on_Scan_area_entered(area):
-	if area.name == "Platform":
-		print("%s: platform detected!" %name)
+func _on_Scan_area_entered( area ):
+	print("%s entered" %area.name)
