@@ -1,10 +1,18 @@
 extends KinematicBody2D
 
-var speed = 600
+export (float) var fire_rate
+export (PackedScene) var Bullet
+export (int) var speed
+
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()
 var life = 30
+# shooting params
+var can_shoot = true
+var in_range = false
+var target_pos = Vector2()
+var accuracy = 0.5
 
 func set_nav(new_nav):
 	nav = new_nav
@@ -21,6 +29,24 @@ func _physics_process(delta):
 			path.remove(0)
 	else:
 		queue_free()
+	# shooting code
+	if can_shoot and in_range:
+		shoot(target_pos)
+
+func shoot(pos):
+	var b = Bullet.instance()
+	var a = (pos - global_position).angle()
+	b.start(position, a + rand_range(-accuracy, accuracy))
+	get_parent().add_child(b)
+	can_shoot = false
+	$ShootTimer.start()
+
+func _on_Scan_area_entered( area ):
+	print("%s entered" %area.name)
+	# stop moving and start shooting
+	speed = 0#lerp(speed, 0, 10)
+	in_range = true
+	target_pos = get_parent().get_node("Platform").global_position
 
 func hit(damage):
 	# check remaining life
@@ -29,5 +55,5 @@ func hit(damage):
 	else:
 		queue_free()
 
-func _on_Scan_area_entered( area ):
-	print("%s entered" %area.name)
+func _on_ShootTimer_timeout():
+	can_shoot = true

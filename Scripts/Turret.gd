@@ -16,10 +16,11 @@ func _ready():
 	$Visibility/CollisionShape2D.shape = shape
 	$ShootTimer.wait_time = fire_rate
 
-func set_size(size):
+func set_size(new_size):
+	size = new_size
 	if size == "Small":
 		detect_radius = 150
-		fire_rate = 0.5
+		fire_rate = 0.3
 	elif size == "Medium":
 		detect_radius = 250
 		fire_rate = 0.2
