@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="game"
+config/name="Platform Defence"
 run/main_scene="res://Scenes/Map.tscn"
 config/icon="res://icon.png"
 

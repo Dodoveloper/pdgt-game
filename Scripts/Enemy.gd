@@ -12,7 +12,7 @@ var life = 30
 var can_shoot = true
 var in_range = false
 var target_pos = Vector2()
-var accuracy = 0.3
+var accuracy = 0.18
 
 func set_nav(new_nav):
 	nav = new_nav

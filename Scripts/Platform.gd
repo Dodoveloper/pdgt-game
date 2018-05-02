@@ -61,8 +61,20 @@ func init(id):
 	# size
 	size = DataHandler.format_dimensions(info_dict.dimensions)
 	# life, according to size
-	# wip
+	life = size
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int() + DataHandler.get_value(id, "cpozzi_in_monitoraggio").to_int()
+
+func hit(damage):
+	# check remaining life
+	if life > damage:
+		life -= damage
+	else:
+		queue_free()
+
+
+
+
+
 

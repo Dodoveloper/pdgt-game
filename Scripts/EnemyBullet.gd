@@ -1,9 +1,14 @@
 extends "res://Scripts/Bullet.gd"
 
-func _ready():
-	pass
 
+func _ready():
+	# override damage
+	damage = 10
+	pass
 
 func _on_EnemyBullet_area_entered( area ):
 	# damage the platform
-	pass # replace with function body
+	if area.name == "Platform":
+		area.hit(damage)
+		print("Platform's life: ", area.life)
+		queue_free()
