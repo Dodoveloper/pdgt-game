@@ -6,7 +6,7 @@ export (PackedScene) var Bullet
 var vis_color = Color(.867, .91, .247, 0.1)
 
 onready var size setget set_size
-var target
+var targets = []
 var can_shoot = true
 
 func _ready():
@@ -30,10 +30,10 @@ func set_size(new_size):
 
 func _physics_process(delta):
 	update()
-	if target:
-		rotation = (target.position - position).angle()
-		if can_shoot:
-			shoot(target.position)
+	if targets.size() > 0:
+		rotation = (targets[0].position - position).angle()
+		if can_shoot and targets[0]:
+			shoot(targets[0].position)
 
 func shoot(pos):
 	var b = Bullet.instance()
@@ -47,14 +47,18 @@ func _draw():
 	draw_circle(Vector2(), detect_radius, vis_color)
 
 func _on_Visibility_body_entered(body):
-	if target:
+	# if already targeting, store the second target to shoot it later
+	if targets.size() > 0 and targets[0]:
+		targets.append(body)
 		return
-	target = body
+#	print("Targeting ", String(body.name))
+	targets.append(body)
 	$Sprite.self_modulate.r = 1.0
 
 func _on_Visibility_body_exited(body):
-	if body == target:
-		target = null
+	if body == targets[0]:
+#		print("Destroyed ", String(body.name))
+		targets.pop_front()
 		$Sprite.self_modulate.r = 0.2
 
 func _on_ShootTimer_timeout():
