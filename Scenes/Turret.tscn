@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 21.6287, 22.0748 )
 
-[node name="Turret" type="KinematicBody2D"]
+[node name="Turret" type="KinematicBody2D" index="0"]
 
 position = Vector2( 55.2136, 37.6254 )
 z_index = 20
