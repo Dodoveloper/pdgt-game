@@ -10,7 +10,8 @@ var goal = Vector2()
 var life = 30
 # shooting params
 var can_shoot = true
-var target
+var in_range = false
+var target_pos = Vector2()
 var accuracy = 0.18
 
 func set_nav(new_nav):
@@ -29,8 +30,8 @@ func _physics_process(delta):
 	else:
 		queue_free()
 	# shooting code
-	if can_shoot and target:
-		shoot(target.global_position)
+	if can_shoot and in_range:
+		shoot(target_pos)
 
 func shoot(pos):
 	var b = Bullet.instance()
@@ -44,10 +45,8 @@ func _on_Scan_area_entered( area ):
 	print("%s entered" %area.name)
 	# stop moving and start shooting
 	speed = 0
-	target = area
-
-func _on_Scan_area_exited(area):
-	target = null
+	in_range = true
+	target_pos = get_parent().get_node("Platform").global_position
 
 func hit(damage):
 	# check remaining life
@@ -58,5 +57,3 @@ func hit(damage):
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
-
-
