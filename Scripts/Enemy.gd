@@ -42,7 +42,6 @@ func shoot(pos):
 	$ShootTimer.start()
 
 func _on_Scan_area_entered( area ):
-	print("%s entered" %area.name)
 	# stop moving and start shooting
 	speed = 0
 	in_range = true
@@ -57,3 +56,6 @@ func hit(damage):
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
+
+func _on_Scan_area_exited(area):
+	in_range = false
