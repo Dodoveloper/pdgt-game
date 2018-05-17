@@ -1,6 +1,5 @@
 extends "res://Scripts/Bullet.gd"
 
-
 func _ready():
 	# override damage
 	damage = 10
@@ -10,5 +9,4 @@ func _on_EnemyBullet_area_entered( area ):
 	# damage the platform
 	if area.name == "Platform":
 		area.hit(damage)
-		print("Platform's life: ", area.life)
 		queue_free()

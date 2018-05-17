@@ -24,8 +24,9 @@ var info_dict = {
 
 func _ready():
 	init(id)
-	print(producting_pits, " " , inactive_pits , " " , size , " " , location)
-	pass
+#	print(producting_pits, " " , inactive_pits , " " , size , " " , location)
+	$HealthBar/Progress.max_value = life
+	$HealthBar/Progress.value = life
 
 func init(id):
 	## init the info dictionary
@@ -70,6 +71,7 @@ func hit(damage):
 	# check remaining life
 	if life > damage:
 		life -= damage
+		$HealthBar/Progress.value -= damage
 	else:
 		queue_free()
 
