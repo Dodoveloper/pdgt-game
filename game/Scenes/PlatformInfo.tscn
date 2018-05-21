@@ -10,7 +10,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 857.0
+margin_right = 562.0
 margin_bottom = 370.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -23,7 +23,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 script = ExtResource( 2 )
-_sections_unfolded = [ "Patch Margin" ]
+_sections_unfolded = [ "Patch Margin", "Rect", "Size Flags" ]
 
 [node name="Rows" type="VBoxContainer" parent="." index="0"]
 
@@ -46,55 +46,55 @@ _sections_unfolded = [ "Margin", "custom_constants" ]
 
 [node name="Name" parent="Rows" index="0" instance=ExtResource( 3 )]
 
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 30.0
 
 [node name="Year" parent="Rows" index="1" instance=ExtResource( 3 )]
 
 margin_top = 40.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 70.0
 
 [node name="Type" parent="Rows" index="2" instance=ExtResource( 3 )]
 
 margin_top = 80.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 110.0
 
 [node name="Owner" parent="Rows" index="3" instance=ExtResource( 3 )]
 
 margin_top = 120.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 150.0
 
 [node name="Harbormaster" parent="Rows" index="4" instance=ExtResource( 3 )]
 
 margin_top = 160.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 190.0
 
 [node name="Distance" parent="Rows" index="5" instance=ExtResource( 3 )]
 
 margin_top = 200.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 230.0
 
 [node name="Altitude" parent="Rows" index="6" instance=ExtResource( 3 )]
 
 margin_top = 240.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 270.0
 
 [node name="Depth" parent="Rows" index="7" instance=ExtResource( 3 )]
 
 margin_top = 280.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 310.0
 
 [node name="Dimensions" parent="Rows" index="8" instance=ExtResource( 3 )]
 
 margin_top = 320.0
-margin_right = 837.0
+margin_right = 542.0
 margin_bottom = 350.0
 
 [connection signal="draw" from="." to="." method="_on_PlatformInfo_draw"]
