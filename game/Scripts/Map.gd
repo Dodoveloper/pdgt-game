@@ -14,10 +14,10 @@ func _on_SpawnRate_timeout():
 		var e = Enemy.instance()
 		add_child(e)
 		# set its position
-		e.global_position = $TestScene/StartPos.position
+		e.global_position = $LevelOne/StartPos.position
 		# initialize its variables
-		e.goal = $TestScene/FinalPos.position
-		e.nav = $TestScene/Navigation2D
+		e.goal = $LevelOne/FinalPos.position
+		e.nav = $LevelOne/Navigation2D
 		# decrease counter
 		enemy_count -= 1
 		# randomize the timer
