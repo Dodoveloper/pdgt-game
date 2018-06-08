@@ -19,7 +19,7 @@ with open(input_json, 'r') as f:
 
 # iterate through each element of the array
 for i, val in enumerate(data):
-    print(pit_sum(data[i]), data[i]["cnumero_pozzi_allacciati__"])
+    print(pit_sum(data[i]), data[i]["cpozzi_in_produzione"],  data[i]["cpozzi_produttivi_non_eroganti"])
     # iterate through the elements of each dict
     for k, v in list(data[i].items()):
         if k == "ctitolo_minerario" or k == "cfoglio":
@@ -31,6 +31,6 @@ for i, val in enumerate(data):
 
 print(len(data))
 
-with open(input_json, 'w') as f:
-    json.dump(data, f)
-    print("Dumped changes to json.")
+#with open(input_json, 'w') as f:
+    #json.dump(data, f)
+    #print("Dumped changes to json.")
