@@ -9,12 +9,16 @@ var small_price = "100"
 var medium_price = "400"
 var big_price = "1000"
 
+func _unhandled_key_input(event):
+	if event.is_action_pressed("escape"):
+		self.queue_free()
+
 func _on_small_pressed():
 	# enable the price button
 	small.get_node("Price").disabled = false
 	# display the buy button if pressed
 	if small.get_node("Type").pressed:
-		small.get_node("Price").text = "Click to buy (%s)" %small_price
+		small.get_node("Price").text = "Click to buy (%s)" % small_price
 	# check if other buttons are pressed and unpress them
 	if medium.get_node("Type").pressed:
 		medium.get_node("Type").pressed = false
@@ -32,7 +36,7 @@ func _on_medium_pressed():
 	medium.get_node("Price").disabled = false
 	# display the buy button if pressed
 	if medium.get_node("Type").pressed:
-		medium.get_node("Price").text = "Click to buy (%s)" %medium_price
+		medium.get_node("Price").text = "Click to buy (%s)" % medium_price
 	if small.get_node("Type").pressed:
 		small.get_node("Type").pressed = false
 		small.get_node("Type").emit_signal("pressed")
@@ -49,7 +53,7 @@ func _on_big_pressed():
 	big.get_node("Price").disabled = false
 	# display the buy button if pressed
 	if big.get_node("Type").pressed:
-		big.get_node("Price").text = "Click to buy (%s)" %big_price
+		big.get_node("Price").text = "Click to buy (%s)" % big_price
 	if small.get_node("Type").pressed:
 		small.get_node("Type").pressed = false
 		small.get_node("Type").emit_signal("pressed")
