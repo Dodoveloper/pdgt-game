@@ -17,9 +17,10 @@ with open(input_json, 'r') as f:
     data = json.load(f)
     print("Loaded json file.")
 
+print("Somma\t Produttivi\t Non eroganti")
 # iterate through each element of the array
 for i, val in enumerate(data):
-    print(pit_sum(data[i]), data[i]["cpozzi_in_produzione"],  data[i]["cpozzi_produttivi_non_eroganti"])
+    print(pit_sum(data[i]), "\t", data[i]["cpozzi_in_produzione"], "\t\t", data[i]["cpozzi_produttivi_non_eroganti"])
     # iterate through the elements of each dict
     for k, v in list(data[i].items()):
         if k == "ctitolo_minerario" or k == "cfoglio":
@@ -29,7 +30,7 @@ for i, val in enumerate(data):
         print("Deleting %s with %s total pits" % (data[i]["cdenominazione__"], data[i]["cnumero_pozzi_allacciati__"]))
         del data[i]
 
-print(len(data))
+print("Totale piattaforme: ", len(data))
 
 #with open(input_json, 'w') as f:
     #json.dump(data, f)
