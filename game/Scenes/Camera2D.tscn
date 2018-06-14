@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Money.gd" type="Script" id=3]
 
-[node name="Camera2D" type="Camera2D" index="0"]
+[node name="Camera2D" type="Camera2D"]
 
 anchor_mode = 1
 rotating = false

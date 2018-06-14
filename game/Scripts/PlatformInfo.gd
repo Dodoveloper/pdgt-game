@@ -1,9 +1,9 @@
 extends NinePatchRect
 
-onready var infos = get_parent().info_dict
 var max_row = 0
 
 func _on_PlatformInfo_draw():
+	var infos = Global.platform_info
 	# display the text
 	for row in $Rows.get_children():
 		row.get_node("HBox/Label").text = row.name + ":"

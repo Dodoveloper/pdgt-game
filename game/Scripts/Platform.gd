@@ -24,6 +24,7 @@ var info_dict = {
 
 func _ready():
 	init(id)
+	Global.platform_info = info_dict
 	$HealthBar/Progress.max_value = life
 	$HealthBar/Progress.value = life
 
