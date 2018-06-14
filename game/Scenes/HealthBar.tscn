@@ -3,8 +3,9 @@
 [ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=2]
 
-[node name="HealthBar" type="Node2D" index="0"]
+[node name="HealthBar" type="Node2D"]
 
+scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

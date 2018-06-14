@@ -46,6 +46,7 @@ _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="Scan" type="Area2D" parent="." index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

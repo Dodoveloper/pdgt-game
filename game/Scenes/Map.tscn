@@ -6,10 +6,10 @@
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Levels/TestScene.tscn" type="PackedScene" id=5]
 
-[node name="Map" type="Node"]
+[node name="Map" type="Node" index="0"]
 
 script = ExtResource( 1 )
-enemy_count = 10
+enemy_count = 100
 
 [node name="TileMap" parent="." index="0" instance=ExtResource( 2 )]
 

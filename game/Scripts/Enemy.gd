@@ -51,8 +51,10 @@ func hit(damage):
 	# check remaining life
 	if life > damage:
 		life -= damage
+		Global.money += 10
 	else:
 		queue_free()
+		Global.money += 100
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
