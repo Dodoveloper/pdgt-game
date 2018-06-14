@@ -4,9 +4,11 @@ export (int) var enemy_count
 var spawn_rate
 
 var Enemy = preload("res://Scenes/Enemy.tscn")
+onready var level
 
 func _ready():
 	randomize()
+	level = get_children()[get_child_count() - 1]
 
 func _on_SpawnRate_timeout():
 	if enemy_count > 0:
@@ -14,10 +16,10 @@ func _on_SpawnRate_timeout():
 		var e = Enemy.instance()
 		add_child(e)
 		# set its position
-		e.global_position = $LevelOne/StartPos.position
+		e.global_position = level.get_node("StartPos").position
 		# initialize its variables
-		e.goal = $LevelOne/FinalPos.position
-		e.nav = $LevelOne/Navigation2D
+		e.goal = level.get_node("FinalPos").position
+		e.nav = level.get_node("Navigation2D")
 		# decrease counter
 		enemy_count -= 1
 		# randomize the timer
