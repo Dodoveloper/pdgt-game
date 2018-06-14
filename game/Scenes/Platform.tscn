@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 221.876, 226.609 )
 
-[node name="Platform" type="Area2D"]
+[node name="Platform" type="Area2D" index="0"]
 
 position = Vector2( 372.051, 267.241 )
 input_pickable = true
@@ -45,10 +45,10 @@ visible = false
 
 [node name="PitList" parent="." index="4" instance=ExtResource( 5 )]
 
-margin_left = -282.0
-margin_top = 253.0
-margin_right = 278.0
-margin_bottom = 473.0
+margin_left = -182.0
+margin_top = 263.0
+margin_right = 611.0
+margin_bottom = 537.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_Platform_mouse_entered"]
 
