@@ -66,10 +66,13 @@ func _on_big_pressed():
 		big.get_node("Price").disabled = true
 
 func _on_Small_Price_pressed():
-	emit_signal("turret_requested", "Small")
+	if Global.decrease_money(int(small_price)):
+		emit_signal("turret_requested", "Small")
 
 func _on_Medium_Price_pressed():
-	emit_signal("turret_requested", "Medium")
+	if Global.decrease_money(int(medium_price)):
+		emit_signal("turret_requested", "Medium")
 
 func _on_Big_Price_pressed():
-	emit_signal("turret_requested", "Big")
+	if Global.decrease_money(int(big_price)):
+		emit_signal("turret_requested", "Big")

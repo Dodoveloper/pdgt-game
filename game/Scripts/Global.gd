@@ -1,13 +1,11 @@
 extends Node
 
-var money = 1000 setget decrease_money, get_money
+var money = 1000
 
 func decrease_money(value):
 	if money - value >= 0:
 		money -= value
+		return true
 	else:
 		print("Insufficient money!")
-	print("Money: ", money)
-
-func get_money():
-	return money
+		return false
