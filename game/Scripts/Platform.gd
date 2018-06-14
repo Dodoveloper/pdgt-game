@@ -2,7 +2,6 @@ extends Area2D
 
 # platform's id
 var id = 220
-var life
 var producting_pits
 var inactive_pits
 var size
@@ -25,8 +24,9 @@ var info_dict = {
 func _ready():
 	init(id)
 	Global.platform_info = info_dict
-	$HealthBar/Progress.max_value = life
-	$HealthBar/Progress.value = life
+	var healthbar = get_tree().root.get_node("Map/Camera2D/HUD/HealthBar/Progress")
+	healthbar.max_value = Global.platform_life
+	healthbar.value = Global.platform_life
 
 func init(id):
 	## init the info dictionary
@@ -61,26 +61,18 @@ func init(id):
 	location = Vector2(long, lat)
 	# size
 	size = DataHandler.format_dimensions(info_dict.Dimensions)
-	# life, according to size
-	life = size
+	# Global.platform_life, according to size
+	Global.platform_life = size
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int()
 
 func hit(damage):
 	# check remaining life
-	if life > damage:
-		life -= damage
-		$HealthBar/Progress.value -= damage
+	if Global.platform_life > damage:
+		Global.platform_life -= damage
 	else:
 		queue_free()
-
-func _on_Platform_mouse_entered():
-	$PlatformInfo.show()
-
-func _on_Platform_mouse_exited():
-	$PlatformInfo.hide()
-
 
 
 

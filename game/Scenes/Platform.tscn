@@ -1,17 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Platform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/pixel_platform.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/PlatformInfo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PitList.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PitList.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 221.876, 226.609 )
 
-[node name="Platform" type="Area2D" index="0"]
+[node name="Platform" type="Area2D"]
 
 position = Vector2( 372.051, 267.241 )
 input_pickable = true
@@ -37,21 +35,11 @@ visible = false
 position = Vector2( -9.92749, 6.36752 )
 shape = SubResource( 1 )
 
-[node name="HealthBar" parent="." index="2" instance=ExtResource( 3 )]
-
-[node name="PlatformInfo" parent="." index="3" instance=ExtResource( 4 )]
-
-visible = false
-
-[node name="PitList" parent="." index="4" instance=ExtResource( 5 )]
+[node name="PitList" parent="." index="2" instance=ExtResource( 3 )]
 
 margin_left = -182.0
 margin_top = 263.0
 margin_right = 611.0
 margin_bottom = 537.0
-
-[connection signal="mouse_entered" from="." to="." method="_on_Platform_mouse_entered"]
-
-[connection signal="mouse_exited" from="." to="." method="_on_Platform_mouse_exited"]
 
 

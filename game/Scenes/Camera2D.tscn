@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Money.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=4]
 
 [node name="Camera2D" type="Camera2D"]
 
@@ -31,7 +32,7 @@ editor_draw_drag_margin = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Limit", "Smoothing" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+[node name="HUD" type="CanvasLayer" parent="." index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -39,7 +40,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Score" type="Label" parent="CanvasLayer" index="0"]
+[node name="Score" type="Label" parent="HUD" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -62,5 +63,9 @@ lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 3 )
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="HealthBar" parent="HUD" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 10, 10 )
 
 
