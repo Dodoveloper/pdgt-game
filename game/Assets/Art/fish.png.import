@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/32x32_map_tile v3.1 [MARGINLESS].png-b63dd4ec0a38728cbece4b2ab6430c06.stex"
+path="res://.import/fish.png-904a447c86519ba740661cfd0205b69c.stex"
 
 [deps]
 
-source_file="res://Assets/Art/32x32_map_tile v3.1 [MARGINLESS].png"
-source_md5="13db56a666de37d148a8e695bc9058a9"
+source_file="res://Assets/Art/fish.png"
+source_md5="78b0f06734453d157a02c813152ba423"
 
-dest_files=[ "res://.import/32x32_map_tile v3.1 [MARGINLESS].png-b63dd4ec0a38728cbece4b2ab6430c06.stex" ]
-dest_md5="fa31b4212c4a6f9a179e290cbb8a9671"
+dest_files=[ "res://.import/fish.png-904a447c86519ba740661cfd0205b69c.stex" ]
+dest_md5="63e798e3c40265f61ca4d4057b7b8b21"
 
 [params]
 

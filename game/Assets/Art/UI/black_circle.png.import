@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ocean_SpriteSheet.png-a1328a45319b8ccd343d987a4f972ad1.stex"
+path="res://.import/black_circle.png-8a942c101a4204a0e2241332334032fb.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Ocean_SpriteSheet.png"
-source_md5="2ca19f394f2dc22b4c057a810132b3ff"
+source_file="res://Assets/Art/UI/black_circle.png"
+source_md5="ddffd576d1ca3e2f1103024ad97438c7"
 
-dest_files=[ "res://.import/Ocean_SpriteSheet.png-a1328a45319b8ccd343d987a4f972ad1.stex" ]
-dest_md5="91cbe301ff59e9a7e4f9ac5abcf387e8"
+dest_files=[ "res://.import/black_circle.png-8a942c101a4204a0e2241332334032fb.stex" ]
+dest_md5="a655c2ac018af4f65b81d6bc1d75668a"
 
 [params]
 

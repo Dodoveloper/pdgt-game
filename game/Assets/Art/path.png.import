@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_circle.png-48b4cd4e9ae237b3f43da69645f04923.stex"
+path="res://.import/path.png-ebf85ce4278d20835bb7ee1904888afc.stex"
 
 [deps]
 
-source_file="res://Assets/Art/UI/blue_circle.png"
-source_md5="4b94699804af1b8abe25b86518805369"
+source_file="res://Assets/Art/path.png"
+source_md5="6b25f09102be763f1975cefcc5b40891"
 
-dest_files=[ "res://.import/blue_circle.png-48b4cd4e9ae237b3f43da69645f04923.stex" ]
-dest_md5="e6c497c3514d6c0f8e9fad92d71c96e0"
+dest_files=[ "res://.import/path.png-ebf85ce4278d20835bb7ee1904888afc.stex" ]
+dest_md5="9a7121718b9cd733ca012bf38fe8660f"
 
 [params]
 
