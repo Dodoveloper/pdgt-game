@@ -17,8 +17,7 @@ func _ready():
 
 func _on_PitList_item_activated(index):
 	if not icons[index]:
-		if Global.money >= Global.pits_cost:
-			Global.money -= Global.pits_cost
+		if Global.decrease_money(Global.pits_cost):
 			icons[index] = 1
 			set_item_icon(index, active)
 		else:

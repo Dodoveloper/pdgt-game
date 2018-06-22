@@ -1,6 +1,6 @@
 extends Node
 
-var money = 1000
+var money = 500
 var platform_info # dictionary generated in the platform scene
 var platform_life
 var pits_cost = 1000

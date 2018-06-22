@@ -31,7 +31,7 @@ __meta__ = {
 }
 fire_rate = 0.3
 Bullet = ExtResource( 2 )
-speed = 600
+speed = 300
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
