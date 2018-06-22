@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Scripts/PitList.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -32,8 +32,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/cursor_unfocused = SubResource( 2 )
-custom_styles/bg = SubResource( 1 )
+custom_styles/cursor_unfocused = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 items = [  ]
@@ -45,5 +45,7 @@ icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Columns", "Icon", "custom_constants", "custom_styles" ]
+
+[connection signal="item_activated" from="." to="." method="_on_PitList_item_activated"]
 
 

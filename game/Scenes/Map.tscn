@@ -9,7 +9,7 @@
 [node name="Map" type="Node" index="0"]
 
 script = ExtResource( 1 )
-enemy_count = 100
+enemy_count = 50
 
 [node name="TileMap" parent="." index="0" instance=ExtResource( 2 )]
 
