@@ -24,9 +24,6 @@ var info_dict = {
 func _ready():
 	init(id)
 	Global.platform_info = info_dict
-	var healthbar = get_tree().root.get_node("Map/Camera2D/HUD/HealthBar/Progress")
-	healthbar.max_value = Global.platform_life
-	healthbar.value = Global.platform_life
 
 func init(id):
 	## init the info dictionary

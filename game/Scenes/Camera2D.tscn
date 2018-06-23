@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scripts/Money.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Art/UI/blue_button03.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 
-[node name="Camera2D" type="Camera2D" index="0"]
+[node name="Camera2D" type="Camera2D"]
 
 anchor_mode = 1
 rotating = false
@@ -33,70 +30,6 @@ editor_draw_drag_margin = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Limit", "Smoothing" ]
 
-[node name="HUD" type="CanvasLayer" parent="." index="0"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="Money" type="Label" parent="HUD" index="0"]
-
-anchor_left = 1.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_left = -383.0
-margin_bottom = 99.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-text = "10000 $"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 3 )
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="HealthBar" parent="HUD" index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 10, 10 )
-
-[node name="TextureProgress" type="TextureProgress" parent="HUD" index="2"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -210.0
-margin_right = 45.0
-margin_bottom = -20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 10.0
-page = 0.0
-value = 45.0
-exp_edit = false
-rounded = false
-texture_under = null
-texture_over = null
-texture_progress = ExtResource( 5 )
-fill_mode = 3
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
-nine_patch_stretch = false
-_sections_unfolded = [ "Margin", "Textures" ]
+[node name="HUD" parent="." index="0" instance=ExtResource( 2 )]
 
 

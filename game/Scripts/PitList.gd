@@ -5,6 +5,8 @@ onready var platform = get_parent()
 var active = preload("res://Assets/Art/UI/active_well.png")
 var inactive = preload("res://Assets/Art/UI/inactive_well.png")
 var icons = []
+var active_tooltip = "Active pit"
+var inactive_tooltip = "Inactive pit: %s$ to activate" % Global.pits_cost
 
 func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -14,12 +16,19 @@ func _ready():
 	for i in platform.inactive_pits:
 		add_icon_item(inactive)
 		icons.append(0)
+#	for x in icons.size():
+#		if icons[x] == 1:
+#			set_item_tooltip(x, active_tooltip)
+#		else:
+#			set_item_tooltip(x, inactive_tooltip)
+#			print(icons, " ", icons[x])
 
 func _on_PitList_item_activated(index):
 	if not icons[index]:
 		if Global.decrease_money(Global.pits_cost):
 			icons[index] = 1
 			set_item_icon(index, active)
+			#set_item_tooltip(index, active_tooltip)
 		else:
 			print("insufficient money to activate a pit")
 	else:
