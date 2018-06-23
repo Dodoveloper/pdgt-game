@@ -14,7 +14,7 @@ extents = Vector2( 28.3052, 52.6242 )
 custom_solver_bias = 0.0
 radius = 171.789
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="Enemy" type="KinematicBody2D" index="0" groups=[
 "enemies",
 ]]
 
@@ -35,14 +35,16 @@ speed = 300
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+rotation = 4.71239
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+rotation = 1.5708
 shape = SubResource( 1 )
-_sections_unfolded = [ "Material", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Scan" type="Area2D" parent="." index="2"]
 

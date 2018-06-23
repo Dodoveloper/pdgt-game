@@ -4,6 +4,11 @@ var money = 500
 var platform_info # dictionary generated in the platform scene
 var platform_life = 500
 var pits_cost = 1000
+var gas_percentage = 0
+var gas_increase = 0.0
+
+func _ready():
+	OS.window_maximized = true
 
 func decrease_money(value):
 	if money - value >= 0:

@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Art/UI/blue_button03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=4]
 
-[node name="HUD" type="CanvasLayer" index="0"]
+[node name="HUD" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -53,9 +53,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 min_value = 0.0
 max_value = 100.0
-step = 10.0
+step = 0.0
 page = 0.0
-value = 45.0
+value = 20.0
 exp_edit = false
 rounded = false
 texture_under = null
@@ -97,8 +97,17 @@ texture_progress = ExtResource( 4 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Textures" ]
+
+[node name="GasTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
 
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
+
+[connection signal="timeout" from="GasTimer" to="." method="_on_GasTimer_timeout"]
 
 
