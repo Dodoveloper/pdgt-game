@@ -13,4 +13,6 @@ use_threads = false
 body_size_limit = -1
 max_redirects = 8
 
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+
 

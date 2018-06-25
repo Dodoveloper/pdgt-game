@@ -66,7 +66,7 @@ func init(id):
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int()
 	
-	emit_signal("platform_initialized")
+	emit_signal("platform_initialized", location)
 
 func hit(damage):
 	# check remaining life
