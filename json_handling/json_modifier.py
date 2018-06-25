@@ -32,6 +32,10 @@ for i, val in enumerate(data):
 
 print("Totale piattaforme: ", len(data))
 
+print("Zona")
+for p in data:
+    print(p["czona"])
+
 #with open(input_json, 'w') as f:
     #json.dump(data, f)
     #print("Dumped changes to json.")
