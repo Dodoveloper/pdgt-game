@@ -1,5 +1,7 @@
 extends Area2D
 
+signal platform_initialized
+
 # platform's id
 var id = 220
 var producting_pits
@@ -63,6 +65,8 @@ func init(id):
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int()
+	
+	emit_signal("platform_initialized")
 
 func hit(damage):
 	# check remaining life

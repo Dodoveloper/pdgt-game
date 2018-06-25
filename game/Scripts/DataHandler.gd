@@ -9,15 +9,12 @@ func _ready():
 	if not file.file_exists(DATA_PATH):
 		print("data absent!")
 		return
-	# read the file and store it into an array of dictionariess
+	# read the file and store it into an array of dictionaries
 	file.open(DATA_PATH, File.READ)
 	var json = JSON.parse(file.get_as_text())
 	data = json.result
 	# close the file
 	file.close()
-#	for i in data.size():
-#		print(data[i]["cdimensioni"])
-#	print(format_string(data[80]["ccapitaneria_di_porto"]))
 
 func format_dimensions(size):
 	var platform_size = size
