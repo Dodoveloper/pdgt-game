@@ -1,3 +1,10 @@
 {
-  "owm_token": "MY_OWM_TOKEN"
+  "owm_token": "MY_OWM_TOKEN",
+  "last_req": {
+    "year": "2018",
+    "month": "1",
+    "day": "01",
+    "hour": "01",
+    "minute": "00"
+  }
 }

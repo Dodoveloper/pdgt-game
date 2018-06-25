@@ -13,15 +13,42 @@ func _ready():
 			print("OWM data absent!")
 			return
 		# read the file and store it into an array of dictionaries
-		file.open(DATA_PATH, File.READ)
+		file.open(DATA_PATH, File.READ_WRITE)
 		var json = JSON.parse(file.get_as_text())
 		data = json.result
+		Global.my_token = data.owm_token
 		# close the file
 		file.close()
-		Global.my_token = data.owm_token
 	# check if it's necessary another request based on time
-	print(OS.get_datetime(true))
-	platform.connect("platform_initialized", self, "make_request")
+	if check_time():
+		platform.connect("platform_initialized", self, "make_request")
 
 func make_request():
-	print("success")
+	print("request")
+
+func check_time():
+	var cur_datetime = OS.get_datetime()
+	var can_request = false
+	var minute_interval = 10
+
+	# if value is > than current datetime we're sure it can make a request,
+	# otherwise if = we need to perform more checks
+	if cur_datetime.year > int(data["last_req"].year):
+		return true
+	elif cur_datetime.year == int(data["last_req"].year):
+		if cur_datetime.month > int(data["last_req"].month):
+			return true
+		elif cur_datetime.month == int(data["last_req"].month):
+			if cur_datetime.day > int(data["last_req"].day):
+				return true
+			elif cur_datetime.day == int(data["last_req"].day):
+				if cur_datetime.hour > int(data["last_req"].hour):
+					return true
+				elif cur_datetime.hour == int(data["last_req"].hour):
+					if cur_datetime.minute > (int(data["last_req"].minute) + minute_interval) % 60:
+						can_request = true
+
+	return can_request
+
+
+
