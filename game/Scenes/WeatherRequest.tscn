@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="WeatherRequest" type="Node" index="0"]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." index="0"]
+
+download_file = "res://Data/"
+use_threads = false
+body_size_limit = -1
+max_redirects = 8
+
+
