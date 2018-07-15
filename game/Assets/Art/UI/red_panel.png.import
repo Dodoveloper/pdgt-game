@@ -7,10 +7,7 @@ path="res://.import/red_panel.png-3cfc7b383db68600358e70bc4671256f.stex"
 [deps]
 
 source_file="res://Assets/Art/UI/red_panel.png"
-source_md5="895ff3d26f033fc93186225b193cf63b"
-
 dest_files=[ "res://.import/red_panel.png-3cfc7b383db68600358e70bc4671256f.stex" ]
-dest_md5="71a407ef4f53203ac4176cd7deffc2d1"
 
 [params]
 

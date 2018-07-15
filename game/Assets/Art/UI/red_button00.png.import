@@ -7,10 +7,7 @@ path="res://.import/red_button00.png-42b9ecf0e0c0a328a9154e1e4c9ae997.stex"
 [deps]
 
 source_file="res://Assets/Art/UI/red_button00.png"
-source_md5="b183b3ea733505a89e0697b2cbc894c3"
-
 dest_files=[ "res://.import/red_button00.png-42b9ecf0e0c0a328a9154e1e4c9ae997.stex" ]
-dest_md5="cf1483ea71373034fe0d06a238633b59"
 
 [params]
 

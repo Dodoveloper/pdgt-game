@@ -7,10 +7,7 @@ path="res://.import/active_well.png-a588888ac3de859a110e7fc238671c95.stex"
 [deps]
 
 source_file="res://Assets/Art/UI/active_well.png"
-source_md5="2db07e30e8ad1818b98d557bf41449c6"
-
 dest_files=[ "res://.import/active_well.png-a588888ac3de859a110e7fc238671c95.stex" ]
-dest_md5="632b3ed1322fa6aca4cb3c723edd4bfd"
 
 [params]
 

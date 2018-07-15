@@ -7,10 +7,7 @@ path="res://.import/TurretSlotHover.png-f5d971a2d5ce452751c9b66549cf00b1.stex"
 [deps]
 
 source_file="res://Assets/Art/Buttons/TurretSlotHover.png"
-source_md5="7421f8503d805959cc9a7477ae1722a1"
-
 dest_files=[ "res://.import/TurretSlotHover.png-f5d971a2d5ce452751c9b66549cf00b1.stex" ]
-dest_md5="80cbcf98ab785857a2351f959e8d3924"
 
 [params]
 

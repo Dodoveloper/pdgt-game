@@ -7,10 +7,7 @@ path="res://.import/big_tower_pressed.png-b5924eea46b3da3b2b457ac47875282d.stex"
 [deps]
 
 source_file="res://Assets/Art/Turrets/Big/big_tower_pressed.png"
-source_md5="fe94d1f75948ce4595d28a576814423e"
-
 dest_files=[ "res://.import/big_tower_pressed.png-b5924eea46b3da3b2b457ac47875282d.stex" ]
-dest_md5="0745d09692ca16530e3ab954b37fbe93"
 
 [params]
 
