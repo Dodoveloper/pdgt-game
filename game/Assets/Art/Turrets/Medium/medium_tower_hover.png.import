@@ -7,7 +7,10 @@ path="res://.import/medium_tower_hover.png-d99a479b1d96e3152a63e08ff15f27ce.stex
 [deps]
 
 source_file="res://Assets/Art/Turrets/Medium/medium_tower_hover.png"
+source_md5="e0f04d6fb3e93988e1a51a3057cdbec5"
+
 dest_files=[ "res://.import/medium_tower_hover.png-d99a479b1d96e3152a63e08ff15f27ce.stex" ]
+dest_md5="2e1804c397854731844dfcc987e0d43b"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/TurretSlotPressed.png-dfe0ff8276d6d3c482b8350315d482d9.stex"
 [deps]
 
 source_file="res://Assets/Art/Buttons/TurretSlotPressed.png"
+source_md5="61fde2338660556fe94b23fe31e211f1"
+
 dest_files=[ "res://.import/TurretSlotPressed.png-dfe0ff8276d6d3c482b8350315d482d9.stex" ]
+dest_md5="62b5e4b3749674dc496a38f592bfd8ee"
 
 [params]
 

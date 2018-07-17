@@ -7,7 +7,10 @@ path="res://.import/inactive_well.png-710b04f6a5c4bffaa56e97accb76f735.stex"
 [deps]
 
 source_file="res://Assets/Art/UI/inactive_well.png"
+source_md5="78e0bc464ffd93ad022cdec985c33c0e"
+
 dest_files=[ "res://.import/inactive_well.png-710b04f6a5c4bffaa56e97accb76f735.stex" ]
+dest_md5="f2a2f152bcaeac89fc3a532c33e70da0"
 
 [params]
 

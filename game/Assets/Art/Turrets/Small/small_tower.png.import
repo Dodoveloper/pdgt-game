@@ -7,7 +7,10 @@ path="res://.import/small_tower.png-5e9984125d3d12c11c668a18ee340302.stex"
 [deps]
 
 source_file="res://Assets/Art/Turrets/Small/small_tower.png"
+source_md5="8373d553bc25419e7bd6497e456414c7"
+
 dest_files=[ "res://.import/small_tower.png-5e9984125d3d12c11c668a18ee340302.stex" ]
+dest_md5="3d2815db27446988b4104146e64b477b"
 
 [params]
 

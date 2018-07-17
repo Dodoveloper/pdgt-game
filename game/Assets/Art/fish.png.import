@@ -7,7 +7,10 @@ path="res://.import/fish.png-904a447c86519ba740661cfd0205b69c.stex"
 [deps]
 
 source_file="res://Assets/Art/fish.png"
+source_md5="78b0f06734453d157a02c813152ba423"
+
 dest_files=[ "res://.import/fish.png-904a447c86519ba740661cfd0205b69c.stex" ]
+dest_md5="63e798e3c40265f61ca4d4057b7b8b21"
 
 [params]
 

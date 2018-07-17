@@ -7,7 +7,10 @@ path="res://.import/019.png-c3ee2b0a57c302cfbd7ac56e6723df5a.stex"
 [deps]
 
 source_file="res://Assets/Art/WaterAnimations/019.png"
+source_md5="1b66355a34d3071f1f59fa3028f112da"
+
 dest_files=[ "res://.import/019.png-c3ee2b0a57c302cfbd7ac56e6723df5a.stex" ]
+dest_md5="b280f23b7b3f0815e2a61d8411aeb447"
 
 [params]
 
