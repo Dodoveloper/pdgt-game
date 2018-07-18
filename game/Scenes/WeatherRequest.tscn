@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/WeatherRequest.gd" type="Script" id=1]
 
-[node name="WeatherRequest" type="Node" index="0"]
+[node name="WeatherRequest" type="Node"]
 
 script = ExtResource( 1 )
 
