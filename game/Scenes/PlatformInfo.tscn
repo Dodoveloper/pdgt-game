@@ -12,11 +12,13 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 562.0
 margin_bottom = 370.0
+rect_min_size = Vector2( 700, 700 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 patch_margin_left = 8
 patch_margin_top = 8
@@ -34,68 +36,69 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
-margin_bottom = 10.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 6
 custom_constants/separation = 10
 alignment = 0
-_sections_unfolded = [ "Margin", "custom_constants" ]
+_sections_unfolded = [ "Margin", "Rect", "Size Flags", "Theme", "custom_constants" ]
 
 [node name="Name" parent="Rows" index="0" instance=ExtResource( 3 )]
 
-margin_right = 542.0
-margin_bottom = 30.0
+margin_right = 680.0
+margin_bottom = 72.0
 
 [node name="Year" parent="Rows" index="1" instance=ExtResource( 3 )]
 
-margin_top = 40.0
-margin_right = 542.0
-margin_bottom = 70.0
+margin_top = 82.0
+margin_right = 680.0
+margin_bottom = 154.0
 
 [node name="Type" parent="Rows" index="2" instance=ExtResource( 3 )]
 
-margin_top = 80.0
-margin_right = 542.0
-margin_bottom = 110.0
+margin_top = 164.0
+margin_right = 680.0
+margin_bottom = 236.0
 
 [node name="Owner" parent="Rows" index="3" instance=ExtResource( 3 )]
 
-margin_top = 120.0
-margin_right = 542.0
-margin_bottom = 150.0
+margin_top = 246.0
+margin_right = 680.0
+margin_bottom = 318.0
 
 [node name="Harbormaster" parent="Rows" index="4" instance=ExtResource( 3 )]
 
-margin_top = 160.0
-margin_right = 542.0
-margin_bottom = 190.0
+margin_top = 328.0
+margin_right = 680.0
+margin_bottom = 400.0
 
 [node name="Distance" parent="Rows" index="5" instance=ExtResource( 3 )]
 
-margin_top = 200.0
-margin_right = 542.0
-margin_bottom = 230.0
+margin_top = 410.0
+margin_right = 680.0
+margin_bottom = 482.0
 
 [node name="Altitude" parent="Rows" index="6" instance=ExtResource( 3 )]
 
-margin_top = 240.0
-margin_right = 542.0
-margin_bottom = 270.0
+margin_top = 492.0
+margin_right = 680.0
+margin_bottom = 564.0
 
 [node name="Depth" parent="Rows" index="7" instance=ExtResource( 3 )]
 
-margin_top = 280.0
-margin_right = 542.0
-margin_bottom = 310.0
+margin_top = 574.0
+margin_right = 680.0
+margin_bottom = 646.0
 
 [node name="Dimensions" parent="Rows" index="8" instance=ExtResource( 3 )]
 
-margin_top = 320.0
-margin_right = 542.0
-margin_bottom = 350.0
+margin_top = 656.0
+margin_right = 680.0
+margin_bottom = 730.0
 
 [connection signal="draw" from="." to="." method="_on_PlatformInfo_draw"]
 
