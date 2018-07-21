@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Art/UI/red_panel.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/default_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Fonts/slkscr.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Scenes/PlatformInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/slkscr.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/PlatformInfo.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="LevelSelection" type="Node" index="0"]
@@ -45,7 +46,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 50
 alignment = 0
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="First" type="MarginContainer" parent="UI/Rows" index="0"]
 
@@ -53,7 +56,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1920.0
+margin_right = 2128.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -107,9 +110,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
-margin_right = 1920.0
-margin_bottom = 64.0
+margin_top = 110.0
+margin_right = 2128.0
+margin_bottom = 508.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -118,14 +121,31 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="TextureButton" type="TextureButton" parent="UI/Rows/Second" index="0"]
+[node name="Platforms" type="HBoxContainer" parent="UI/Rows/Second" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 1920.0
+margin_right = 2128.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="TextureButton" type="TextureButton" parent="UI/Rows/Second/Platforms" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 350.0
+margin_bottom = 398.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -137,23 +157,100 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Platforms" type="HBoxContainer" parent="UI/Rows/Second" index="1"]
+[node name="TextureButton2" type="TextureButton" parent="UI/Rows/Second/Platforms" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 1920.0
+margin_left = 354.0
+margin_right = 704.0
+margin_bottom = 398.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+focus_mode = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="TextureButton3" type="TextureButton" parent="UI/Rows/Second/Platforms" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 708.0
+margin_right = 1058.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="TextureButton4" type="TextureButton" parent="UI/Rows/Second/Platforms" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1062.0
+margin_right = 1412.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="TextureButton5" type="TextureButton" parent="UI/Rows/Second/Platforms" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1416.0
+margin_right = 1766.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="Third" type="MarginContainer" parent="UI/Rows" index="2"]
 
@@ -161,9 +258,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 68.0
-margin_right = 1920.0
-margin_bottom = 1385.0
+margin_top = 558.0
+margin_right = 2128.0
+margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -179,16 +276,17 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 1920.0
-margin_bottom = 1317.0
+margin_right = 2128.0
+margin_bottom = 522.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 20
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="BtnLeft" type="Button" parent="UI/Rows/Third/HBoxContainer" index="0"]
 
@@ -196,9 +294,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 623.0
+margin_top = 225.0
 margin_right = 50.0
-margin_bottom = 694.0
+margin_bottom = 296.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -217,11 +315,10 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "Textures", "custom_fonts" ]
 
-[node name="PlatformInfo" parent="UI/Rows/Third/HBoxContainer" index="1" instance=ExtResource( 5 )]
+[node name="PlatformInfo" parent="UI/Rows/Third/HBoxContainer" index="1" instance=ExtResource( 6 )]
 
-margin_left = 54.0
-margin_right = 1858.0
-margin_bottom = 700.0
+margin_left = 70.0
+margin_right = 2050.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
@@ -231,10 +328,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1862.0
-margin_top = 623.0
-margin_right = 1912.0
-margin_bottom = 694.0
+margin_left = 2070.0
+margin_top = 225.0
+margin_right = 2120.0
+margin_bottom = 296.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
