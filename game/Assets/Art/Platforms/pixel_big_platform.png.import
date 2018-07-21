@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixel_platform.png-5db350c283832943d67b9c7b01c9659d.stex"
+path="res://.import/pixel_big_platform.png-8205c288c646236720da80f6e586fa50.stex"
 
 [deps]
 
-source_file="res://Assets/Art/pixel_platform.png"
-source_md5="8f7a7178291e6dac1a496ec4bda81d8e"
-
-dest_files=[ "res://.import/pixel_platform.png-5db350c283832943d67b9c7b01c9659d.stex" ]
-dest_md5="77614bf45e5a32be5fd9ba6395a277ba"
+source_file="res://Assets/Art/Platforms/pixel_big_platform.png"
+dest_files=[ "res://.import/pixel_big_platform.png-8205c288c646236720da80f6e586fa50.stex" ]
 
 [params]
 
