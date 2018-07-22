@@ -2,6 +2,9 @@ extends Area2D
 
 signal platform_initialized
 
+var textures = ["res://Assets/Art/Platforms/pixel_small_platform.png",
+				"res://Assets/Art/Platforms/pixel_platform.png",
+				"res://Assets/Art/Platforms/pixel_big_platform.png"]
 # platform's id
 var id = 220
 var producting_pits

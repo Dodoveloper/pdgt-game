@@ -12,12 +12,14 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 8.0
 margin_bottom = 40.0
+rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="Columns" type="HBoxContainer" parent="." index="0"]
 
@@ -26,7 +28,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 851.0
+margin_right = 931.0
 margin_bottom = 171.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -200,7 +202,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
-text = "altezza: 60m"
+text = "altezza slm: 60m"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0

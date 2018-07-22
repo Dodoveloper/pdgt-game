@@ -32,15 +32,17 @@ for i, val in enumerate(data):
 
 print("Totale piattaforme: ", len(data))
 
-zone = {"ZA" : 0,
-        "ZB" : 0,
-        "ZC" : 0,
-        "ZD" : 0}
-for p in data:
-    zona = p["czona"].rsplit("|")[0]
-    zone[zona] = zone[zona] + 1
+sizes = {10 : 0,
+         100 : 0,
+         1000 : 0}
 
-print(zone)
+for p in data:
+    dim = p["cdimensioni"]
+    dim = dim.replace("x", "")
+    dim = dim.replace("m", "")
+    size = int(dim[0:3]) * int(dim[:2])
+
+    print(size)
 
 #with open(input_json, 'w') as f:
     #json.dump(data, f)

@@ -1,19 +1,27 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Fonts/slkscr.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_small_platform.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_platform.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/PlatformInfos.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Scripts/LevelSelection.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/8bitoperator.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_small_platform.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_platform.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/PlatformInfos.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 48
+size = 82
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 36
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -21,13 +29,24 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 64
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="LevelSelection" type="Node" index="0"]
 
-[node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
 
+[node name="TileMap" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 0, -1.85065 )
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0 )
 
 [node name="UI" type="Control" parent="." index="1"]
@@ -55,61 +74,90 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/separation = 50
+custom_constants/separation = 30
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
 [node name="First" type="MarginContainer" parent="UI/Rows" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_top = 90.0
 margin_right = 1920.0
-margin_bottom = 60.0
+margin_bottom = 214.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 6
+custom_constants/margin_right = 120
+custom_constants/margin_left = 100
+_sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Rows/First" index="0"]
+[node name="Labels" type="HBoxContainer" parent="UI/Rows/First" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 834.0
-margin_right = 1094.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 260, 60 )
+margin_left = 100.0
+margin_right = 1800.0
+margin_bottom = 124.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 6
-size_flags_vertical = 3
-_sections_unfolded = [ "Rect", "Size Flags" ]
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Label" type="Label" parent="UI/Rows/First/NinePatchRect" index="0"]
+[node name="Zone" type="Label" parent="UI/Rows/First/Labels" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 848.0
+margin_bottom = 124.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "Zona A"
-align = 1
 valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="Page" type="Label" parent="UI/Rows/First/Labels" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 852.0
+margin_top = 34.0
+margin_right = 1700.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "1/8"
+align = 2
+valign = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -121,16 +169,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 110.0
+margin_top = 334.0
 margin_right = 1920.0
-margin_bottom = 522.0
+margin_bottom = 746.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect", "Size Flags" ]
+size_flags_vertical = 4
+_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
 [node name="Platforms" type="HBoxContainer" parent="UI/Rows/Second" index="0"]
 
@@ -138,8 +186,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 14.0
-margin_right = 1914.0
+margin_left = 16.0
+margin_right = 1912.0
 margin_bottom = 412.0
 grow_horizontal = 0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -148,7 +196,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-custom_constants/separation = 50
+custom_constants/separation = 48
 alignment = 0
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
@@ -158,9 +206,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 170.0
-margin_right = 50.0
-margin_bottom = 241.0
+margin_top = 155.0
+margin_right = 54.0
+margin_bottom = 257.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -185,8 +233,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 100.0
-margin_right = 450.0
+margin_left = 102.0
+margin_top = 14.0
+margin_right = 452.0
 margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -194,12 +243,12 @@ focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 8
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="TextureButton2" type="TextureButton" parent="UI/Rows/Second/Platforms" index="2"]
@@ -223,7 +272,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="TextureButton3" type="TextureButton" parent="UI/Rows/Second/Platforms" index="3"]
@@ -232,8 +281,32 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 800.0
-margin_right = 1100.0
+margin_left = 798.0
+margin_right = 1098.0
+margin_bottom = 412.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 8
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="TextureButton4" type="TextureButton" parent="UI/Rows/Second/Platforms" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1146.0
+margin_top = 111.0
+margin_right = 1396.0
 margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -247,17 +320,17 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Grow Direction", "Rect", "Size Flags", "Textures" ]
 
-[node name="TextureButton4" type="TextureButton" parent="UI/Rows/Second/Platforms" index="4"]
+[node name="TextureButton5" type="TextureButton" parent="UI/Rows/Second/Platforms" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1150.0
-margin_top = 111.0
-margin_right = 1400.0
+margin_left = 1444.0
+margin_top = 14.0
+margin_right = 1794.0
 margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -271,30 +344,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Grow Direction", "Rect", "Textures" ]
-
-[node name="TextureButton5" type="TextureButton" parent="UI/Rows/Second/Platforms" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1450.0
-margin_right = 1800.0
-margin_bottom = 412.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 3 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="BtnRight" type="Button" parent="UI/Rows/Second/Platforms" index="6"]
 
@@ -302,10 +352,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1850.0
-margin_top = 170.0
-margin_right = 1900.0
-margin_bottom = 241.0
+margin_left = 1842.0
+margin_top = 155.0
+margin_right = 1896.0
+margin_bottom = 257.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -329,15 +379,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 572.0
+margin_top = 842.0
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 1013.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 6
+custom_constants/margin_right = 120
+custom_constants/margin_left = 100
 _sections_unfolded = [ "Margin", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Rows/Third" index="0"]
@@ -346,10 +398,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_top = 168.0
-margin_right = 1920.0
-margin_bottom = 339.0
+margin_left = 100.0
+margin_right = 1800.0
+margin_bottom = 171.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -360,11 +411,13 @@ custom_constants/separation = 400
 alignment = 0
 _sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
-[node name="PlatformInfos" parent="UI/Rows/Third/HBoxContainer" index="0" instance=ExtResource( 6 )]
+[node name="PlatformInfos" parent="UI/Rows/Third/HBoxContainer" index="0" instance=ExtResource( 7 )]
 
 margin_right = 931.0
 margin_bottom = 171.0
-_sections_unfolded = [ "Size Flags" ]
+rect_scale = Vector2( 1, 1 )
+size_flags_vertical = 2
+_sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="Play" type="Button" parent="UI/Rows/Third/HBoxContainer" index="1"]
 
@@ -372,18 +425,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1331.0
-margin_top = 41.0
-margin_right = 1912.0
-margin_bottom = 130.0
+margin_left = 1484.0
+margin_top = 34.0
+margin_right = 1700.0
+margin_bottom = 136.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
