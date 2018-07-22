@@ -80,6 +80,7 @@ _sections_unfolded = [ "custom_constants" ]
 
 [node name="First" type="MarginContainer" parent="UI/Rows" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -344,7 +345,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+_sections_unfolded = [ "Rect", "Size Flags", "Textures", "Visibility" ]
 
 [node name="BtnRight" type="Button" parent="UI/Rows/Second/Platforms" index="6"]
 
@@ -446,5 +447,7 @@ text = "Play!"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+
+[connection signal="pressed" from="UI/Rows/Second/Platforms/BtnRight" to="." method="_on_BtnRight_pressed"]
 
 
