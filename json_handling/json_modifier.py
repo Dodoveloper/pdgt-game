@@ -40,7 +40,7 @@ for p in data:
     dim = p["cdimensioni"]
     dim = dim.replace("x", "")
     dim = dim.replace("m", "")
-    size = int(dim[0:3]) * int(dim[:2])
+    size = int(dim[3:6]) * int(dim[:2])
 
     print(size)
 
