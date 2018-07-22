@@ -1,18 +1,27 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Art/UI/red_panel.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/default_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/slkscr.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Fonts/slkscr.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Scenes/PlatformInfo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_small_platform.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_platform.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/PlatformInfo.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
 
 size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="LevelSelection" type="Node" index="0"]
@@ -56,7 +65,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 2128.0
+margin_right = 1920.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -67,20 +76,19 @@ size_flags_vertical = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Rows/First" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 268.0
+margin_left = 834.0
+margin_right = 1094.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 260, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
+size_flags_horizontal = 6
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Rect", "Size Flags" ]
@@ -97,8 +105,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "Zona A"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -111,8 +121,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 110.0
-margin_right = 2128.0
-margin_bottom = 508.0
+margin_right = 1920.0
+margin_bottom = 522.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -127,16 +137,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 2128.0
-margin_bottom = 398.0
+margin_left = 114.0
+margin_right = 1814.0
+margin_bottom = 412.0
+grow_horizontal = 0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 4
 size_flags_vertical = 1
+custom_constants/separation = 50
 alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="TextureButton" type="TextureButton" parent="UI/Rows/Second/Platforms" index="0"]
 
@@ -145,7 +158,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 350.0
-margin_bottom = 398.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -158,7 +171,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="TextureButton2" type="TextureButton" parent="UI/Rows/Second/Platforms" index="1"]
 
@@ -166,22 +179,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 354.0
-margin_right = 704.0
-margin_bottom = 398.0
+margin_left = 400.0
+margin_top = 111.0
+margin_right = 650.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 8
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Textures" ]
+texture_normal = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
 [node name="TextureButton3" type="TextureButton" parent="UI/Rows/Second/Platforms" index="2"]
 
@@ -189,21 +203,21 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 708.0
-margin_right = 1058.0
-margin_bottom = 398.0
+margin_left = 700.0
+margin_right = 1000.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 8
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="TextureButton4" type="TextureButton" parent="UI/Rows/Second/Platforms" index="3"]
@@ -212,22 +226,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1062.0
-margin_right = 1412.0
-margin_bottom = 398.0
+margin_left = 1050.0
+margin_top = 111.0
+margin_right = 1300.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 8
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Textures" ]
+texture_normal = ExtResource( 5 )
+_sections_unfolded = [ "Grow Direction", "Rect", "Textures" ]
 
 [node name="TextureButton5" type="TextureButton" parent="UI/Rows/Second/Platforms" index="4"]
 
@@ -235,9 +250,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1416.0
-margin_right = 1766.0
-margin_bottom = 398.0
+margin_left = 1350.0
+margin_right = 1700.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -258,8 +273,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 558.0
-margin_right = 2128.0
+margin_top = 572.0
+margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -276,8 +291,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 2128.0
-margin_bottom = 522.0
+margin_right = 1920.0
+margin_bottom = 508.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -294,9 +309,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 225.0
+margin_top = 218.0
 margin_right = 50.0
-margin_bottom = 296.0
+margin_bottom = 289.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -304,7 +319,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -315,10 +330,10 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "Textures", "custom_fonts" ]
 
-[node name="PlatformInfo" parent="UI/Rows/Third/HBoxContainer" index="1" instance=ExtResource( 6 )]
+[node name="PlatformInfo" parent="UI/Rows/Third/HBoxContainer" index="1" instance=ExtResource( 7 )]
 
 margin_left = 70.0
-margin_right = 2050.0
+margin_right = 1842.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
@@ -328,10 +343,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2070.0
-margin_top = 225.0
-margin_right = 2120.0
-margin_bottom = 296.0
+margin_left = 1862.0
+margin_top = 218.0
+margin_right = 1912.0
+margin_bottom = 289.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -339,7 +354,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
