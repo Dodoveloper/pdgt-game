@@ -16,7 +16,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 
 size = 36
 use_mipmaps = false
@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 64
 use_mipmaps = false
@@ -32,7 +32,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 size = 64
 use_mipmaps = false
@@ -155,7 +155,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "1/8"
 align = 2
 valign = 2
@@ -217,7 +217,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -364,7 +364,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -437,7 +437,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 10
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -447,6 +447,8 @@ text = "Play!"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+
+[connection signal="pressed" from="UI/Rows/Second/Platforms/BtnLeft" to="." method="_on_BtnLeft_pressed"]
 
 [connection signal="pressed" from="UI/Rows/Second/Platforms/BtnRight" to="." method="_on_BtnRight_pressed"]
 
