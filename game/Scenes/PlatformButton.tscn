@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/PlatformButton.gd" type="Script" id=2]
+
+[node name="PlatformButton" type="TextureButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_right = 394.0
+margin_bottom = 341.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 8
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+

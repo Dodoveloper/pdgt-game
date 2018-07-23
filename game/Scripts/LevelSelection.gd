@@ -24,13 +24,16 @@ func _ready():
 	for node in columns.get_children():
 		if not "Btn" in node.name:
 			buttons.append(node)
-
+	# generate the first row
 	fill_row()
 	# update max page info
 	pages = platforms.size() / buttons.size()
 	if platforms.size() % buttons.size() > 0:
 		pages += 1
 	page.text = "1/%s" % str(pages)
+	# show first platform's info for starting
+	var id = int(platforms[0]["ccodice"])
+	$UI/Rows/Third/HBoxContainer/PlatformInfos.show_info(id)
 
 func fill_row():
 	var sizes = []
@@ -52,8 +55,6 @@ func fill_row():
 				buttons[i].texture_normal = load(textures[2])
 		else:
 			buttons[i].modulate.a = 0
-	# show info for the seleced button
-
 
 func _on_BtnRight_pressed():
 	# update the buttons

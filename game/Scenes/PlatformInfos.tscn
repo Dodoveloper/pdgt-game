@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Fonts/font_size_24.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Fonts/font_size_20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/PlatformInfos.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/font_size_24.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/font_size_20.tres" type="DynamicFont" id=4]
 
 [node name="PlatformInfos" type="MarginContainer"]
 
@@ -19,6 +20,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Columns" type="HBoxContainer" parent="." index="0"]
@@ -28,7 +30,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 931.0
+margin_right = 881.0
 margin_bottom = 171.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -42,6 +44,7 @@ _sections_unfolded = [ "custom_constants" ]
 
 [node name="First" type="VBoxContainer" parent="Columns" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -70,7 +73,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "santa lolla"
 valign = 1
 uppercase = true
@@ -94,7 +97,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "attiva dal 1988"
 valign = 1
 percent_visible = 1.0
@@ -117,7 +120,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "gruppo ENI"
 valign = 1
 percent_visible = 1.0
@@ -140,7 +143,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "struttura reticolare 8 gambe"
 valign = 1
 percent_visible = 1.0
@@ -179,7 +182,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "dimensioni: 30x50m"
 valign = 1
 percent_visible = 1.0
@@ -201,7 +204,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "altezza slm: 60m"
 valign = 1
 percent_visible = 1.0
@@ -223,7 +226,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "distanza dalla costa: 2km"
 valign = 1
 percent_visible = 1.0
@@ -246,7 +249,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "profondità fondale: 59m"
 valign = 1
 percent_visible = 1.0
@@ -269,28 +272,11 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "capitaneria: Ravenna"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="Third" type="VBoxContainer" parent="Columns" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 923.0
-margin_right = 923.0
-margin_bottom = 171.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
 
