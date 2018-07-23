@@ -52,7 +52,6 @@ func fill_row():
 				buttons[i].texture_normal = load(textures[2])
 		else:
 			buttons[i].modulate.a = 0
-	print(sizes)
 	# show info for the seleced button
 
 
