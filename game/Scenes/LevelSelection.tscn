@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/8bitoperator.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_small_platform.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_platform.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Art/UI/platforms/pixel_big_platform.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/PlatformInfos.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlatformButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlatformInfos.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -228,125 +226,27 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "Textures", "custom_fonts" ]
 
-[node name="TextureButton2" type="TextureButton" parent="UI/Rows/Second/Platforms" index="1"]
+[node name="PlatformButton" parent="UI/Rows/Second/Platforms" index="1" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 94.0
-margin_right = 394.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 8
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+[node name="PlatformButton2" parent="UI/Rows/Second/Platforms" index="2" instance=ExtResource( 4 )]
 
-[node name="TextureButton6" type="TextureButton" parent="UI/Rows/Second/Platforms" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 434.0
 margin_right = 734.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 8
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
 
-[node name="TextureButton3" type="TextureButton" parent="UI/Rows/Second/Platforms" index="3"]
+[node name="PlatformButton3" parent="UI/Rows/Second/Platforms" index="3" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 774.0
 margin_right = 1074.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 8
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="TextureButton4" type="TextureButton" parent="UI/Rows/Second/Platforms" index="4"]
+[node name="PlatformButton4" parent="UI/Rows/Second/Platforms" index="4" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 1114.0
 margin_right = 1414.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 8
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Grow Direction", "Rect", "Size Flags", "Textures" ]
 
-[node name="TextureButton5" type="TextureButton" parent="UI/Rows/Second/Platforms" index="5"]
+[node name="PlatformButton5" parent="UI/Rows/Second/Platforms" index="5" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 1454.0
 margin_right = 1754.0
-margin_bottom = 341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 8
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 6 )
-_sections_unfolded = [ "Rect", "Size Flags", "Textures", "Visibility" ]
 
 [node name="BtnRight" type="Button" parent="UI/Rows/Second/Platforms" index="6"]
 
@@ -377,6 +277,7 @@ _sections_unfolded = [ "Size Flags", "Textures", "custom_fonts" ]
 
 [node name="Third" type="MarginContainer" parent="UI/Rows" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -396,6 +297,7 @@ _sections_unfolded = [ "Margin", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Rows/Third" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -413,7 +315,7 @@ custom_constants/separation = 400
 alignment = 0
 _sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
-[node name="PlatformInfos" parent="UI/Rows/Third/HBoxContainer" index="0" instance=ExtResource( 7 )]
+[node name="PlatformInfos" parent="UI/Rows/Third/HBoxContainer" index="0" instance=ExtResource( 5 )]
 
 margin_right = 881.0
 margin_bottom = 171.0

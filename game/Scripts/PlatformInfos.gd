@@ -31,6 +31,7 @@ func _ready():
 	pass
 
 func show_info(id):
+	print(id)
 	## init the info dictionary
 	label_values.Name = DataHandler.get_value(id, "cdenominazione__")
 	# get and format the Year
@@ -59,7 +60,7 @@ func show_info(id):
 			label.text += " km"
 		elif label.name in ["Altitude", "Depth"]:
 			label.text += " m"
-	
+
 
 
 

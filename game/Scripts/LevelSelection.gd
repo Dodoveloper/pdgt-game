@@ -5,6 +5,7 @@ var textures = ["res://Assets/Art/UI/platforms/pixel_small_platform.png",
 				"res://Assets/Art/UI/platforms/pixel_big_platform.png"]
 onready var columns = $UI/Rows/Second/Platforms
 onready var page = $UI/Rows/First/Labels/Page
+onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
 var cur_area = "ZA"
 var number = 0
 var platforms = []
@@ -26,6 +27,10 @@ func _ready():
 			buttons.append(node)
 	# generate the first row
 	fill_row()
+	# connect the buttons' pressed signal
+	for b in buttons.size():
+		buttons[b].connect("pressed", platform_infos, "show_info",
+						   [buttons[b].platform_id])
 	# update max page info
 	pages = platforms.size() / buttons.size()
 	if platforms.size() % buttons.size() > 0:
@@ -33,7 +38,7 @@ func _ready():
 	page.text = "1/%s" % str(pages)
 	# show first platform's info for starting
 	var id = int(platforms[0]["ccodice"])
-	$UI/Rows/Third/HBoxContainer/PlatformInfos.show_info(id)
+	platform_infos.show_info(id)
 
 func fill_row():
 	var sizes = []
@@ -49,12 +54,19 @@ func fill_row():
 			# update the buttons
 			if sizes[i] < 1000:
 				buttons[i].texture_normal = load(textures[0])
+				buttons[i].platform_id = id
+				print("id: ", id)
 			elif sizes[i] >= 1000 and sizes[i] < 1500:
 				buttons[i].texture_normal = load(textures[1])
+				buttons[i].platform_id = id
+				print("id: ", id)
 			else:
 				buttons[i].texture_normal = load(textures[2])
+				buttons[i].platform_id = id
+				print("id: ", id)
 		else:
 			buttons[i].modulate.a = 0
+			buttons[i].disabled = true
 
 func _on_BtnRight_pressed():
 	# update the buttons
@@ -83,6 +95,8 @@ func _on_BtnLeft_pressed():
 	# disable if first page
 	if cur_page == 1:
 		$UI/Rows/Second/Platforms/BtnLeft.disabled = true
+
+
 
 
 
