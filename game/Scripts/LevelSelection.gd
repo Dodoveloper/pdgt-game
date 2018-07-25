@@ -81,6 +81,11 @@ func _on_BtnRight_pressed():
 	# disable if last page
 	if cur_page == pages:
 		$UI/Rows/Second/Platforms/BtnRight.disabled = true
+	
+	for b in buttons.size():
+		buttons[b].disconnect("pressed", platform_infos, "show_info")
+		buttons[b].connect("pressed", platform_infos, "show_info",
+					   [buttons[b].platform_id])
 
 func _on_BtnLeft_pressed():
 	# update the buttons
@@ -96,6 +101,10 @@ func _on_BtnLeft_pressed():
 	if cur_page == 1:
 		$UI/Rows/Second/Platforms/BtnLeft.disabled = true
 
+	for b in buttons.size():
+		buttons[b].disconnect("pressed", platform_infos, "show_info")
+		buttons[b].connect("pressed", platform_infos, "show_info",
+					   [buttons[b].platform_id])
 
 
 
