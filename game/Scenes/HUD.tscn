@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/8bitoperator.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Art/UI/blue_button03.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=4]
 
-[node name="HUD" type="CanvasLayer"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 72
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -28,7 +36,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "10000 $"
 percent_visible = 1.0
 lines_skipped = 0
