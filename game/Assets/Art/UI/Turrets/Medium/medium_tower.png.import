@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/small_tower_hover.png-75cff62759fcb57b89c9b14c762c8c82.stex"
+path="res://.import/medium_tower.png-2bd369c2ba96ea005491796aa00ae164.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Turrets/Small/small_tower_hover.png"
-dest_files=[ "res://.import/small_tower_hover.png-75cff62759fcb57b89c9b14c762c8c82.stex" ]
+source_file="res://Assets/Art/UI/Turrets/Medium/medium_tower.png"
+dest_files=[ "res://.import/medium_tower.png-2bd369c2ba96ea005491796aa00ae164.stex" ]
 
 [params]
 

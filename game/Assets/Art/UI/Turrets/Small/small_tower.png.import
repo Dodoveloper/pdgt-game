@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grey_panel.png-411b761e99cba3e0730b5ba1d9e9a397.stex"
+path="res://.import/small_tower.png-a6d0243f4955d8bc119d0aec6f129570.stex"
 
 [deps]
 
-source_file="res://Assets/Art/UI/grey_panel.png"
-source_md5="4e5babd36c3ed5305564507a7b20d997"
-
-dest_files=[ "res://.import/grey_panel.png-411b761e99cba3e0730b5ba1d9e9a397.stex" ]
-dest_md5="77a679740b3a3c2ce4160f41385e4840"
+source_file="res://Assets/Art/UI/Turrets/Small/small_tower.png"
+dest_files=[ "res://.import/small_tower.png-a6d0243f4955d8bc119d0aec6f129570.stex" ]
 
 [params]
 

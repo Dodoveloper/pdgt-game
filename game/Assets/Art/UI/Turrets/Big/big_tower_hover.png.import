@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_panel.png-a0f03c1d1379b223ffcaed209779236d.stex"
+path="res://.import/big_tower_hover.png-8161c3de9da39216fc09cba42b0c6dbf.stex"
 
 [deps]
 
-source_file="res://Assets/Art/UI/blue_panel.png"
-source_md5="d735064d002ddf6693393abc71491aa2"
-
-dest_files=[ "res://.import/blue_panel.png-a0f03c1d1379b223ffcaed209779236d.stex" ]
-dest_md5="91901f70d022d35d586f5c9dc58f5fe8"
+source_file="res://Assets/Art/UI/Turrets/Big/big_tower_hover.png"
+dest_files=[ "res://.import/big_tower_hover.png-8161c3de9da39216fc09cba42b0c6dbf.stex" ]
 
 [params]
 
