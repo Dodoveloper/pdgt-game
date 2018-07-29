@@ -9,10 +9,6 @@ var small_price = "100"
 var medium_price = "400"
 var big_price = "1000"
 
-func _unhandled_key_input(event):
-	if event.is_action_pressed("escape"):
-		self.queue_free()
-
 func _on_small_pressed():
 	# enable the price button
 	small.get_node("Price").disabled = false

@@ -10,6 +10,8 @@ var pits_cost = 1000
 var gas_percentage = 0
 var gas_increase = 0.0
 
+var is_displaying = false # turretpopup flag
+
 func _ready():
 	OS.window_maximized = true
 
