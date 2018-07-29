@@ -6,7 +6,7 @@ var textures = ["res://Assets/Art/Platforms/pixel_small_platform.png",
 				"res://Assets/Art/Platforms/pixel_platform.png",
 				"res://Assets/Art/Platforms/pixel_big_platform.png"]
 # platform's id
-var id = 220
+var id
 var producting_pits
 var inactive_pits
 var size
@@ -27,6 +27,7 @@ var info_dict = {
 }
 
 func _ready():
+	id = Global.platform_id
 	init(id)
 	Global.platform_info = info_dict
 

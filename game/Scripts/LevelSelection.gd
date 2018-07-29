@@ -6,12 +6,15 @@ var textures = ["res://Assets/Art/UI/platforms/pixel_small_platform.png",
 onready var columns = $UI/Rows/Second/Platforms
 onready var page = $UI/Rows/First/Labels/Page
 onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
+onready var play = $UI/Rows/Third/HBoxContainer/Play
+onready var map = "res://Scenes/Map.tscn"
 var cur_area = "ZA"
 var number = 0
 var platforms = []
 var buttons = []
 var cur_page = 1
 var pages = 0
+var cur_id = 0
 
 func _ready():
 	# find all platforms within the current area
@@ -37,8 +40,8 @@ func _ready():
 		pages += 1
 	page.text = "1/%s" % str(pages)
 	# show first platform's info for starting
-	var id = int(platforms[0]["ccodice"])
-	platform_infos.show_info(id)
+	cur_id = int(platforms[0]["ccodice"])
+	platform_infos.show_info(cur_id)
 
 func fill_row():
 	var sizes = []
@@ -47,23 +50,20 @@ func fill_row():
 		var i = p % buttons.size()
 		if p < platforms.size():
 			buttons[i].modulate.a = 1
-			var id = int(platforms[p]["ccodice"])
-			var size = DataHandler.get_value(id, "cdimensioni")
+			cur_id = int(platforms[p]["ccodice"])
+			var size = DataHandler.get_value(cur_id, "cdimensioni")
 			size = DataHandler.format_dimensions(size)
 			sizes.append(size)
 			# update the buttons
 			if sizes[i] < 1000:
 				buttons[i].texture_normal = load(textures[0])
-				buttons[i].platform_id = id
-				print("id: ", id)
+				buttons[i].platform_id = cur_id
 			elif sizes[i] >= 1000 and sizes[i] < 1500:
 				buttons[i].texture_normal = load(textures[1])
-				buttons[i].platform_id = id
-				print("id: ", id)
+				buttons[i].platform_id = cur_id
 			else:
 				buttons[i].texture_normal = load(textures[2])
-				buttons[i].platform_id = id
-				print("id: ", id)
+				buttons[i].platform_id = cur_id
 		else:
 			buttons[i].modulate.a = 0
 			buttons[i].disabled = true
@@ -81,7 +81,7 @@ func _on_BtnRight_pressed():
 	# disable if last page
 	if cur_page == pages:
 		$UI/Rows/Second/Platforms/BtnRight.disabled = true
-	
+	# pass the new ids to the buttons
 	for b in buttons.size():
 		buttons[b].disconnect("pressed", platform_infos, "show_info")
 		buttons[b].connect("pressed", platform_infos, "show_info",
@@ -100,11 +100,17 @@ func _on_BtnLeft_pressed():
 	# disable if first page
 	if cur_page == 1:
 		$UI/Rows/Second/Platforms/BtnLeft.disabled = true
-
+	# pass the new ids to the buttons
 	for b in buttons.size():
 		buttons[b].disconnect("pressed", platform_infos, "show_info")
 		buttons[b].connect("pressed", platform_infos, "show_info",
 					   [buttons[b].platform_id])
+
+func _on_Play_pressed():
+	# switch to the game scene
+	Global.platform_id = cur_id
+	get_tree().change_scene(map)
+
 
 
 

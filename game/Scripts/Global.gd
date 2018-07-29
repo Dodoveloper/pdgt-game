@@ -3,6 +3,7 @@ extends Node
 var my_token = ""
 
 var money = 500
+var platform_id = 0
 var platform_info # dictionary generated in the platform scene
 var platform_life = 500
 var pits_cost = 1000
