@@ -181,6 +181,7 @@ _sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
 [node name="Platforms" type="HBoxContainer" parent="UI/Rows/Second" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -296,6 +297,7 @@ _sections_unfolded = [ "Margin", "Size Flags" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Rows/Third" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
