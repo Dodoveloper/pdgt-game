@@ -72,3 +72,8 @@ func _on_Medium_Price_pressed():
 func _on_Big_Price_pressed():
 	if Global.decrease_money(int(big_price)):
 		emit_signal("turret_requested", "Big")
+
+func _on_CloseButton_pressed():
+	# close this instance
+	Global.is_displaying = false
+	self.queue_free()

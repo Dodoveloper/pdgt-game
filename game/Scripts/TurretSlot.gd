@@ -6,11 +6,6 @@ var Turret = preload("res://Scenes/Turret.tscn")
 # turret's position
 onready var pos = $Pivot.position
 
-func _unhandled_key_input(event):
-	if event.is_action_pressed("escape") and Global.is_displaying:
-		menu.queue_free()
-		Global.is_displaying = false
-
 func _on_TurretSlot_pressed():
 	if not Global.is_displaying:
 		# display the popup menu
