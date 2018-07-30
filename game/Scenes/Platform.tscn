@@ -26,7 +26,8 @@ _sections_unfolded = [ "Collision" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+offset = Vector2( 0, -70 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
