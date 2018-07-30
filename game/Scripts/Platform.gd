@@ -62,9 +62,16 @@ func init(id):
 	var lat = DataHandler.get_value(id, "clatitudine__wgs84__")
 	var long = DataHandler.get_value(id, "clongitudine__wgs_84__")
 	location = Vector2(long, lat)
-	# size
+	# size and relative texture
 	size = DataHandler.format_dimensions(info_dict.Dimensions)
-	# Global.platform_life, according to size
+	print(id, " ", size)
+	if size < 1000:
+		$Sprite.texture = load(textures[0])
+	elif size >= 1000 and size < 1500:
+		$Sprite.texture = load(textures[1])
+	else:
+		$Sprite.texture = load(textures[2])
+	# life, according to size
 	Global.platform_life = size
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()

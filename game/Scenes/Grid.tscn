@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Art/Test.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Art/TileMaps/Test.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/GridVisualizer.gd" type="Script" id=2]
+
 
 [node name="Grid" type="TileMap"]
 

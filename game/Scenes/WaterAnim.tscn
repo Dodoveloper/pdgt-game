@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Assets/Art/PixelatedWater.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Art/TileMaps/PixelatedWater.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Art/WaterAnimations/001.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Art/WaterAnimations/002.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/WaterAnimations/003.png" type="Texture" id=4]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/Art/WaterAnimations/019.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Art/WaterAnimations/020.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Art/WaterAnimations/021.png" type="Texture" id=22]
+
 
 [sub_resource type="Animation" id=1]
 

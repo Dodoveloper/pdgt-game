@@ -38,7 +38,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -181,7 +181,6 @@ _sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
 [node name="Platforms" type="HBoxContainer" parent="UI/Rows/Second" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

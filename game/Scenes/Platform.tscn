@@ -25,7 +25,6 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 

@@ -107,6 +107,10 @@ func _on_BtnLeft_pressed():
 					   [buttons[b].platform_id])
 
 func _on_Play_pressed():
+	# find the pressed button
+	for b in buttons.size():
+		if buttons[b].pressed:
+			cur_id = buttons[b].platform_id
 	# switch to the game scene
 	Global.platform_id = cur_id
 	get_tree().change_scene(map)
