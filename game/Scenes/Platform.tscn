@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 221.876, 226.609 )
 
-[node name="Platform" type="Area2D"]
+[node name="Platform" type="Area2D" index="0"]
 
 position = Vector2( 372.051, 267.241 )
 input_pickable = true
@@ -37,9 +37,11 @@ shape = SubResource( 1 )
 
 [node name="PitList" parent="." index="2" instance=ExtResource( 3 )]
 
-margin_left = -182.0
-margin_top = 263.0
-margin_right = 611.0
-margin_bottom = 537.0
+margin_left = -192.0
+margin_top = 193.0
+margin_right = 601.0
+margin_bottom = 667.0
+custom_constants/icon_margin = 10
+_sections_unfolded = [ "Columns", "Icon", "Rect", "custom_constants" ]
 
 
