@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/TestScene.tscn" type="PackedScene" id=6]
 
-[node name="Map" type="Node"]
+[node name="Map" type="Node" index="0"]
 
 script = ExtResource( 1 )
 enemy_count = 50
@@ -26,7 +26,7 @@ _sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
 [node name="SpawnRate" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 5.0
 one_shot = false
 autostart = true
 

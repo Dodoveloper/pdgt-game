@@ -1,8 +1,8 @@
 extends Node
 
 export (int) var enemy_count
-var spawn_rate
 
+var spawn_rate = 0
 var Enemy = preload("res://Scenes/Enemy.tscn")
 onready var level
 
@@ -24,4 +24,6 @@ func _on_SpawnRate_timeout():
 		# decrease counter
 		enemy_count -= 1
 		# randomize the timer
-		$SpawnRate.wait_time = rand_range(0.5, 2)
+		$SpawnRate.wait_time = rand_range(spawn_rate - 1.5, spawn_rate)
+		if spawn_rate >= 2.0:
+			spawn_rate -= 0.2

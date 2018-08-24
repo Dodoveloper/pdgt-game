@@ -51,7 +51,7 @@ func hit(damage):
 	# check remaining life
 	if life > damage:
 		life -= damage
-		Global.money += 10
+		Global.money += 2
 	else:
 		queue_free()
 		Global.money += 100
