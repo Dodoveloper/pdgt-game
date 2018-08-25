@@ -13,7 +13,7 @@ func _ready():
 	for p in platform.producting_pits:
 		add_icon_item(active)
 		icons.append(1)
-		Global.gas_increase += 0.2
+		Global.gas_increase += 0.05
 	for i in platform.inactive_pits:
 		add_icon_item(inactive)
 		icons.append(0)
@@ -29,7 +29,7 @@ func _on_PitList_item_activated(index):
 		if Global.decrease_money(Global.pits_cost):
 			icons[index] = 1
 			set_item_icon(index, active)
-			Global.gas_increase += 0.2
+			Global.gas_increase += 0.1
 			#set_item_tooltip(index, active_tooltip)
 		else:
 			print("insufficient money to activate a pit")

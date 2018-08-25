@@ -19,14 +19,14 @@ func _ready():
 func set_size(new_size):
 	size = new_size
 	if size == "Small":
-		detect_radius = 150
+		detect_radius = 200
 		fire_rate = 0.3
 	elif size == "Medium":
-		detect_radius = 250
-		fire_rate = 0.2
+		detect_radius = 300
+		fire_rate = 0.5
 	elif size == "Big":
-		detect_radius = 450
-		fire_rate = 0.4
+		detect_radius = 400
+		fire_rate = 0.7
 
 func _physics_process(delta):
 	update()
