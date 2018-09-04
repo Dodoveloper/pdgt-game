@@ -10,6 +10,7 @@ func _ready():
 	randomize()
 	level = get_children()[get_child_count() - 1]
 	$Platform.position = $TestScene/FinalPos.position
+	spawn_rate = $SpawnRate.wait_time
 
 func _on_SpawnRate_timeout():
 	if enemy_count > 0:
