@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	$Money.text = String(Global.money) + " $"
 	$HealthBar.value = Global.platform_life
+	$GasLabel.text = "%d %%" % Global.gas_percentage
 
 func _on_HealthBar_value_changed(value):
 	if value <= $HealthBar.max_value / 2:
