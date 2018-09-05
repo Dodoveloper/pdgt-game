@@ -14,6 +14,8 @@ func _ready():
 		add_icon_item(active)
 		icons.append(1)
 		Global.gas_increase += 0.05
+		# increase enemies' life
+		enhance_enemies(5)
 	for i in platform.inactive_pits:
 		add_icon_item(inactive)
 		icons.append(0)
@@ -31,7 +33,17 @@ func _on_PitList_item_activated(index):
 			set_item_icon(index, active)
 			Global.gas_increase += 0.1
 			#set_item_tooltip(index, active_tooltip)
+			# increase enemies' life
+			enhance_enemies(10)
 		else:
 			print("insufficient money to activate a pit")
 	else:
 		print(index, " already activated")
+
+func enhance_enemies(factor):
+	var nodes = get_tree().root.get_node("Map").get_children()
+	for node in nodes:
+		if node.is_in_group("enemies"):
+			node.life += factor
+
+

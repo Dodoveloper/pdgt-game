@@ -23,6 +23,8 @@ position = Vector2( 3054.85, 579.795 )
 
 [node name="Turrets" type="Node" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="TurretSlot" parent="Turrets" index="0" instance=ExtResource( 3 )]
 
 margin_left = 320.0
