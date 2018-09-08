@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Turret.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Turrets/towerDefense_tile180.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Turrets/towerDefense_tile250.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 21.6287, 22.0748 )
 
-[node name="Turret" type="KinematicBody2D"]
+[node name="Turret" type="KinematicBody2D" index="0"]
 
 position = Vector2( 55.2136, 37.6254 )
 z_index = 20
@@ -26,16 +27,28 @@ detect_radius = 250
 fire_rate = 0.2
 Bullet = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Base" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
+texture = ExtResource( 4 )
+offset = Vector2( 10, 0 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Muzzle" type="Position2D" parent="Sprite" index="0"]
+
+position = Vector2( 50, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+visible = false
 shape = SubResource( 1 )
 
-[node name="Visibility" type="Area2D" parent="." index="2"]
+[node name="Visibility" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -50,7 +63,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
 
-[node name="ShootTimer" type="Timer" parent="." index="3"]
+[node name="ShootTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0

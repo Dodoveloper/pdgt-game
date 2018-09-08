@@ -31,7 +31,7 @@ func set_size(new_size):
 func _physics_process(delta):
 	update()
 	if targets.size() > 0:
-		rotation = (targets.front().position - position).angle()
+		$Sprite.look_at(targets.front().position)
 		if can_shoot:
 			shoot(targets.front().position)
 
