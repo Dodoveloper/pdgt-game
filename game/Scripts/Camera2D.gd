@@ -7,7 +7,7 @@ var zoom_speed = 10
 var zoom_pos = Vector2()
 var zoom_weight = 0.7
 const MAX_ZOOM = 0.6
-const MIN_ZOOM = 1.6
+const MIN_ZOOM = 1.8
 
 func _unhandled_input(event):
 	# camera drag

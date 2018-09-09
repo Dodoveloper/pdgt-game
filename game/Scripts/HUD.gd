@@ -10,7 +10,7 @@ func _ready():
 	$HealthBar.value = Global.platform_life
 
 func _process(delta):
-	$Money.text = String(Global.money) + " $"
+	$Money.text = String(Global.money) + " €"
 	$HealthBar.value = Global.platform_life
 	$GasLabel.text = "%d %%" % Global.gas_percentage
 

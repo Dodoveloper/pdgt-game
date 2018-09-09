@@ -8,7 +8,7 @@ onready var page = $UI/Rows/First/Labels/Page
 onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
 onready var play = $UI/Rows/Third/HBoxContainer/Play
 onready var map = "res://Scenes/Map.tscn"
-var cur_area = "ZA"
+var cur_area = "ZB"
 var number = 0
 var platforms = []
 var buttons = []
@@ -17,6 +17,8 @@ var pages = 0
 var cur_id = 0
 
 func _ready():
+	# zone label text
+	$UI/Rows/First/Labels/Zone.text = "Zona %s" % cur_area[1]
 	# find all platforms within the current area
 	for p in DataHandler.data.size():
 		var id = int(DataHandler.data[p]["ccodice"])
@@ -50,6 +52,7 @@ func fill_row():
 		var i = p % buttons.size()
 		if p < platforms.size():
 			buttons[i].modulate.a = 1
+			buttons[i].disabled = false
 			cur_id = int(platforms[p]["ccodice"])
 			var size = DataHandler.get_value(cur_id, "cdimensioni")
 			size = DataHandler.format_dimensions(size)
@@ -69,6 +72,8 @@ func fill_row():
 			buttons[i].disabled = true
 
 func _on_BtnRight_pressed():
+	# play the animation
+	$AnimationPlayer.play("swipe")
 	# update the buttons
 	number += buttons.size()
 	fill_row()
@@ -88,6 +93,8 @@ func _on_BtnRight_pressed():
 					   [buttons[b].platform_id])
 
 func _on_BtnLeft_pressed():
+	# play the animation
+	$AnimationPlayer.play("swipe")
 	# update the buttons
 	number -= buttons.size()
 	fill_row()

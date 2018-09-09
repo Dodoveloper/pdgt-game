@@ -13,26 +13,19 @@ func _ready():
 	for p in platform.producting_pits:
 		add_icon_item(active)
 		icons.append(1)
-		Global.gas_increase += 0.05
+		Global.gas_increase += 0.025
 		# increase enemies' life
 		enhance_enemies(5)
 	for i in platform.inactive_pits:
 		add_icon_item(inactive)
 		icons.append(0)
-#	for x in icons.size():
-#		if icons[x] == 1:
-#			set_item_tooltip(x, active_tooltip)
-#		else:
-#			set_item_tooltip(x, inactive_tooltip)
-#			print(icons, " ", icons[x])
 
 func _on_PitList_item_activated(index):
 	if not icons[index]:
 		if Global.decrease_money(Global.pits_cost):
 			icons[index] = 1
 			set_item_icon(index, active)
-			Global.gas_increase += 0.1
-			#set_item_tooltip(index, active_tooltip)
+			Global.gas_increase += 0.05
 			# increase enemies' life
 			enhance_enemies(10)
 		else:
