@@ -70,6 +70,11 @@ func fill_row():
 		else:
 			buttons[i].modulate.a = 0
 			buttons[i].disabled = true
+	# set the first button as active
+	buttons[0].pressed = true
+	buttons[0].emit_signal("pressed")
+	# display the correct info
+	platform_infos.show_info(buttons[0].platform_id)
 
 func _on_BtnRight_pressed():
 	# play the animation
