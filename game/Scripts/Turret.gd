@@ -42,6 +42,7 @@ func shoot(pos):
 	get_parent().add_child(b)
 	can_shoot = false
 	$ShootTimer.start()
+	$Gunshot.play()
 
 func _draw():
 	draw_circle(Vector2(), detect_radius, vis_color)

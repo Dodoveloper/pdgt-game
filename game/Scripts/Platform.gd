@@ -80,6 +80,7 @@ func init(id):
 	emit_signal("platform_initialized", location)
 
 func hit(damage):
+	$HitSound.play()
 	# check remaining life
 	if Global.platform_life > damage:
 		Global.platform_life -= damage

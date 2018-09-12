@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Platform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Platforms/pixel_big_platform.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/PitList.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sfx/Hit_Hurt3.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 221.876, 226.609 )
 
-[node name="Platform" type="Area2D" index="0"]
+[node name="Platform" type="Area2D"]
 
 position = Vector2( 372.051, 267.241 )
 input_pickable = true
@@ -42,6 +43,17 @@ margin_top = 193.0
 margin_right = 601.0
 margin_bottom = 667.0
 custom_constants/icon_margin = 10
-_sections_unfolded = [ "Columns", "Icon", "Rect", "custom_constants" ]
+_sections_unfolded = [ "Columns", "Icon", "Rect", "custom_constants", "custom_styles" ]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

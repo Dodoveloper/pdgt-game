@@ -119,6 +119,9 @@ func _on_BtnLeft_pressed():
 					   [buttons[b].platform_id])
 
 func _on_Play_pressed():
+	$PlaySound.play()
+
+func _on_PlaySound_finished():
 	# find the pressed button
 	for b in buttons.size():
 		if buttons[b].pressed:
@@ -126,6 +129,7 @@ func _on_Play_pressed():
 	# switch to the game scene
 	Global.platform_id = cur_id
 	get_tree().change_scene(map)
+
 
 
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hit_Hurt3.wav-b843065bf965ad9d0ddeaa94530974ff.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/Hit_Hurt3.wav"
+dest_files=[ "res://.import/Hit_Hurt3.wav-b843065bf965ad9d0ddeaa94530974ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

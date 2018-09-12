@@ -28,8 +28,10 @@ func _on_PitList_item_activated(index):
 			Global.gas_increase += 0.05
 			# increase enemies' life
 			enhance_enemies(10)
+			$ActivatedSound.play()
 		else:
 			print("insufficient money to activate a pit")
+			$DeniedSound.play()
 	else:
 		print(index, " already activated")
 

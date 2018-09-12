@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/PitList.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sfx/Powerup112.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sfx/Blip_Select19.wav" type="AudioStream" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -45,6 +47,24 @@ icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Columns", "Icon", "custom_constants", "custom_styles" ]
+
+[node name="ActivatedSound" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeniedSound" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="item_activated" from="." to="." method="_on_PitList_item_activated"]
 

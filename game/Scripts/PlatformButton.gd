@@ -7,6 +7,7 @@ func _ready():
 
 func _on_PlatformButton_pressed():
 	if pressed:
+		$Sound.play()
 		$AnimationPlayer.play("active")
 		var buttons = []
 		for node in get_parent().get_children():
