@@ -4,17 +4,21 @@ const DATA_PATH = "res://Data/weather.json"
 var data
 var file = null
 
+onready var platform = get_tree().root.get_node("Map/Platform")
+
 var green_texture = preload("res://Assets/Art/UI/green_button00.png")
 var yellow_texture = preload("res://Assets/Art/UI/yellow_button00.png")
 var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
-	yield(get_tree().create_timer(0.1), "timeout")
+	platform.connect("platform_initialized", self, "init_values")
+	platform.connect("platform_initialized", self, "fill_weather_info")
+
+func init_values(loc):
 	$HealthBar.max_value = Global.platform_life
 	$HealthBar.value = Global.platform_life
-	fill_weather_info()
 
-func fill_weather_info():
+func fill_weather_info(loc):
 	# try to load the file
 	file = File.new()
 	if not file.file_exists(DATA_PATH):
@@ -27,7 +31,7 @@ func fill_weather_info():
 	# get the values and display them on the HUD
 	var temp = data.main.temp
 	var description = data.weather[0].description
-	$Weather/Generic.text = "%d°  %s" % [temp, description]
+	$Weather/Generic.text = "%.2f°  %s" % [temp, description]
 	var wind = int(data.wind.speed) * 3.6
 	$Weather/Wind.text = "vento %d km/h" % wind
 	var humidity = data.main.humidity
