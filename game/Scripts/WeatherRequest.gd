@@ -26,7 +26,7 @@ func _ready():
 
 func make_request(location):
 	var params = [str(location.x), str(location.y), str(Global.my_token)]
-	var req = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric&appid=%s" % params
+	var req = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric&appid=%s&lang=it" % params
 	$HTTPRequest.request(req)
 
 func check_time():
@@ -53,14 +53,12 @@ func check_time():
 	return false
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
 	if result != 0:
-		print(body.get_string_from_utf8())
-		printerr("HTTPRequest Error: ", result, " ", response_code)
+		print("HTTPRequest Error: ", result, " ", response_code)
 		return
 
 	write_last_request()
-	var json = JSON.parse(body.get_string_from_utf8())
-	print(json.result)
 
 func write_last_request():
 	var cur_datetime = OS.get_datetime()

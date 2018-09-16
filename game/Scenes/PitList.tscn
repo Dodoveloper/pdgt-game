@@ -51,7 +51,7 @@ _sections_unfolded = [ "Columns", "Icon", "custom_constants", "custom_styles" ]
 [node name="ActivatedSound" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 2 )
-volume_db = 0.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

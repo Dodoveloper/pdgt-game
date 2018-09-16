@@ -8,7 +8,7 @@ script = ExtResource( 1 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." index="0"]
 
-download_file = "res://Data/"
+download_file = "res://Data/weather.json"
 use_threads = false
 body_size_limit = -1
 max_redirects = 8

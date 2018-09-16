@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/8bitoperator.ttf" type="DynamicFontData" id=2]
@@ -14,7 +14,23 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HUD" type="CanvasLayer"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -46,14 +62,14 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="GasLevel" type="TextureProgress" parent="." index="1"]
 
-anchor_left = 0.0
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -210.0
-margin_right = 45.0
-margin_bottom = -20.0
+margin_left = -95.0
+margin_top = -200.0
+margin_right = -50.0
+margin_bottom = -10.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -74,7 +90,7 @@ fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Margin", "Textures" ]
+_sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [node name="HealthBar" type="TextureProgress" parent="." index="2"]
 
@@ -121,9 +137,9 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 1820.0
 margin_top = -260.0
-margin_right = 99.0
+margin_right = 1909.0
 margin_bottom = -223.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -137,6 +153,80 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="Weather" type="Node" parent="." index="5"]
+
+[node name="Generic" type="Label" parent="Weather" index="0"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -160.0
+margin_right = 557.0
+margin_bottom = -87.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "35°  NUBI SPARSE"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_fonts" ]
+
+[node name="Wind" type="Label" parent="Weather" index="1"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -90.0
+margin_right = 219.0
+margin_bottom = -59.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "VENTO 36 km/h"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Humidity" type="Label" parent="Weather" index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -50.0
+margin_right = 200.0
+margin_bottom = -19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "umidità 50 %"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
 
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 

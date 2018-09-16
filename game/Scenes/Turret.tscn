@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Art/Turrets/towerDefense_tile180.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/Turrets/towerDefense_tile250.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sfx/Laser_Shoot.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sfx/turret_shot.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
