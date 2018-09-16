@@ -59,7 +59,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
