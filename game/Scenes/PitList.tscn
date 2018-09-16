@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/PitList.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sfx/Powerup112.wav" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Sfx/Blip_Select19.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sfx/powerup.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sfx/error2.wav" type="AudioStream" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -18,7 +18,7 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[node name="PitList" type="ItemList"]
+[node name="PitList" type="ItemList" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

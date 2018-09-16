@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeatherRequest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Levels/TestScene.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sfx/game_music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Levels/TestScene.tscn" type="PackedScene" id=7]
 
 [node name="Map" type="Node"]
 
@@ -36,7 +37,16 @@ position = Vector2( 2420.02, 460.025 )
 z_index = 30
 _sections_unfolded = [ "Collision", "Z Index" ]
 
-[node name="TestScene" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Music" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="TestScene" parent="." index="6" instance=ExtResource( 7 )]
 
 [connection signal="timeout" from="SpawnRate" to="." method="_on_SpawnRate_timeout"]
 

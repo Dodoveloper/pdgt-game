@@ -31,7 +31,7 @@ func fill_weather_info(loc):
 	# get the values and display them on the HUD
 	var temp = data.main.temp
 	var description = data.weather[0].description
-	$Weather/Generic.text = "%.2f°  %s" % [temp, description]
+	$Weather/Generic.text = "%d°  %s" % [temp, description]
 	var wind = int(data.wind.speed) * 3.6
 	$Weather/Wind.text = "vento %d km/h" % wind
 	var humidity = data.main.humidity

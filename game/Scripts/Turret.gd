@@ -10,6 +10,7 @@ var targets = []
 var can_shoot = true
 
 func _ready():
+	$Spawn.play()
 	$Sprite.self_modulate = Color(0.2, 0, 0)
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/turret_bought3.wav-deac3973e6a73a2c7774206c0b21abed.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/turret_bought3.wav"
+dest_files=[ "res://.import/turret_bought3.wav-deac3973e6a73a2c7774206c0b21abed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

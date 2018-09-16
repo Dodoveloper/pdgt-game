@@ -13,7 +13,6 @@ func _on_PlatformButton_pressed():
 		for node in get_parent().get_children():
 			if "PlatformButton" in node.name and not node.name == name:
 				buttons.append(node)
-		print(buttons)
 		for btn in buttons:
 			btn.pressed = false
 			btn.emit_signal("pressed")

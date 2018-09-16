@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/TurretPopup.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/UI/Turrets/Small/small_tower.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Art/UI/Turrets/Big/big_tower_pressed.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Art/UI/Turrets/Big/big_tower_hover.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Assets/Sfx/error2.wav" type="AudioStream" id=13]
 
 [node name="TurretPopup" type="CanvasLayer" index="0"]
 
@@ -292,6 +293,15 @@ text = "x"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="Error" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="PanelContainer/Turrets/Small/Type" to="." method="_on_small_pressed"]
 

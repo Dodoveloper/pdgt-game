@@ -64,14 +64,20 @@ func _on_big_pressed():
 func _on_Small_Price_pressed():
 	if Global.decrease_money(int(small_price)):
 		emit_signal("turret_requested", "Small")
+	else:
+		$Error.play()
 
 func _on_Medium_Price_pressed():
 	if Global.decrease_money(int(medium_price)):
 		emit_signal("turret_requested", "Medium")
+	else:
+		$Error.play()
 
 func _on_Big_Price_pressed():
 	if Global.decrease_money(int(big_price)):
 		emit_signal("turret_requested", "Big")
+	else:
+		$Error.play()
 
 func _on_CloseButton_pressed():
 	# close this instance

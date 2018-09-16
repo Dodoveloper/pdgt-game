@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Platform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Platforms/pixel_big_platform.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/PitList.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sfx/Hit_Hurt3.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sfx/platform_hit.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
