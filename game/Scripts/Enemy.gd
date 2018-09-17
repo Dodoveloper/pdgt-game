@@ -29,5 +29,14 @@ func hit(damage):
 		life -= damage
 		Global.money += 2
 	else:
-		queue_free()
-		Global.money += 100
+		explode()
+
+func explode():
+	$CollisionShape2D.disabled = true
+	speed = 0
+	$AnimationPlayer.play("explode")
+	Global.money += 100
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	queue_free()
+

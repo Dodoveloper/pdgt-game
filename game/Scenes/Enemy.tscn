@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Explosions/fish_explosion.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -25,11 +26,54 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 30.8902, 79.0753 )
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[sub_resource type="Animation" id=3]
+
+resource_name = "explode"
+length = 0.6
+loop = false
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[node name="Enemy" type="KinematicBody2D" index="0" groups=[
 "enemies",
 ]]
 
-position = Vector2( 439.733, 164.184 )
+position = Vector2( 421.645, 198.853 )
 z_index = 30
 input_pickable = false
 collision_layer = 2
@@ -50,9 +94,33 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 position = Vector2( 2.15091, 1.07545 )
 rotation = 1.5708
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 3.0
+anims/explode = SubResource( 3 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Explosion" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 6 )
+vframes = 4
+hframes = 3
+region_rect = Rect2( 128, 0, 128, 128 )
+region_filter_clip = true
+_sections_unfolded = [ "Animation", "Region", "Visibility" ]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 
