@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed
-
+var speed = 450
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()

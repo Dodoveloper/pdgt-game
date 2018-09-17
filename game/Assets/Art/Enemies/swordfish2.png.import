@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerDefense_tile203.png-2e0e52ceb86d2a08031e12b7417b3252.stex"
+path="res://.import/swordfish2.png-7c54427be2147eb8d51740b7fd8f1bfb.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Turrets/towerDefense_tile203.png"
-dest_files=[ "res://.import/towerDefense_tile203.png-2e0e52ceb86d2a08031e12b7417b3252.stex" ]
+source_file="res://Assets/Art/Enemies/swordfish2.png"
+dest_files=[ "res://.import/swordfish2.png-7c54427be2147eb8d51740b7fd8f1bfb.stex" ]
 
 [params]
 

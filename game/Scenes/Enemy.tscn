@@ -1,12 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/fish.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "swordfish",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "dolphin",
+"speed": 2.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 28.3052, 52.6242 )
+extents = Vector2( 30.8902, 79.0753 )
 
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
@@ -23,19 +40,19 @@ _sections_unfolded = [ "Collision", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
-speed = 450
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-rotation = 4.71239
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
+frames = SubResource( 1 )
+animation = "dolphin"
+playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 2.15091, 1.07545 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 

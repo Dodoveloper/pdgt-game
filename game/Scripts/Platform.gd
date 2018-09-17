@@ -71,6 +71,7 @@ func init(id):
 		$Sprite.texture = load(textures[1])
 	else:
 		$Sprite.texture = load(textures[2])
+	$Sprite.scale *= 2.0
 	# life, according to size
 	Global.platform_life = size
 	# pits

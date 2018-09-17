@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerDefense_tile249.png-2cc0ec66d0dea10fd5b353de4f2441e5.stex"
+path="res://.import/turret1.png-19f5b553fc1c12cd0a69a0ff6a923ac4.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Turrets/towerDefense_tile249.png"
-dest_files=[ "res://.import/towerDefense_tile249.png-2cc0ec66d0dea10fd5b353de4f2441e5.stex" ]
+source_file="res://Assets/Art/Turrets/turret1.png"
+dest_files=[ "res://.import/turret1.png-19f5b553fc1c12cd0a69a0ff6a923ac4.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 1000
+var speed = 2000
 var velocity = Vector2()
 var damage = 2
 
@@ -15,4 +15,7 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	# damage the enemies
 	body.hit(damage)
+	queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
