@@ -87,6 +87,12 @@ func hit(damage):
 	else:
 		queue_free()
 
+func _on_Platform_body_entered(body):
+	if body.is_in_group("enemies"):
+		self.hit(body.damage)
+		body.queue_free()
+
+
 
 
 

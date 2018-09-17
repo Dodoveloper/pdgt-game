@@ -1,20 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/EnemyBullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Art/fish.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/fish.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 28.3052, 52.6242 )
 
-[sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 171.789
-
-[node name="Enemy" type="KinematicBody2D" index="0" groups=[
+[node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
 ]]
 
@@ -29,15 +23,13 @@ _sections_unfolded = [ "Collision", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
-fire_rate = 0.3
-Bullet = ExtResource( 2 )
 speed = 450
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 rotation = 4.71239
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -45,35 +37,5 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="Scan" type="Area2D" parent="." index="2"]
-
-visible = false
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 32
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scan" index="0"]
-
-shape = SubResource( 2 )
-
-[node name="ShootTimer" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[connection signal="area_entered" from="Scan" to="." method="_on_Scan_area_entered"]
-
-[connection signal="area_exited" from="Scan" to="." method="_on_Scan_area_exited"]
-
-[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 
 
