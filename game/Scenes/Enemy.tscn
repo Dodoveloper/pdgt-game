@@ -69,7 +69,7 @@ tracks/2/keys = {
 "values": [ false, false ]
 }
 
-[node name="Enemy" type="KinematicBody2D" index="0" groups=[
+[node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
 ]]
 
