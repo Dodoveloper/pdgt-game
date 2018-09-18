@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-var speed = 450
+var speed = 350
 var nav = null setget set_nav
 var path = []
 var goal = Vector2()
-var life = 30
+var life = 500
 var damage = 50
 
 func set_nav(new_nav):

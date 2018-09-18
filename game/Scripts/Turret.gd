@@ -8,6 +8,7 @@ var vis_color = Color(.867, .91, .247, 0.1)
 onready var size setget set_size
 var targets = []
 var can_shoot = true
+var damage = 10
 
 func _ready():
 	$Spawn.play()
@@ -22,11 +23,12 @@ func set_size(new_size):
 		detect_radius = 300
 		fire_rate = 0.2
 	elif size == "Medium":
-		detect_radius = 400
+		detect_radius = 500
 		fire_rate = 0.4
 	elif size == "Big":
-		detect_radius = 500
-		fire_rate = 0.5
+		detect_radius = 200
+		fire_rate = 0.1
+		damage = 15
 
 func _physics_process(delta):
 	update()
@@ -37,6 +39,7 @@ func _physics_process(delta):
 func shoot(pos):
 	var b = Bullet.instance()
 	var a = (pos - global_position).angle()
+	b.damage = self.damage
 	b.start($Sprite/Muzzle.position, a + rand_range(-0.05, 0.05))
 	get_parent().add_child(b)
 	can_shoot = false

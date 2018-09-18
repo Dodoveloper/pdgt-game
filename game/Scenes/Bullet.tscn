@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/bullet2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/bullet.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 20.1773
-height = 25.7869
+radius = 23.2928
+height = 36.8727
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" index="0"]
 
 z_index = 50
 input_pickable = true
@@ -32,8 +32,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
-position = Vector2( -5.47002, 2.37827 )
+position = Vector2( -0.293483, 2.05474 )
 rotation = 1.5557
 shape = SubResource( 1 )
 

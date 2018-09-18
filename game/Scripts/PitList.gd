@@ -7,7 +7,7 @@ var inactive = preload("res://Assets/Art/UI/inactive_well.png")
 var icons = []
 var active_tooltip = "Active pit"
 var inactive_tooltip = "Inactive pit: %s$ to activate" % Global.pits_cost
-var increase = 0.5
+var increase = 1.0
 
 func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -19,7 +19,7 @@ func _ready():
 		icons.append(1)
 		Global.gas_increase += (increase / 2)
 		# increase enemies' life
-		enhance_enemies(5)
+		enhance_enemies(100)
 	for i in platform.inactive_pits:
 		add_icon_item(inactive)
 		icons.append(0)
@@ -31,7 +31,7 @@ func _on_PitList_item_activated(index):
 			set_item_icon(index, active)
 			Global.gas_increase += increase
 			# increase enemies' life
-			enhance_enemies(30)
+			enhance_enemies(300)
 			$ActivatedSound.play()
 		else:
 			$DeniedSound.play()

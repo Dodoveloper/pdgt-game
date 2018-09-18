@@ -71,7 +71,7 @@ func init(id):
 		$Sprite.texture = load(textures[1])
 	else:
 		$Sprite.texture = load(textures[2])
-	$Sprite.scale *= 2.0
+	$Sprite.scale *= 1.7
 	# life, according to size
 	Global.platform_life = size
 	# pits
@@ -86,12 +86,22 @@ func hit(damage):
 	if Global.platform_life > damage:
 		Global.platform_life -= damage
 	else:
-		queue_free()
+		Global.platform_life = 0
+		game_over()
 
 func _on_Platform_body_entered(body):
 	if body.is_in_group("enemies"):
 		self.hit(body.damage)
 		body.queue_free()
+
+func game_over():
+	# play the explosion
+	$AnimationPlayer.play("explode")
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	# display gameover
+	pass # replace with function body
+
 
 
 
