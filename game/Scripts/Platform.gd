@@ -2,6 +2,7 @@ extends Area2D
 
 signal platform_initialized
 
+var GameOver = preload("res://Scenes/GameOver.tscn")
 var textures = ["res://Assets/Art/Platforms/pixel_small_platform.png",
 				"res://Assets/Art/Platforms/pixel_platform.png",
 				"res://Assets/Art/Platforms/pixel_big_platform.png"]
@@ -29,7 +30,6 @@ var info_dict = {
 func _ready():
 	id = Global.platform_id
 	init(id)
-	Global.platform_info = info_dict
 
 func init(id):
 	## init the info dictionary
@@ -64,7 +64,6 @@ func init(id):
 	location = Vector2(long, lat)
 	# size and relative texture
 	size = DataHandler.format_dimensions(info_dict.Dimensions)
-	print(id, " ", size)
 	if size < 1000:
 		$Sprite.texture = load(textures[0])
 	elif size >= 1000 and size < 1500:
@@ -74,10 +73,12 @@ func init(id):
 	$Sprite.scale *= 1.7
 	# life, according to size
 	Global.platform_life = size
+	Global.initial_life = Global.platform_life
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int()
-	
+
+	Global.platform_info = info_dict
 	emit_signal("platform_initialized", location)
 
 func hit(damage):
@@ -100,7 +101,9 @@ func game_over():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	# display gameover
-	pass # replace with function body
+	var g = GameOver.instance()
+	g.victory = false
+	add_child(g)
 
 
 

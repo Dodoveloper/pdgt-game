@@ -9,6 +9,9 @@ var platform_life = 500
 var pits_cost = 1000
 var gas_percentage = 0
 var gas_increase = 0.0
+# final values
+var initial_life = 0
+var victory_bonus = 10000
 
 var is_displaying = false # turretpopup flag
 

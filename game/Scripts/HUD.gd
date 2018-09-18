@@ -5,6 +5,7 @@ var data
 var file = null
 
 onready var platform = get_tree().root.get_node("Map/Platform")
+var GameOver = preload("res://Scenes/GameOver.tscn")
 
 var green_texture = preload("res://Assets/Art/UI/green_button00.png")
 var yellow_texture = preload("res://Assets/Art/UI/yellow_button00.png")
@@ -17,6 +18,7 @@ func _ready():
 func init_values(loc):
 	$HealthBar.max_value = Global.platform_life
 	$HealthBar.value = Global.platform_life
+	$Name.text = Global.platform_info.Name
 
 func fill_weather_info(loc):
 	# try to load the file
@@ -31,7 +33,7 @@ func fill_weather_info(loc):
 	# get the values and display them on the HUD
 	var temp = data.main.temp
 	var description = data.weather[0].description
-	$Weather/Generic.text = "%d°  %s" % [temp, description]
+	$Weather/Generic.text = "%d° %s" % [temp, description]
 	var wind = int(data.wind.speed) * 3.6
 	$Weather/Wind.text = "vento %d km/h" % wind
 	var humidity = data.main.humidity
@@ -54,3 +56,8 @@ func _on_GasTimer_timeout():
 	# check gas lvl every second
 	Global.gas_percentage += Global.gas_increase
 	$GasLevel.value = Global.gas_percentage
+	# check victory
+	if $GasLevel.value >= 100:
+		var g = GameOver.instance()
+		g.victory = true
+		add_child(g)

@@ -78,7 +78,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Platform" type="Area2D" index="0"]
+[node name="Platform" type="Area2D"]
 
 position = Vector2( 372.051, 267.241 )
 input_pickable = true
@@ -107,9 +107,9 @@ shape = SubResource( 1 )
 [node name="PitList" parent="." index="2" instance=ExtResource( 3 )]
 
 margin_left = -192.0
-margin_top = 250.0
+margin_top = 310.0
 margin_right = 601.0
-margin_bottom = 724.0
+margin_bottom = 784.0
 custom_constants/icon_margin = 10
 _sections_unfolded = [ "Columns", "Icon", "Rect", "custom_constants", "custom_styles" ]
 

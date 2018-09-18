@@ -7,11 +7,26 @@ var goal = Vector2()
 var life = 500
 var damage = 50
 
+var is_swordfish = false
+var red_texture = preload("res://Assets/Art/UI/red_button00.png")
+
+func _ready():
+	damage = Global.platform_life / 30
+	$HealthBar.max_value = self.life
+	$HealthBar.value = $HealthBar.max_value
+	if is_swordfish:
+		life += (life / 3)
+		speed += 50
+		damage *= 2
+		$Sprite.animation = "swordfish"
+
 func set_nav(new_nav):
 	nav = new_nav
 	path = nav.get_simple_path(global_position, goal, false)
 
 func _physics_process(delta):
+	# update healthbar
+	$HealthBar.value = self.life
 	# travel to the next point
 	if path.size() > 1:
 		var d = global_position.distance_to(path[0])
@@ -29,6 +44,7 @@ func hit(damage):
 		life -= damage
 		Global.money += 2
 	else:
+		life = 0
 		explode()
 
 func explode():
@@ -39,4 +55,9 @@ func explode():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	queue_free()
+
+func _on_HealthBar_value_changed(value):
+	if value <= $HealthBar.max_value / 4:
+		$HealthBar.texture_progress = red_texture
+
 

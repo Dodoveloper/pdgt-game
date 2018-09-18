@@ -16,8 +16,12 @@ func _ready():
 
 func _on_SpawnRate_timeout():
 	if enemy_count > 0:
+		var is_swordfish = false
+		# choose randomly enemy type
+		is_swordfish = select_random_enemy()
 		# instance the enemy
 		var e = Enemy.instance()
+		e.is_swordfish = is_swordfish
 		add_child(e)
 		# set its position
 		e.global_position = level.get_node("StartPos").position
@@ -34,3 +38,25 @@ func _on_SpawnRate_timeout():
 		# randomize the timer
 		$SpawnRate.wait_time = rand_range(spawn_rate - 0.5, spawn_rate)
 	print($SpawnRate.wait_time)
+
+func select_random_enemy():
+	var outcome = {
+		false : 80,
+		true : 20
+	}
+	var tot_weight = 100
+	var rand = randi() % tot_weight
+	var output = null
+
+	for key in outcome.keys():
+		if rand < outcome[key]:
+			output = key
+			break
+		rand -= outcome[key]
+
+	return output
+
+
+
+
+

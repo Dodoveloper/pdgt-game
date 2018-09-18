@@ -7,7 +7,7 @@ var inactive = preload("res://Assets/Art/UI/inactive_well.png")
 var icons = []
 var active_tooltip = "Active pit"
 var inactive_tooltip = "Inactive pit: %s$ to activate" % Global.pits_cost
-var increase = 1.0
+var increase = 1.5
 
 func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
