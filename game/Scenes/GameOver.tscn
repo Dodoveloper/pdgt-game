@@ -1,18 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/gameover_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Fonts/bonus_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Sfx/gameover.wav" type="AudioStream" id=6]
 
-[node name="GameOver" type="Node"]
+[node name="GameOver" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0.470588 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Visibility" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -373,6 +390,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="ButtonsMargin" type="MarginContainer" parent="VBoxContainer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -456,6 +474,15 @@ group = null
 text = "Livelli"
 flat = false
 align = 1
+
+[node name="LossSound" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="VBoxContainer/ButtonsMargin/Buttons/Menu" to="." method="_on_Menu_pressed"]
 

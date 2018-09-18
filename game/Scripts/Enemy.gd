@@ -11,7 +11,7 @@ var is_swordfish = false
 var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
-	damage = Global.platform_life / 30
+	damage = Global.platform_life / 10
 	$HealthBar.max_value = self.life
 	$HealthBar.value = $HealthBar.max_value
 	if is_swordfish:

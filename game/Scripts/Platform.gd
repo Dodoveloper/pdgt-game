@@ -103,7 +103,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	# display gameover
 	var g = GameOver.instance()
 	g.victory = false
-	add_child(g)
+	get_parent().get_node("Camera2D/HUD").add_child(g)
 
 
 

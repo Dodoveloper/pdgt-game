@@ -8,6 +8,8 @@ var life_percentage = 0
 var total = 0
 
 func _ready():
+#	get_tree().root.get_node("Map/Music").stop()
+	$LossSound.play()
 	get_tree().paused = true
 	if victory:
 		$VBoxContainer/Outcome.text = "vittoria!"

@@ -70,7 +70,7 @@ tracks/2/keys = {
 "values": [ false, false ]
 }
 
-[node name="Enemy" type="KinematicBody2D" index="0" groups=[
+[node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
 ]]
 
@@ -91,7 +91,6 @@ __meta__ = {
 position = Vector2( 3.05176e-05, 0 )
 frames = SubResource( 1 )
 animation = "dolphin"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
