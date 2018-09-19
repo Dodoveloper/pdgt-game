@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal weather_acquired
+
 const DATA_PATH = "res://Data/weather.json"
 var data
 var file = null
@@ -12,15 +14,16 @@ var yellow_texture = preload("res://Assets/Art/UI/yellow_button00.png")
 var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
-	platform.connect("platform_initialized", self, "init_values")
-	platform.connect("platform_initialized", self, "fill_weather_info")
+	yield(get_tree().create_timer(0.15), "timeout")
+	init_values()
+	fill_weather_info()
 
-func init_values(loc):
+func init_values():
 	$HealthBar.max_value = Global.platform_life
 	$HealthBar.value = Global.platform_life
 	$Name.text = Global.platform_info.Name
 
-func fill_weather_info(loc):
+func fill_weather_info():
 	# try to load the file
 	file = File.new()
 	if not file.file_exists(DATA_PATH):
@@ -38,6 +41,8 @@ func fill_weather_info(loc):
 	$Weather/Wind.text = "vento %d km/h" % wind
 	var humidity = data.main.humidity
 	$Weather/Humidity.text = "umidità %s %%" % humidity
+	# notify the map
+	emit_signal("weather_acquired", data.weather[0].main)
 	# close the file
 	file.close()
 

@@ -1,7 +1,7 @@
 extends MarginContainer
 
-onready var buttons = $Columns/Right.get_children()
-onready var zones = $Columns/Left.get_children()
+onready var buttons = $VBoxContainer/Columns/Right.get_children()
+onready var zones = $VBoxContainer/Columns/Left.get_children()
 
 func _ready():
 	zones.remove(0)
@@ -20,7 +20,7 @@ func highlight_zone(name):
 		else:
 			zone.modulate.a = 0.5
 
-	$Columns/Confirm.disabled = false
+	$VBoxContainer/Columns/Confirm.disabled = false
 	# set the current zone
 	Global.cur_zone = name
 

@@ -56,6 +56,19 @@ func select_random_enemy():
 
 	return output
 
+func _on_HUD_weather_acquired(weather):
+	print(weather)
+	if weather == "Clouds":
+		$TileMap.modulate = Color("8ed3a7")
+	elif weather == "Rain" or weather == "Snow":
+		$TileMap.modulate = Color("8ed3a7")
+		# particles
+		$Node2D/Rain.emitting = true
+	else:
+		$Node2D/Rain.emitting = false
+		$TileMap.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+
 
 
 

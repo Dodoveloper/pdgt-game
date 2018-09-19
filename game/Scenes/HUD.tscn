@@ -60,7 +60,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 text = "rospo mare b"
-align = 1
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -184,6 +183,8 @@ _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
 
 [node name="Weather" type="Node" parent="." index="6"]
 
+editor/display_folded = true
+
 [node name="Generic" type="Label" parent="Weather" index="0"]
 
 anchor_left = 0.0
@@ -201,7 +202,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
-text = "35°  NUBI SPARSE"
+text = "27°  NUBI SPARSE"
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -225,7 +226,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "VENTO 36 km/h"
+text = "VENTO 8 km/h"
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -249,7 +250,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "umidità 50 %"
+text = "umidità 70 %"
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0

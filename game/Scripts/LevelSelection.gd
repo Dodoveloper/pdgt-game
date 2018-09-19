@@ -39,6 +39,9 @@ func _ready():
 	pages = platforms.size() / buttons.size()
 	if platforms.size() % buttons.size() > 0:
 		pages += 1
+	# disable the right button if needed
+	if pages == 1:
+		$UI/Rows/Second/Platforms/BtnRight.disabled = true
 	page.text = "1/%s" % str(pages)
 	# show first platform's info for starting
 	cur_id = int(platforms[0]["ccodice"])

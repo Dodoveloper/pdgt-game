@@ -38,3 +38,5 @@ func zoom_at(pos, step):
 	zoom.y = clamp(zoom.y, MAX_ZOOM, MIN_ZOOM)
 	position.x = lerp(position.x, pos.x, 0.2)
 	position.y = lerp(position.y, pos.y, 0.2)
+
+

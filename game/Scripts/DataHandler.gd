@@ -30,7 +30,7 @@ func format_string(string):
 	return output
 
 func get_value(platform_id, key):
-	var index
+	var index = 0
 	# get the right index
 	for i in data.size():
 		if platform_id == data[i]["ccodice"].to_int():
