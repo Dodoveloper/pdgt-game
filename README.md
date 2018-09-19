@@ -12,7 +12,7 @@ I dati sulle piattaforme sono stati raccolti dal Ministero dello Sviluppo Econom
 Il dataset è un file JSON composto di 92 entry, una per piattaforma. Esso presenta molte informazioni, tra cui coordinate, anno di costruzione, zona, nome, tipo di struttura, distanza dalla costa, gestore, numero di pozzi, ecc.
 
 Il progetto attinge inoltre ai dati sul **meteo in tempo reale** forniti da [Open WeatherMap](https://openweathermap.org/current): Platform Defense riproduce infatti nell'area di gioco selezionata il meteo reale corrispondente, arricchendo la varietà del gameplay.
-Per reperire questi dati vengono effettuate delle chiamate alle API di Open Weather Map tramite il protocollo HTTP, utilizzando le coordinate reperite dal dataset.
+Per reperire questi dati vengono effettuate delle chiamate alle API di Open Weather Map tramite il protocollo HTTP, utilizzando le coordinate geografiche reperite dal dataset.
 
 N.B. per usufruire di queste API è necessario l'utilizzo di un token, ottenibile gratuitamente registrandosi al servizio.
 
@@ -25,9 +25,10 @@ Per il suono invece si è fatto affidamento sulla comunity di [Freesound](http:/
 Le piattaforme sono classificate in 4 aree geografiche. Prima di sviluppare il gioco è stato necessario un lavoro di *modifica* del dataset per adattarlo al gameplay finale. Ad esempio sono state eliminate le piattaforme attualmente non operative o quelle con un numero totale di pozzi troppo basso.
 
 A quel punto è stato sviluppato il *core gameplay*: difendere la piattaforma dai nemici (delfini e pesci spada) con l'obiettivo di estrarre una determinata quantità di gas per vincere la partita. Sono stati quindi selezionati alcuni parametri per l'assegnazione di funzioni all'interno delle meccaniche di gioco. Per esempio:
--dimensioni = vita della piattaforma
--numero di pozzi di estrazione = velocità di estrazione
--posizione = area di gioco
+- dimensioni = vita della piattaforma
+- numero di pozzi di estrazione = velocità di estrazione
+- posizione = area di gioco
+
 Ciascuna piattaforma ha numero variabile di pozzi totali e di pozzi già attivi. Il giocatore può utilizzare la moneta virtuale per acquistare le torrette per difendere la piattaforma o per attivare i pozzi inattivi, velocizzando l'estrazione del gas.
 
 
