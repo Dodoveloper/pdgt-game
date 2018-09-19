@@ -8,7 +8,6 @@ onready var page = $UI/Rows/First/Labels/Page
 onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
 onready var play = $UI/Rows/Third/HBoxContainer/Play
 onready var map = "res://Scenes/Map.tscn"
-var cur_area = "ZA"
 var number = 0
 var platforms = []
 var buttons = []
@@ -18,13 +17,13 @@ var cur_id = 0
 
 func _ready():
 	# zone label text
-	$UI/Rows/First/Labels/Zone.text = "Zona %s" % cur_area[1]
+	$UI/Rows/First/Labels/Zone.text = "Zona %s" % Global.cur_zone[1]
 	# find all platforms within the current area
 	for p in DataHandler.data.size():
 		var id = int(DataHandler.data[p]["ccodice"])
 		var area = DataHandler.get_value(id, "czona")
 		area = DataHandler.format_string(area)
-		if area == cur_area:
+		if area == Global.cur_zone:
 			platforms.append(DataHandler.data[p])
 	# get the texture buttons
 	for node in columns.get_children():

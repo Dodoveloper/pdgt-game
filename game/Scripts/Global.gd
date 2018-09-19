@@ -1,6 +1,7 @@
 extends Node
 
 var my_token = ""
+var cur_zone = "ZA"
 
 var money = 500
 var platform_id = 220

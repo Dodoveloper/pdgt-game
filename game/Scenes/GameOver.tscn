@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/Sfx/gameover.wav" type="AudioStream" id=6]
 
-[node name="GameOver" type="Node" index="0"]
+[node name="GameOver" type="Node"]
 
 pause_mode = 2
 script = ExtResource( 1 )
