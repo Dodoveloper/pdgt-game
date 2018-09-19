@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/turret_shot.wav-f03825e32be7902b21b6c7d772a1bca6.sample"
+path="res://.import/enemy_expl.wav-4cf12407b893c2e1c0d38f2ce5be5813.sample"
 
 [deps]
 
-source_file="res://Assets/Sfx/turret_shot.wav"
-dest_files=[ "res://.import/turret_shot.wav-f03825e32be7902b21b6c7d772a1bca6.sample" ]
+source_file="res://Assets/Sfx/enemy_expl.wav"
+dest_files=[ "res://.import/enemy_expl.wav-4cf12407b893c2e1c0d38f2ce5be5813.sample" ]
 
 [params]
 

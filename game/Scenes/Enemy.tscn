@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Art/Explosions/fish_explosion.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sfx/enemy_expl.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -91,6 +92,7 @@ __meta__ = {
 position = Vector2( 3.05176e-05, 0 )
 frames = SubResource( 1 )
 animation = "dolphin"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -154,6 +156,15 @@ radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

@@ -7,6 +7,8 @@ func _ready():
 	zones.remove(0)
 
 func highlight_zone(name):
+	# play the sound
+	$PressedSound.play()
 	# highlight the button
 	for btn in buttons:
 		if btn.name == name:

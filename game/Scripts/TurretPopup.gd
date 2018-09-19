@@ -10,6 +10,8 @@ var medium_price = "400"
 var big_price = "1000"
 
 func _on_small_pressed():
+	# play the sound
+	$PressedSound.play()
 	# enable the price button
 	small.get_node("Price").disabled = false
 	# display the buy button if pressed
@@ -28,6 +30,8 @@ func _on_small_pressed():
 		small.get_node("Price").disabled = true
 
 func _on_medium_pressed():
+	# play the sound
+	$PressedSound.play()
 	# enable the price button
 	medium.get_node("Price").disabled = false
 	# display the buy button if pressed
@@ -45,6 +49,8 @@ func _on_medium_pressed():
 		medium.get_node("Price").disabled = true
 
 func _on_big_pressed():
+	# play the sound
+	$PressedSound.play()
 	# enable the price button
 	big.get_node("Price").disabled = false
 	# display the buy button if pressed

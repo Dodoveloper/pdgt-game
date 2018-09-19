@@ -7,6 +7,8 @@ var Turret = preload("res://Scenes/Turret.tscn")
 onready var pos = $Pivot.position
 
 func _on_TurretSlot_pressed():
+	# play the sound
+	$PressedSound.play()
 	if not Global.is_displaying:
 		# display the popup menu
 		menu = Menu.instance()

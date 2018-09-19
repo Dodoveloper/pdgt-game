@@ -49,6 +49,7 @@ func hit(damage):
 		explode()
 
 func explode():
+	$ExplosionSound.play()
 	$CollisionShape2D.disabled = true
 	speed = 0
 	$AnimationPlayer.play("explode")
