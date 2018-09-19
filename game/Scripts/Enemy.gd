@@ -12,11 +12,12 @@ var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
 	damage = Global.platform_life / 10
+	speed += (get_parent().get_node("Platform").producting_pits) * 10
 	$HealthBar.max_value = self.life
 	$HealthBar.value = $HealthBar.max_value
 	if is_swordfish:
 		life += (life / 3)
-		speed += 50
+		speed -= 50
 		damage *= 2
 		$Sprite.animation = "swordfish"
 

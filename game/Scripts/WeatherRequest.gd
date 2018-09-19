@@ -6,20 +6,18 @@ onready var platform = get_tree().root.get_node("Map/Platform")
 onready var file
 
 func _ready():
-	# get the token if necessary
-	if Global.my_token == "":
-		# try to load the file
-		file = File.new()
-		if not file.file_exists(DATA_PATH):
-			print("OWM data absent!")
-			return
-		# read the file and store it into an array of dictionaries
-		file.open(DATA_PATH, File.READ)
-		var json = JSON.parse(file.get_as_text())
-		data = json.result
-		Global.my_token = data.owm_token
-		# close the file
-		file.close()
+	# try to load the file
+	file = File.new()
+	if not file.file_exists(DATA_PATH):
+		print("OWM data absent!")
+		return
+	# read the file and store it into an array of dictionaries
+	file.open(DATA_PATH, File.READ)
+	var json = JSON.parse(file.get_as_text())
+	data = json.result
+	Global.my_token = data.owm_token
+	# close the file
+	file.close()
 	# check if it's necessary another request based on time
 	if check_time():
 		platform.connect("platform_initialized", self, "make_request")

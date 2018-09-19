@@ -9,7 +9,6 @@ var total = 0
 
 func _ready():
 	get_tree().root.get_node("Map/Music").stop()
-	$LossSound.play()
 	get_tree().paused = true
 	if victory:
 		$VBoxContainer/Outcome.text = "vittoria!"
@@ -18,6 +17,7 @@ func _ready():
 		life_bonus = (life_percentage / 100) * Global.victory_bonus
 		print(life_bonus)
 	else:
+		$LossSound.play()
 		$VBoxContainer/Outcome.text = "sconfitta!"
 	# compute score
 	total = score + win_bonus + life_bonus

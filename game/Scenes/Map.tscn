@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Sfx/game_music.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Levels/TestScene.tscn" type="PackedScene" id=8]
 
-[node name="Map" type="Node" index="0"]
+[node name="Map" type="Node"]
 
 script = ExtResource( 1 )
 enemy_count = 999
