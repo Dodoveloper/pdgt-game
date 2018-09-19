@@ -14,7 +14,7 @@ var yellow_texture = preload("res://Assets/Art/UI/yellow_button00.png")
 var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
-	yield(get_tree().create_timer(0.15), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout")
 	init_values()
 	fill_weather_info()
 

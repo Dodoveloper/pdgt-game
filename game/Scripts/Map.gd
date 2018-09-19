@@ -63,9 +63,9 @@ func _on_HUD_weather_acquired(weather):
 	elif weather == "Rain" or weather == "Snow":
 		$TileMap.modulate = Color("8ed3a7")
 		# particles
-		$Node2D/Rain.emitting = true
+		$Camera2D/WeatherEffects/Rain.emitting = true
 	else:
-		$Node2D/Rain.emitting = false
+		$Camera2D/WeatherEffects/Rain.emitting = false
 		$TileMap.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 

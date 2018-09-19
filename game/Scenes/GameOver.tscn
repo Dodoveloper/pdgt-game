@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/Sfx/gameover.wav" type="AudioStream" id=6]
 
-[node name="GameOver" type="Node"]
+[node name="GameOver" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -390,7 +390,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="ButtonsMargin" type="MarginContainer" parent="VBoxContainer" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -408,7 +407,6 @@ _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer/ButtonsMargin" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -450,14 +448,14 @@ text = "Menu"
 flat = false
 align = 1
 
-[node name="Level" type="Button" parent="VBoxContainer/ButtonsMargin/Buttons" index="1"]
+[node name="Retry" type="Button" parent="VBoxContainer/ButtonsMargin/Buttons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1266.0
-margin_right = 1604.0
+margin_left = 1246.0
+margin_right = 1623.0
 margin_bottom = 115.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -471,7 +469,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Livelli"
+text = "Riprova"
 flat = false
 align = 1
 
@@ -486,6 +484,6 @@ bus = "Master"
 
 [connection signal="pressed" from="VBoxContainer/ButtonsMargin/Buttons/Menu" to="." method="_on_Menu_pressed"]
 
-[connection signal="pressed" from="VBoxContainer/ButtonsMargin/Buttons/Level" to="." method="_on_Level_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsMargin/Buttons/Retry" to="." method="_on_Retry_pressed"]
 
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Art/Explosions/fish_explosion.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=7]
 
@@ -13,13 +13,13 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "dolphin",
-"speed": 2.5
+"name": "swordfish",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "swordfish",
-"speed": 3.0
+"name": "dolphin",
+"speed": 2.5
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
