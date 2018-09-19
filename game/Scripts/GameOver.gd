@@ -46,9 +46,12 @@ func _on_Retry_pressed():
 	get_tree().change_scene("res://Scenes/Map.tscn")
 
 func restore_values():
+	$PressedSound.play()
+	# unpause the game and restore values
 	get_tree().paused = false
 	Global.money = 500
 	Global.gas_percentage = 0
 	Global.gas_increase = 0.0
+
 
 

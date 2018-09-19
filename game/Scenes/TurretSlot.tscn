@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/TurretSlot.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=3]
 
-[node name="TurretSlot" type="TextureButton" index="0"]
+[node name="TurretSlot" type="TextureButton"]
 
 anchor_left = 0.0
 anchor_top = 0.0
