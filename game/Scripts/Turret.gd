@@ -8,7 +8,7 @@ var vis_color = Color(.867, .91, .247, 0.1)
 onready var size setget set_size
 var targets = []
 var can_shoot = true
-var damage = 10
+var damage = 14
 
 func _ready():
 	$Spawn.play()
@@ -43,7 +43,7 @@ func shoot(pos):
 	var b = Bullet.instance()
 	var a = (pos - global_position).angle()
 	b.damage = self.damage
-	b.start($Sprite/Muzzle.position, a + rand_range(-0.05, 0.05))
+	b.start($Sprite/Muzzle.position, a + rand_range(-0.02, 0.02))
 	get_parent().add_child(b)
 	can_shoot = false
 	$ShootTimer.start()

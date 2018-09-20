@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/gameover_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Fonts/bonus_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Sfx/gameover.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Art/background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/gameover_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/bonus_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Sfx/gameover.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=8]
 
-[node name="GameOver" type="Node"]
+[node name="GameOver" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -16,19 +17,23 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
-modulate = Color( 1, 1, 1, 0.470588 )
+modulate = Color( 1, 1, 1, 0.325961 )
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 192.0
+margin_bottom = 108.0
+rect_scale = Vector2( 10, 10 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
 stretch_mode = 0
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Rect", "Size Flags", "Visibility" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 
@@ -58,7 +63,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 7
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "game over!"
 align = 1
 valign = 1
@@ -136,7 +141,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "avido profitto:"
 valign = 1
 uppercase = true
@@ -160,7 +165,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 8
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "5000"
 valign = 1
 uppercase = true
@@ -201,7 +206,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "bonus di trionfo:"
 valign = 1
 uppercase = true
@@ -225,7 +230,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 8
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "10000"
 valign = 1
 uppercase = true
@@ -267,7 +272,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "risparmio riparazioni:"
 valign = 1
 uppercase = true
@@ -291,7 +296,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 8
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "1000"
 valign = 1
 uppercase = true
@@ -332,7 +337,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "totale:"
 valign = 1
 uppercase = true
@@ -356,7 +361,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 8
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "16000"
 valign = 1
 uppercase = true
@@ -380,7 +385,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 7
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "Prossimo passo: la conquista del mondo"
 align = 1
 valign = 1
@@ -441,7 +446,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 6
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -466,7 +471,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 6
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -477,7 +482,7 @@ align = 1
 
 [node name="LossSound" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -486,7 +491,7 @@ bus = "Master"
 
 [node name="VictorySound" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -495,7 +500,7 @@ bus = "Master"
 
 [node name="PressedSound" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false

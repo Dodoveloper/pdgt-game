@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dolphin_background.png-843fd2780bb1a17eb549e02aba4b65b4.stex"
+path="res://.import/background.png-e3fea7196f472b60f10fe0e639cb6198.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Background/dolphin_background.png"
-dest_files=[ "res://.import/dolphin_background.png-843fd2780bb1a17eb549e02aba4b65b4.stex" ]
+source_file="res://Assets/Art/background.png"
+dest_files=[ "res://.import/background.png-e3fea7196f472b60f10fe0e639cb6198.stex" ]
 
 [params]
 
