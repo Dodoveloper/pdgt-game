@@ -183,8 +183,6 @@ _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
 
 [node name="Weather" type="Node" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="Generic" type="Label" parent="Weather" index="0"]
 
 anchor_left = 0.0

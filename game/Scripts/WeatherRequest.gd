@@ -29,7 +29,7 @@ func make_request(location):
 
 func check_time():
 	var cur_datetime = OS.get_datetime()
-	var minute_interval = 10
+	var minute_interval = 1
 
 	# if value is > than current datetime we're sure it can make a request,
 	# otherwise if = we need to perform more checks

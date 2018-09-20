@@ -15,7 +15,7 @@ var life_percentage = 0
 var total = 0
 
 func _ready():
-	# free turret popup if present
+	# delete turret popup if present
 	var slots = get_tree().root.get_node("Map/TestScene/Turrets").get_children()
 	if slots:
 		for slot in slots:
@@ -28,6 +28,7 @@ func _ready():
 	get_tree().root.get_node("Map/Music").stop()
 	get_tree().paused = true
 	if victory:
+		$VictorySound.play()
 		$VBoxContainer/Outcome.text = "vittoria!"
 		win_bonus = Global.victory_bonus
 		life_percentage = (Global.platform_life * 100) / Global.initial_life

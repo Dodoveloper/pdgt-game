@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Sfx/error2.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=7]
 
-[node name="TurretPopup" type="CanvasLayer" index="0"]
+[node name="TurretPopup" type="CanvasLayer"]
 
 layer = 100
 offset = Vector2( 0, 0 )
