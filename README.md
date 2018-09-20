@@ -31,4 +31,12 @@ A quel punto è stato sviluppato il *core gameplay*: difendere la piattaforma da
 
 Ciascuna piattaforma ha numero variabile di pozzi totali e di pozzi già attivi. Il giocatore può utilizzare la moneta virtuale per acquistare le torrette per difendere la piattaforma o per attivare i pozzi inattivi, velocizzando l'estrazione del gas.
 
+Per quanto riguarda il meteo, con esso varia dinamicamente l'aspetto grafico del gioco. Cielo sereno, nuvoloso o condizioni di pioggia vengono riprodotte visivamente nel videogioco.
 
+### COME SI GIOCA
+I controlli sono semplici:
+- Click per interagire con gli oggetti
+- Doppio click sui pozzi inattivi (cerchi grigi) per attivarli
+- Click tenendo premuto sulla mappa per trascinare la telecamera
+- Rotellina mouse per lo zoom
+- ESC per chiudere il gioco
