@@ -96,6 +96,7 @@ func _on_Platform_body_entered(body):
 		body.queue_free()
 
 func game_over():
+	$CollisionShape2D.disabled = true
 	# play the explosion
 	$AnimationPlayer.play("explode")
 

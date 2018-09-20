@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Art/TileMaps/Path.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/TurretSlot.tscn" type="PackedScene" id=3]
 
-[node name="TestScene" type="Node"]
+[node name="TestScene" type="Node" index="0"]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="0"]
 
@@ -62,10 +62,10 @@ margin_bottom = 874.0
 
 [node name="TurretSlot8" parent="Turrets" index="5" instance=ExtResource( 3 )]
 
-margin_left = 2060.0
-margin_top = 701.0
-margin_right = 2135.0
-margin_bottom = 773.0
+margin_left = 1934.0
+margin_top = 709.0
+margin_right = 2009.0
+margin_bottom = 781.0
 
 [node name="TurretSlot3" parent="Turrets" index="6" instance=ExtResource( 3 )]
 

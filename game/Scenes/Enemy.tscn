@@ -92,6 +92,7 @@ __meta__ = {
 position = Vector2( 3.05176e-05, 0 )
 frames = SubResource( 1 )
 animation = "swordfish"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 

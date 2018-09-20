@@ -14,8 +14,9 @@ var is_swordfish = false
 var red_texture = preload("res://Assets/Art/UI/red_button00.png")
 
 func _ready():
-	damage = Global.platform_life / 15
-	speed += (get_parent().get_node("Platform").producting_pits) * 10
+	var active_pits = get_parent().get_node("Platform").producting_pits
+	damage = (Global.initial_life / 10) + (active_pits * 50)
+	speed += (active_pits) * 10
 	$HealthBar.max_value = self.life
 	$HealthBar.value = $HealthBar.max_value
 	if is_swordfish:

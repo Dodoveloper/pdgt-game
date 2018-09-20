@@ -40,7 +40,7 @@ func _on_SpawnRate_timeout():
 
 func select_random_enemy():
 	var outcome = {
-		false : 80,
+		false : 90,
 		true : 10
 	}
 	var tot_weight = 100
