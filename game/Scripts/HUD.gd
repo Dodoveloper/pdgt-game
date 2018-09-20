@@ -24,6 +24,14 @@ func init_values():
 	$Name.text = Global.platform_info.Name
 
 func fill_weather_info():
+	# check for connection errors
+	if Global.conn_error:
+		$Weather/Wind.hide()
+		$Weather/Humidity.hide()
+		return
+	else:
+		$Weather/Wind.show()
+		$Weather/Humidity.show()
 	# try to load the file
 	file = File.new()
 	if not file.file_exists(DATA_PATH):

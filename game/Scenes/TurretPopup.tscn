@@ -1,21 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/TurretPopup.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/UI/Turrets/Small/small_tower.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Art/UI/Turrets/Small/small_tower_pressed.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/UI/Turrets/Small/small_tower_hover.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Fonts/font_size_24.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Art/UI/Turrets/Medium/medium_tower.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Art/UI/Turrets/Medium/medium_tower_pressed.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Art/UI/Turrets/Medium/medium_tower_hover.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Art/UI/Turrets/Big/big_tower.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Art/UI/Turrets/Big/big_tower_pressed.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Art/UI/Turrets/Big/big_tower_hover.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=12]
-[ext_resource path="res://Assets/Sfx/error2.wav" type="AudioStream" id=13]
-[ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Art/UI/Turrets/turret.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/UI/Turrets/turret_hover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/font_size_24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Fonts/name_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Sfx/error2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=7]
 
-[node name="TurretPopup" type="CanvasLayer" index="0"]
+[node name="TurretPopup" type="CanvasLayer"]
 
 layer = 100
 offset = Vector2( 0, 0 )
@@ -66,8 +59,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_right = 174.0
+margin_left = 63.0
+margin_right = 185.0
 margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -80,13 +73,14 @@ alignment = 1
 
 [node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Small" index="0"]
 
+modulate = Color( 1, 0.585938, 0.585938, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 19.0
-margin_right = 144.0
-margin_bottom = 163.0
+margin_top = 16.0
+margin_right = 122.0
+margin_bottom = 166.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -99,10 +93,9 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
 stretch_mode = 3
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Textures", "Visibility" ]
 
 [node name="Price" type="Button" parent="PanelContainer/Turrets/Small" index="1"]
 
@@ -110,9 +103,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 193.0
-margin_right = 144.0
-margin_bottom = 236.0
+margin_top = 196.0
+margin_right = 122.0
+margin_bottom = 239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -120,7 +113,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -136,8 +129,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 244.0
-margin_right = 388.0
+margin_left = 255.0
+margin_right = 377.0
 margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -150,13 +143,14 @@ alignment = 1
 
 [node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Medium" index="0"]
 
+modulate = Color( 1, 0.857666, 0.585938, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 19.0
-margin_right = 144.0
-margin_bottom = 163.0
+margin_top = 16.0
+margin_right = 122.0
+margin_bottom = 166.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -168,11 +162,10 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 stretch_mode = 3
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Textures", "Visibility" ]
 
 [node name="Price" type="Button" parent="PanelContainer/Turrets/Medium" index="1"]
 
@@ -180,9 +173,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 193.0
-margin_right = 144.0
-margin_bottom = 236.0
+margin_top = 196.0
+margin_right = 122.0
+margin_bottom = 239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -190,7 +183,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -206,8 +199,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 458.0
-margin_right = 602.0
+margin_left = 447.0
+margin_right = 569.0
 margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -220,13 +213,14 @@ alignment = 1
 
 [node name="Type" type="TextureButton" parent="PanelContainer/Turrets/Big" index="0"]
 
+modulate = Color( 0.664062, 0.937012, 1, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 19.0
-margin_right = 144.0
-margin_bottom = 163.0
+margin_top = 16.0
+margin_right = 122.0
+margin_bottom = 166.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -238,10 +232,9 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
-_sections_unfolded = [ "Size Flags", "Textures" ]
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+_sections_unfolded = [ "Size Flags", "Textures", "Visibility" ]
 
 [node name="Price" type="Button" parent="PanelContainer/Turrets/Big" index="1"]
 
@@ -249,9 +242,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 193.0
-margin_right = 144.0
-margin_bottom = 236.0
+margin_top = 196.0
+margin_right = 122.0
+margin_bottom = 239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -259,7 +252,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -285,7 +278,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -297,7 +290,7 @@ _sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
 
 [node name="Error" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -306,7 +299,7 @@ bus = "Master"
 
 [node name="PressedSound" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 7 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false

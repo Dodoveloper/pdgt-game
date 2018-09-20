@@ -15,6 +15,15 @@ var life_percentage = 0
 var total = 0
 
 func _ready():
+	# free turret popup if present
+	var slots = get_tree().root.get_node("Map/TestScene/Turrets").get_children()
+	if slots:
+		for slot in slots:
+			for child in slot.get_children():
+				if child.name == "TurretPopup":
+					child.queue_free()
+					Global.is_displaying = false
+					break
 	randomize()
 	get_tree().root.get_node("Map/Music").stop()
 	get_tree().paused = true

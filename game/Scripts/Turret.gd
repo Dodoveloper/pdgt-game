@@ -22,13 +22,16 @@ func set_size(new_size):
 	if size == "Small":
 		detect_radius = 300
 		fire_rate = 0.25
+		$Sprite.modulate = Color("ff9595")
 	elif size == "Medium":
 		detect_radius = 400
 		fire_rate = 0.2
+		$Sprite.modulate = Color("ffda95")
 	elif size == "Big":
 		detect_radius = 200
 		fire_rate = 0.1
-		damage = 15
+		$Sprite.modulate = Color("a9eeff")
+		damage += (damage / 2)
 
 func _physics_process(delta):
 	update()

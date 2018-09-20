@@ -15,6 +15,7 @@ var initial_life = 0
 var victory_bonus = 10000
 
 var is_displaying = false # turretpopup flag
+var conn_error = false # connection error
 
 func _ready():
 	OS.window_maximized = true

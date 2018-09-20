@@ -54,8 +54,10 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
 	if result != 0:
 		print("HTTPRequest Error: ", result, " ", response_code)
+		Global.conn_error = true
 		return
 
+	Global.conn_error = false
 	write_last_request()
 
 func write_last_request():
