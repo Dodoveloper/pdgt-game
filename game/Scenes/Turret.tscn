@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 21.6287, 22.0748 )
 
-[node name="Turret" type="KinematicBody2D"]
+[node name="Turret" type="KinematicBody2D" index="0"]
 
 position = Vector2( 55.2136, 37.6254 )
 z_index = 20
@@ -67,7 +67,7 @@ autostart = true
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 4 )
-volume_db = -5.0
+volume_db = -7.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

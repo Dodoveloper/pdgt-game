@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Enemies/dolphin1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Enemies/dolphin2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Enemies/swordfish1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Enemies/swordfish2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Art/Explosions/fish_explosion.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Art/UI/green_button00.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sfx/enemy_expl.wav" type="AudioStream" id=8]
@@ -14,12 +14,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "swordfish",
+"name": "dolphin",
 "speed": 3.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "dolphin",
+"name": "swordfish",
 "speed": 2.5
 } ]
 
@@ -91,8 +91,7 @@ __meta__ = {
 
 position = Vector2( 3.05176e-05, 0 )
 frames = SubResource( 1 )
-animation = "dolphin"
-frame = 1
+animation = "swordfish"
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -166,8 +165,17 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

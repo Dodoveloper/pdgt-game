@@ -23,8 +23,8 @@ func set_size(new_size):
 		detect_radius = 300
 		fire_rate = 0.2
 	elif size == "Medium":
-		detect_radius = 500
-		fire_rate = 0.4
+		detect_radius = 400
+		fire_rate = 0.35
 	elif size == "Big":
 		detect_radius = 200
 		fire_rate = 0.1

@@ -41,7 +41,7 @@ func _on_SpawnRate_timeout():
 func select_random_enemy():
 	var outcome = {
 		false : 80,
-		true : 20
+		true : 10
 	}
 	var tot_weight = 100
 	var rand = randi() % tot_weight
