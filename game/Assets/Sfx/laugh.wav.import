@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/laugh.wav-847d998701bc5e092e4feca8989876ac.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/laugh.wav"
+dest_files=[ "res://.import/laugh.wav-847d998701bc5e092e4feca8989876ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

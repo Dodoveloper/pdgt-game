@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/ZoneSelection.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Art/UI/Menu/zone_c.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Art/UI/Menu/zone_d.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sfx/back.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sfx/Play.wav" type="AudioStream" id=10]
 
 [node name="ZoneSelection" type="MarginContainer"]
 
@@ -21,6 +23,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/margin_right = 20
+custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
 _sections_unfolded = [ "custom_constants" ]
@@ -31,8 +35,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 1920.0
+margin_left = 20.0
+margin_right = 1900.0
 margin_bottom = 1063.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -48,7 +52,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1912.0
+margin_right = 1880.0
 margin_bottom = 109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -58,6 +62,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 text = "selezione zona"
+align = 1
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -66,13 +71,14 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Columns" type="HBoxContainer" parent="VBoxContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 16.0
+margin_left = 142.0
 margin_top = 113.0
-margin_right = 1895.0
+margin_right = 1738.0
 margin_bottom = 1063.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -80,121 +86,35 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 6
 size_flags_vertical = 1
-custom_constants/separation = 200
+custom_constants/separation = 100
 alignment = 0
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Left" type="MarginContainer" parent="VBoxContainer/Columns" index="0"]
+[node name="Back" type="Button" parent="VBoxContainer/Columns" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 704.0
+margin_top = 835.0
+margin_right = 108.0
 margin_bottom = 950.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Map" type="TextureRect" parent="VBoxContainer/Columns/Left" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 704.0
-margin_bottom = 950.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="ZA" type="TextureRect" parent="VBoxContainer/Columns/Left" index="1"]
-
-modulate = Color( 1, 1, 1, 0.478431 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 704.0
-margin_bottom = 950.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 4 )
-stretch_mode = 0
-_sections_unfolded = [ "Visibility" ]
-
-[node name="ZB" type="TextureRect" parent="VBoxContainer/Columns/Left" index="2"]
-
-modulate = Color( 1, 1, 1, 0.478431 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 704.0
-margin_bottom = 950.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 5 )
-stretch_mode = 0
-
-[node name="ZC" type="TextureRect" parent="VBoxContainer/Columns/Left" index="3"]
-
-modulate = Color( 1, 1, 1, 0.478431 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 704.0
-margin_bottom = 950.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 6 )
-stretch_mode = 0
-
-[node name="ZD" type="TextureRect" parent="VBoxContainer/Columns/Left" index="4"]
-
-modulate = Color( 1, 1, 1, 0.478431 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 704.0
-margin_bottom = 950.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 7 )
-stretch_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "<-"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Columns" index="1"]
 
@@ -203,9 +123,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 904.0
+margin_left = 208.0
 margin_top = 215.0
-margin_right = 1227.0
+margin_right = 531.0
 margin_bottom = 735.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -320,15 +240,129 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Confirm" type="Button" parent="VBoxContainer/Columns" index="2"]
+[node name="Left" type="MarginContainer" parent="VBoxContainer/Columns" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 631.0
+margin_right = 1335.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Map" type="TextureRect" parent="VBoxContainer/Columns/Left" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1427.0
+margin_left = 8.0
+margin_right = 704.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="ZA" type="TextureRect" parent="VBoxContainer/Columns/Left" index="1"]
+
+modulate = Color( 1, 1, 1, 0.478431 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 704.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+_sections_unfolded = [ "Visibility" ]
+
+[node name="ZB" type="TextureRect" parent="VBoxContainer/Columns/Left" index="2"]
+
+modulate = Color( 1, 1, 1, 0.478431 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 704.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 0
+
+[node name="ZC" type="TextureRect" parent="VBoxContainer/Columns/Left" index="3"]
+
+modulate = Color( 1, 1, 1, 0.478431 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 704.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="ZD" type="TextureRect" parent="VBoxContainer/Columns/Left" index="4"]
+
+modulate = Color( 1, 1, 1, 0.478431 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 704.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+
+[node name="Confirm" type="Button" parent="VBoxContainer/Columns" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1435.0
 margin_top = 835.0
-margin_right = 1879.0
+margin_right = 1596.0
 margin_bottom = 950.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -343,7 +377,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Conferma"
+text = "Vai"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
@@ -357,6 +391,26 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="BackSound" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="VBoxContainer/Columns/Back" to="." method="_on_Back_pressed"]
+
 [connection signal="pressed" from="VBoxContainer/Columns/Right/ZA" to="." method="_on_ZA_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/Columns/Right/ZB" to="." method="_on_ZB_pressed"]
@@ -366,5 +420,7 @@ bus = "Master"
 [connection signal="pressed" from="VBoxContainer/Columns/Right/ZD" to="." method="_on_ZD_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/Columns/Confirm" to="." method="_on_Confirm_pressed"]
+
+[connection signal="finished" from="ConfirmSound" to="." method="_on_ConfirmSound_finished"]
 
 

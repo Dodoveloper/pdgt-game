@@ -3,6 +3,8 @@ extends MarginContainer
 onready var buttons = $VBoxContainer/Columns/Right.get_children()
 onready var zones = $VBoxContainer/Columns/Left.get_children()
 
+var LevelSelection = preload("res://Scenes/LevelSelection.tscn")
+
 func _ready():
 	zones.remove(0)
 
@@ -39,7 +41,20 @@ func _on_ZD_pressed():
 	highlight_zone("ZD")
 
 func _on_Confirm_pressed():
-	get_tree().change_scene("res://Scenes/LevelSelection.tscn")
+	$ConfirmSound.play()
+
+func _on_ConfirmSound_finished():
+	if get_parent().name == "MainMenu":
+		var ls = LevelSelection.instance()
+		get_parent().add_child(ls)
+		queue_free()
+
+func _on_Back_pressed():
+	$BackSound.play()
+	if get_parent().name == "MainMenu":
+		get_parent().get_node("Slider").play_backwards("right")
+
+
 
 
 

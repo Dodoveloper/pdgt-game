@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WaterAnim.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Art/Platforms/pixel_big_platform.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Fonts/score_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/ZoneSelection.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sfx/menu_music.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sfx/select.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -15,7 +17,7 @@ length = 1.8
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Columns/Main/Name:rect_scale")
+tracks/0/path = NodePath("Menu/Main/Name:rect_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +29,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Menu/Columns/Main/Credits:rect_scale")
+tracks/1/path = NodePath("Menu/Main/Credits:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -46,7 +48,7 @@ length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Menu/Columns/Main/Icon:rect_rotation")
+tracks/0/path = NodePath("Menu/Main/Icon:rect_rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -89,7 +91,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -1920, 0 ) ]
 }
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="MainMenu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -100,6 +102,7 @@ _sections_unfolded = [ "Cell", "Transform", "Visibility" ]
 
 [node name="Menu" type="MarginContainer" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -110,61 +113,46 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 100
 custom_constants/margin_bottom = 20
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="Columns" type="HBoxContainer" parent="Menu" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 121.0
-margin_right = 1806.0
-margin_bottom = 1060.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 6
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Size Flags" ]
-
-[node name="Main" type="VBoxContainer" parent="Menu/Columns" index="0"]
+[node name="Main" type="VBoxContainer" parent="Menu" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 195.0
-margin_right = 1181.0
-margin_bottom = 864.0
+margin_left = 8.0
+margin_top = 100.0
+margin_right = 1870.0
+margin_bottom = 1060.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 4
-custom_constants/separation = 10
+size_flags_horizontal = 7
+size_flags_vertical = 5
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Name" type="Label" parent="Menu/Columns/Main" index="0"]
+[node name="Name" type="Label" parent="Menu/Main" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1181.0
-margin_bottom = 151.0
-rect_pivot_offset = Vector2( 590, 75 )
+margin_top = 7.0
+margin_right = 1862.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 960, 75 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
+size_flags_vertical = 6
 custom_fonts/font = ExtResource( 3 )
 text = "platform defense"
 align = 1
@@ -174,21 +162,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Credits" type="Label" parent="Menu/Columns/Main" index="1"]
+[node name="Credits" type="Label" parent="Menu/Main" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 161.0
-margin_right = 1181.0
-margin_bottom = 209.0
-rect_pivot_offset = Vector2( 590, 24 )
+margin_top = 229.0
+margin_right = 1862.0
+margin_bottom = 277.0
+rect_pivot_offset = Vector2( 960, 24 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
+size_flags_vertical = 6
 custom_fonts/font = ExtResource( 4 )
 text = "Un gioco di Davide Cortellucci"
 align = 1
@@ -197,48 +185,48 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Icon" type="TextureRect" parent="Menu/Columns/Main" index="2"]
+[node name="Icon" type="TextureRect" parent="Menu/Main" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 219.0
-margin_right = 1181.0
-margin_bottom = 669.0
-rect_pivot_offset = Vector2( 590, 225 )
+margin_top = 340.0
+margin_right = 1862.0
+margin_bottom = 790.0
+rect_pivot_offset = Vector2( 960, 225 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 6
 texture = ExtResource( 5 )
 stretch_mode = 4
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Button" type="Button" parent="Menu/Columns" index="1"]
+[node name="Button" type="Button" parent="Menu/Main" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1185.0
-margin_top = 945.0
-margin_right = 1685.0
-margin_bottom = 1060.0
+margin_left = 1754.0
+margin_top = 845.0
+margin_right = 1862.0
+margin_bottom = 960.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 8
 size_flags_vertical = 10
 custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Clicca Qui"
+text = "->"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
@@ -271,7 +259,25 @@ playback_speed = 1.0
 anims/right = SubResource( 3 )
 blend_times = [  ]
 
-[connection signal="pressed" from="Menu/Columns/Button" to="." method="_on_Button_pressed"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Pressed" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 9 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="Menu/Main/Button" to="." method="_on_Button_pressed"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
