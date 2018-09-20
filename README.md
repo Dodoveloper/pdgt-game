@@ -9,7 +9,7 @@ L'attività di estrazione delle piattaforme entro dodici miglia dalla costa è u
 
 ### GLI *OPEN DATA* UTILIZZATI
 I dati sulle piattaforme sono stati raccolti dal Ministero dello Sviluppo Economico e sono aggiornati al 2016. 
-Il dataset è un file JSON composto di 92 entry, una per piattaforma. Esso presenta molte informazioni, tra cui coordinate, anno di costruzione, zona, nome, tipo di struttura, distanza dalla costa, gestore, numero di pozzi, ecc.
+Il dataset è un file JSON composto di 92 entry, una per piattaforma. Esso presenta molte informazioni, tra cui coordinate, anno di costruzione, zona, nome, tipo di struttura, distanza dalla costa, gestore, numero di pozzi e molto altro.
 
 Il progetto attinge inoltre ai dati sul **meteo in tempo reale** forniti da [Open WeatherMap](https://openweathermap.org/current): Platform Defense riproduce infatti nell'area di gioco selezionata il meteo reale corrispondente, arricchendo la varietà del gameplay.
 Per reperire questi dati vengono effettuate delle chiamate alle API di Open Weather Map tramite il protocollo HTTP, utilizzando le coordinate geografiche reperite dal dataset.
@@ -34,9 +34,12 @@ Ciascuna piattaforma ha numero variabile di pozzi totali e di pozzi già attivi.
 Per quanto riguarda il meteo, con esso varia dinamicamente l'aspetto grafico del gioco. Cielo sereno, nuvoloso o condizioni di pioggia vengono riprodotte visivamente nel videogioco.
 
 ### COME SI GIOCA
-I controlli sono semplici:
+#### REQUISITI PER IL METEO
+- Un account [Open WeatherMap](https://openweathermap.org/) con un token per accedere a questa [API](https://openweathermap.org/current)
+- L'inserimento manuale del proprio token nel file JSON *my_data.json*, situato nella cartella *Data*
+#### CONTROLLI
 - Click per interagire con gli oggetti
 - Doppio click sui pozzi inattivi (cerchi grigi) per attivarli
-- Click tenendo premuto sulla mappa per trascinare la telecamera
+- Drag sulla mappa per trascinare la telecamera
 - Rotellina mouse per lo zoom
 - ESC per chiudere il gioco
