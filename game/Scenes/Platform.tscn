@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Platform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Platforms/pixel_big_platform.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/PitList.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sfx/platform_hit.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sfx/laugh.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Art/Explosions/platform_explosion.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/Explosions/platform_explosion.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -126,29 +125,17 @@ bus = "Master"
 area_mask = 1
 _sections_unfolded = [ "Material" ]
 
-[node name="Laughter" type="AudioStreamPlayer2D" parent="." index="4"]
-
-stream = ExtResource( 5 )
-volume_db = 1.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "8bit"
-area_mask = 1
-_sections_unfolded = [ "Material" ]
-
-[node name="Explosion" type="Sprite" parent="." index="5"]
+[node name="Explosion" type="Sprite" parent="." index="4"]
 
 visible = false
 position = Vector2( 0, -150 )
 scale = Vector2( 2.3, 2.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 vframes = 3
 hframes = 5
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = ""

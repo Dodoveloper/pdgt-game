@@ -27,11 +27,7 @@ var label_values = {
 	"Dimensions" : 0
 }
 
-func _ready():
-	pass
-
 func show_info(id):
-	print("id info: ", id)
 	## init the info dictionary
 	label_values.Name = DataHandler.get_value(id, "cdenominazione__")
 	# get and format the Year

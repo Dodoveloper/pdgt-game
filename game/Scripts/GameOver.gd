@@ -2,8 +2,8 @@ extends Node
 
 var sentences = { 
 	true : ["Prossimo passo: la conquista del mondo",
-			"Bella vittoria. Peccato non prenda il WiFi"],
-	false: ["Dannazione! Ha vinto il bene stavolta",
+			"Un'ottima contrattazione!"],
+	false: ["Dannazione! Ha vinto il Bene stavolta",
 			"Ti hanno preso a ... pesci in faccia"]
 }
 

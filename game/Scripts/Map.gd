@@ -37,7 +37,6 @@ func _on_SpawnRate_timeout():
 				prev_percentage = Global.gas_percentage
 		# randomize the timer
 		$SpawnRate.wait_time = rand_range(spawn_rate - 0.5, spawn_rate)
-	print($SpawnRate.wait_time)
 
 func select_random_enemy():
 	var outcome = {
@@ -57,7 +56,6 @@ func select_random_enemy():
 	return output
 
 func _on_HUD_weather_acquired(weather):
-	print(weather)
 	if weather == "Clouds":
 		$TileMap.modulate = Color("8ed3a7")
 	elif weather == "Rain" or weather == "Snow":
