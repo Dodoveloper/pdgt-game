@@ -1,9 +1,13 @@
 extends Node
 
+
 const DATA_PATH = "res://Data/my_data.json"
+
 var data
+
 onready var platform = get_tree().root.get_node("Map/Platform")
 onready var file
+
 
 func _ready():
 	# try to load the file
@@ -22,15 +26,16 @@ func _ready():
 	if check_time():
 		platform.connect("platform_initialized", self, "make_request")
 
+
 func make_request(location):
 	var params = [str(location.x), str(location.y), str(Global.my_token)]
 	var req = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric&appid=%s&lang=it" % params
 	$HTTPRequest.request(req)
 
+
 func check_time():
 	var cur_datetime = OS.get_datetime()
 	var minute_interval = 1
-
 	# if value is > than current datetime we're sure it can make a request,
 	# otherwise if = we need to perform more checks
 	if cur_datetime.year > int(data["last_req"].year):
@@ -47,18 +52,17 @@ func check_time():
 				elif cur_datetime.hour == int(data["last_req"].hour):
 					if cur_datetime.minute > (int(data["last_req"].minute) + minute_interval) % 60:
 						return true
-
 	return false
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	var json = JSON.parse(body.get_string_from_utf8())
+
+func _on_HTTPRequest_request_completed(result, response_code, _headers, _body):
 	if result != 0:
 		print("HTTPRequest Error: ", result, " ", response_code)
 		Global.conn_error = true
 		return
-
 	Global.conn_error = false
 	write_last_request()
+
 
 func write_last_request():
 	var cur_datetime = OS.get_datetime()
@@ -73,6 +77,3 @@ func write_last_request():
 	file.open(DATA_PATH, File.WRITE)
 	file.store_string(JSON.print(data, "  ", true))
 	file.close()
-
-
-

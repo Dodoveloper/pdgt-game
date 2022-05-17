@@ -3,16 +3,9 @@
 [ext_resource path="res://Scripts/WeatherRequest.gd" type="Script" id=1]
 
 [node name="WeatherRequest" type="Node"]
-
 script = ExtResource( 1 )
 
-[node name="HTTPRequest" type="HTTPRequest" parent="." index="0"]
-
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 download_file = "res://Data/weather.json"
-use_threads = false
-body_size_limit = -1
-max_redirects = 8
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
-
-

@@ -33,7 +33,7 @@ func set_size(new_size):
 		$Sprite.modulate = Color("a9eeff")
 		damage += (damage / 2)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	update()
 	if targets.size() > 0:
 		if can_shoot:

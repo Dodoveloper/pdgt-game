@@ -65,9 +65,3 @@ func _on_HUD_weather_acquired(weather):
 	else:
 		$Camera2D/WeatherEffects/Rain.emitting = false
 		$TileMap.modulate = Color(1.0, 1.0, 1.0, 1.0)
-
-
-
-
-
-

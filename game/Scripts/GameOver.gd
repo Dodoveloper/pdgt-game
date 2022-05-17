@@ -49,11 +49,11 @@ func _ready():
 
 func _on_Menu_pressed():
 	restore_values()
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	var _e = get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 func _on_Retry_pressed():
 	restore_values()
-	get_tree().change_scene("res://Scenes/Map.tscn")
+	var _e = get_tree().change_scene("res://Scenes/Map.tscn")
 
 func restore_values():
 	$PressedSound.play()

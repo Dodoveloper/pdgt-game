@@ -47,10 +47,10 @@ func _physics_process(delta):
 	else:
 		queue_free()
 
-func hit(damage):
+func hit(_damage):
 	# check remaining life
-	if life > damage:
-		life -= damage
+	if life > _damage:
+		life -= _damage
 		Global.money += 2
 	else:
 		life = 0
@@ -58,12 +58,12 @@ func hit(damage):
 
 func explode():
 	$ExplosionSound.play()
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.set_deferred("disabled", true)
 	speed = 0
 	$AnimationPlayer.play("explode")
 	Global.money += points
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()
 
 func _on_HealthBar_value_changed(value):

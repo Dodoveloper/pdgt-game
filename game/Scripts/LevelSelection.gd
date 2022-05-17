@@ -1,19 +1,22 @@
 extends Node
 
+
 var textures = ["res://Assets/Art/UI/platforms/pixel_small_platform.png",
 				"res://Assets/Art/UI/platforms/pixel_platform.png",
 				"res://Assets/Art/UI/platforms/pixel_big_platform.png"]
-onready var columns = $UI/Rows/Second/Platforms
-onready var page = $UI/Rows/First/Labels/Page
-onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
-onready var play = $UI/Rows/Third/HBoxContainer/Play
-onready var map = "res://Scenes/Map.tscn"
 var number = 0
 var platforms = []
 var buttons = []
 var cur_page = 1
 var pages = 0
 var cur_id = 0
+
+onready var columns = $UI/Rows/Second/Platforms
+onready var page = $UI/Rows/First/Labels/Page
+onready var platform_infos = $UI/Rows/Third/HBoxContainer/PlatformInfos
+onready var play = $UI/Rows/Third/HBoxContainer/Play
+onready var map = "res://Scenes/Map.tscn"
+
 
 func _ready():
 	# zone label text
@@ -47,6 +50,7 @@ func _ready():
 	cur_id = int(platforms[0]["ccodice"])
 	platform_infos.show_info(cur_id)
 
+
 func fill_row():
 	var sizes = []
 	# find 5 platforms in the json
@@ -78,6 +82,7 @@ func fill_row():
 	# display the correct info
 	platform_infos.show_info(buttons[0].platform_id)
 
+
 func _on_BtnRight_pressed():
 	# play the animation
 	$AnimationPlayer.play("swipe")
@@ -98,6 +103,7 @@ func _on_BtnRight_pressed():
 		buttons[b].disconnect("pressed", platform_infos, "show_info")
 		buttons[b].connect("pressed", platform_infos, "show_info",
 					   [buttons[b].platform_id])
+
 
 func _on_BtnLeft_pressed():
 	# play the animation
@@ -120,8 +126,10 @@ func _on_BtnLeft_pressed():
 		buttons[b].connect("pressed", platform_infos, "show_info",
 					   [buttons[b].platform_id])
 
+
 func _on_Play_pressed():
 	$PlaySound.play()
+
 
 func _on_PlaySound_finished():
 	# find the pressed button
@@ -130,12 +138,4 @@ func _on_PlaySound_finished():
 			cur_id = buttons[b].platform_id
 	# switch to the game scene
 	Global.platform_id = cur_id
-	get_tree().change_scene(map)
-
-
-
-
-
-
-
-
+	var _e = get_tree().change_scene(map)

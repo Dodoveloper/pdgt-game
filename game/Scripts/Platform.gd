@@ -1,5 +1,6 @@
 extends Area2D
 
+
 signal platform_initialized
 
 var GameOver = preload("res://Scenes/GameOver.tscn")
@@ -7,7 +8,7 @@ var textures = ["res://Assets/Art/Platforms/pixel_small_platform.png",
 				"res://Assets/Art/Platforms/pixel_platform.png",
 				"res://Assets/Art/Platforms/pixel_big_platform.png"]
 # platform's id
-var id
+var id: int
 var producting_pits
 var inactive_pits
 var size
@@ -27,11 +28,9 @@ var info_dict = {
 	"Dimensions" : 0
 }
 
+
 func _ready():
 	id = Global.platform_id
-	init(id)
-
-func init(id):
 	## init the info dictionary
 	info_dict.Name = DataHandler.get_value(id, "cdenominazione__")
 	# get and format the Year
@@ -56,7 +55,6 @@ func init(id):
 	info_dict.Altitude = DataHandler.get_value(id, "caltezza_slm__m_")
 	info_dict.Depth = DataHandler.get_value(id, "cprofondit__fondale__m_")
 	info_dict.Dimensions = DataHandler.get_value(id, "cdimensioni")
-	
 	## init game values
 	# location
 	var lat = DataHandler.get_value(id, "clatitudine__wgs84__")
@@ -77,9 +75,9 @@ func init(id):
 	# pits
 	producting_pits = DataHandler.get_value(id, "cpozzi_in_produzione").to_int()
 	inactive_pits = DataHandler.get_value(id, "cpozzi_produttivi_non_eroganti").to_int()
-
 	Global.platform_info = info_dict
 	emit_signal("platform_initialized", location)
+
 
 func hit(damage):
 	$HitSound.play()
@@ -90,27 +88,21 @@ func hit(damage):
 		Global.platform_life = 0
 		game_over()
 
+
 func _on_Platform_body_entered(body):
 	if body.is_in_group("enemies"):
 		self.hit(body.damage)
 		body.queue_free()
+
 
 func game_over():
 	$CollisionShape2D.disabled = true
 	# play the explosion
 	$AnimationPlayer.play("explode")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	# display gameover
 	var g = GameOver.instance()
 	g.victory = false
 	get_parent().get_node("Camera2D/HUD").add_child(g)
-
-
-
-
-
-
-
-
-

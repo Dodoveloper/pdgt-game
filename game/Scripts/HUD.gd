@@ -54,7 +54,7 @@ func fill_weather_info():
 	# close the file
 	file.close()
 
-func _process(delta):
+func _process(_delta):
 	$Money.text = String(Global.money) + " €"
 	$HealthBar.value = Global.platform_life
 	$GasLabel.text = "%d %%" % Global.gas_percentage
