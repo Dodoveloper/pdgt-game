@@ -7,16 +7,11 @@
 [ext_resource path="res://Assets/Art/Explosions/platform_explosion.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 221.876, 226.609 )
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "explode"
 length = 2.5
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Explosion:frame")
 tracks/0/interp = 1
@@ -79,74 +74,40 @@ tracks/4/keys = {
 }
 
 [node name="Platform" type="Area2D"]
-
 position = Vector2( 372.051, 267.241 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_mask = 18
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 offset = Vector2( 0, -70 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -9.92749, 6.36752 )
 shape = SubResource( 1 )
 
-[node name="PitList" parent="." index="2" instance=ExtResource( 3 )]
-
+[node name="PitList" parent="." instance=ExtResource( 3 )]
 margin_left = -192.0
 margin_top = 310.0
 margin_right = 601.0
 margin_bottom = 784.0
 custom_constants/icon_margin = 10
-_sections_unfolded = [ "Columns", "Icon", "Rect", "custom_constants", "custom_styles" ]
 
-[node name="HitSound" type="AudioStreamPlayer2D" parent="." index="3"]
-
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = 24.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-_sections_unfolded = [ "Material" ]
 
-[node name="Explosion" type="Sprite" parent="." index="4"]
-
+[node name="Explosion" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -150 )
 scale = Vector2( 2.3, 2.3 )
 texture = ExtResource( 5 )
 hframes = 15
-_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 3.0
 anims/explode = SubResource( 2 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Platform_body_entered"]
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-
-

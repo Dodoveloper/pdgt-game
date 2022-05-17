@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/inactive_well.png-710b04f6a5c4bffaa56e97accb76f735.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/Art/UI/inactive_well.png"
-source_md5="78e0bc464ffd93ad022cdec985c33c0e"
-
 dest_files=[ "res://.import/inactive_well.png-710b04f6a5c4bffaa56e97accb76f735.stex" ]
-dest_md5="f2a2f152bcaeac89fc3a532c33e70da0"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,8 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

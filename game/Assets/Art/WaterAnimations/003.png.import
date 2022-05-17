@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/003.png-cad44115510eea08f0d0f7104e78c6ff.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Assets/Art/WaterAnimations/003.png"
-source_md5="0b7bdd8b28cfe8e2115a990a923d20de"
-
 dest_files=[ "res://.import/003.png-cad44115510eea08f0d0f7104e78c6ff.stex" ]
-dest_md5="cc2d45e4f90737c0f84a9a468778509b"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,8 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -7,89 +7,47 @@
 [ext_resource path="res://Assets/Sfx/turret_bought3.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 21.6287, 22.0748 )
 
 [node name="Turret" type="KinematicBody2D"]
-
 position = Vector2( 55.2136, 37.6254 )
 z_index = 20
-input_pickable = false
 collision_layer = 4
 collision_mask = 3
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 detect_radius = 250
 fire_rate = 0.2
 Bullet = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2.99368, 7.78358 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, -40 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Muzzle" type="Position2D" parent="Sprite" index="0"]
-
+[node name="Muzzle" type="Position2D" parent="Sprite"]
 position = Vector2( 30.8377, -76.7454 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
 
-[node name="Visibility" type="Area2D" parent="." index="2"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+[node name="Visibility" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility"]
 
-[node name="ShootTimer" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="ShootTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
-[node name="Gunshot" type="AudioStreamPlayer2D" parent="." index="4"]
-
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -7.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
-[node name="Spawn" type="AudioStreamPlayer2D" parent="." index="5"]
-
+[node name="Spawn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
-
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
-
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
-
-

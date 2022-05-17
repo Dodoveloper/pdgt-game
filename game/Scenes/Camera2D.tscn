@@ -5,36 +5,18 @@
 [ext_resource path="res://Scenes/Rain.tscn" type="PackedScene" id=3]
 
 [node name="Camera2D" type="Camera2D"]
-
-anchor_mode = 1
-rotating = false
 current = true
 zoom = Vector2( 0.9, 0.9 )
 limit_left = -1000
 limit_top = -1000
 limit_right = 4000
 limit_bottom = 2000
-limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
 smoothing_speed = 15.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Limit", "Smoothing" ]
 
-[node name="HUD" parent="." index="0" instance=ExtResource( 2 )]
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 
-[node name="WeatherEffects" parent="." index="1" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-
-
+[node name="WeatherEffects" parent="." instance=ExtResource( 3 )]

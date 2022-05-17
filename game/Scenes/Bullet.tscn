@@ -4,46 +4,27 @@
 [ext_resource path="res://Assets/Art/bullet.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-
-custom_solver_bias = 0.0
 radius = 23.2928
 height = 36.8727
 
 [node name="Bullet" type="Area2D"]
-
 z_index = 50
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 16
 collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.293483, 2.05474 )
 rotation = 1.5557
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
-
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0.1481, -0.822495 )
 scale = Vector2( 6.2442, 3.68828 )
-rect = Rect2( -10, -10, 20, 20 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
-
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-
-
