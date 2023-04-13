@@ -1,6 +1,6 @@
 # PLATFORM DEFENSE - ENG
 
-**Platform Defense** is a game based on *open data*, it's central theme is the platforms extracting hydrocarbons off the Italian coast.
+**Platform Defense** is a game based on *open data*, its central theme are the platforms extracting hydrocarbons off the Italian coast.
 The project allows you to dinamically explore the [dataset](http://www.datiopen.it/it/opendata/Elenco_piattaforme_marine_entro_12_miglia_dalla_costa) distributed by the [Italian Portal of *Open Data*](https://www.datiopen.it), which lists and catalogs the **oil platforms** within twelve miles of the coast.
 The game is about defending the chosen platform against the enemy assault, following the typical gameplay of the *tower defense* games.
 
